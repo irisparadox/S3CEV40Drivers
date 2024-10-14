@@ -100,9 +100,9 @@ void sys_init( void )
     WTCON  = 0;             // deshabilita el watchdog    
     INTMSK = ~0;            // enmascara todas las interrupciones
     
-    GET_OPMODE( &mode );    // lee el modo de ejecución del procesador
+    GET_OPMODE( &mode );    // lee el modo de ejecuciï¿½n del procesador
     if( mode != SVCMODE )
-        sys_recovery();     // si no es SVC (por una reejecución de la aplicación tras una excepción sin reset HW previo) recupera el modo SVC y restaura las pilas del sistema
+        sys_recovery();     // si no es SVC (por una reejecuciï¿½n de la aplicaciï¿½n tras una excepciï¿½n sin reset HW previo) recupera el modo SVC y restaura las pilas del sistema
 
     // Configuracion del gestor de reloj
     LOCKTIME = 0xfff;         // estabilizacion del PLL = 512 us
@@ -399,12 +399,21 @@ void isr_USB_dummy( void ) {
 }
 
 static inline void show_sys_info( void ) {
-	uart0_puts("\n\n*** WELCOME ***\n\n");
-	uart0_puts("* FIRMWARE:\nGabriel Guillermo Saavedra Moreira\nDaniel Menéndez Crespo\n\n");
-	uart0_puts("- Board: EMBEST S3CEV40\n");
-	uart0_puts("- CPU: Samsung S3C44B0X\n");
-	uart0_puts("- Version: 24w42a\n\n");
-	uart0_puts("---------------\n\n");
+	uart0_puts("\n\n");
+    uart0_puts("****************************\n");
+    uart0_puts("        *** WELCOME ***     \n");
+    uart0_puts("****************************\n\n");
+
+    uart0_puts("   FIRMWARE DEVELOPERS:\n");
+    uart0_puts("     Gabriel Guillermo Saavedra Moreira\n");
+    uart0_puts("     Daniel MenÃ©ndez Crespo\n\n");
+
+    uart0_puts("   BOARD INFORMATION:\n");
+    uart0_puts("     - Board:   EMBEST S3CEV40\n");
+    uart0_puts("     - CPU:     Samsung S3C44B0X\n");
+    uart0_puts("     - Version: 24w42a\n\n");
+
+    uart0_puts("****************************\n\n");
 }
 
 inline void sleep( void )
@@ -419,10 +428,10 @@ static void sys_recovery( void ) // NO TOCAR
     uint32 *addrSrc, *addrDst;
     uint32 diffStacks;
     
-    asm volatile ( "str sp, %0" : "=m" (sp) : : );    // lee el puntero a la cima de la pila de excepción (SP) 
-    asm volatile ( "str fp, %0" : "=m" (fp) : : );    // lee el puntero al marco de activación (FP) de sys_recovery() en la pila de excepción
+    asm volatile ( "str sp, %0" : "=m" (sp) : : );    // lee el puntero a la cima de la pila de excepciï¿½n (SP) 
+    asm volatile ( "str fp, %0" : "=m" (fp) : : );    // lee el puntero al marco de activaciï¿½n (FP) de sys_recovery() en la pila de excepciï¿½n
     
-    GET_OPMODE( &mode );    // lee el modo de ejecución del procesador
+    GET_OPMODE( &mode );    // lee el modo de ejecuciï¿½n del procesador
     switch( mode )
     {
         case IRQMODE:
@@ -443,27 +452,27 @@ static void sys_recovery( void ) // NO TOCAR
             break;         
         case SYSMODE:
         case USRMODE:
-            // Habría que hacer algo análogo a lo anterior y además para volver a modo SVC dado que no es válido SET_OPMODE( SVCMODE ), es necesario esto:
+            // Habrï¿½a que hacer algo anï¿½logo a lo anterior y ademï¿½s para volver a modo SVC dado que no es vï¿½lido SET_OPMODE( SVCMODE ), es necesario esto:
             // pISR_SWI = (uint32) isr_SWI;
             // SWI( 0 );  
         default:
-            while( 1 );                           // aquí no debería llegarse
+            while( 1 );                           // aquï¿½ no deberï¿½a llegarse
             break;
     }    
         
-    asm volatile ( "ldr sp, %0" : "=m" (addrSrc) : : );    // restaura el SP de excepción a su base para desechar su contenido y evitar su desbordamiento     
+    asm volatile ( "ldr sp, %0" : "=m" (addrSrc) : : );    // restaura el SP de excepciï¿½n a su base para desechar su contenido y evitar su desbordamiento     
         
-    for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo de la pila excepción en la pila SVC
+    for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo de la pila excepciï¿½n en la pila SVC
         *(--addrDst) = *(--addrSrc);
 
-    addrDst = (uint32 *)(fp-diffStacks);   // carga el puntero al marco de activación de sys_recovery() en la pila SVC
+    addrDst = (uint32 *)(fp-diffStacks);   // carga el puntero al marco de activaciï¿½n de sys_recovery() en la pila SVC
     addrDst--;                             // salta el PC apilado
     addrDst--;                             // salta el LR apilado
     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
     addrDst--;                             // salta el SP apilado
     *addrDst -= diffStacks;                // actualiza el FP apilado para que apunte a la pila SVC
     
-    addrDst = (uint32 *)(*addrDst);        // carga el puntero al marco de activación de sys_init()
+    addrDst = (uint32 *)(*addrDst);        // carga el puntero al marco de activaciï¿½n de sys_init()
     addrDst--;                             // salta el PC apilado
     addrDst--;                             // salta el LR apilado
     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
@@ -476,5 +485,5 @@ static void sys_recovery( void ) // NO TOCAR
     asm volatile ( "ldr sp, %0" : : "m" (sp) : );    // actualiza SP_svc para que apunte a la cima de la pila SVC
     
     fp -= diffStacks;                 
-    asm volatile ( "ldr fp, %0" : : "m" (fp) : );    // actualiza FP para que apunte al marco de la pila SVC, debe ser siempre la última sentencia
+    asm volatile ( "ldr fp, %0" : : "m" (fp) : );    // actualiza FP para que apunte al marco de la pila SVC, debe ser siempre la ï¿½ltima sentencia
 }
