@@ -1,4 +1,4 @@
-12:20:36 **** Build of configuration Debug for project BSP ****
+12:38:32 **** Build of configuration Debug for project BSP ****
 cs-make all 
 'Building file: ../src/adc.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
@@ -111,5 +111,5 @@ arm-none-eabi-ar: creating libBSP.a
 'Finished building target: libBSP.a'
 ' '
 
-12:20:38 Build Finished (took 1s.978ms)
+12:38:34 Build Finished (took 1s.981ms)
 

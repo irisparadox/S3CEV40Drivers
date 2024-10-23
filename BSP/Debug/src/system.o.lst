@@ -141,7 +141,7 @@
  2045 0020 0020E0E3 		mvn	r2, #0
  2046 0024 002083E5 		str	r2, [r3, #0]
  102:../src/system.c ****     
- 103:../src/system.c ****     GET_OPMODE( &mode );    // lee el modo de ejecución del procesador
+ 103:../src/system.c ****     GET_OPMODE( &mode );    // lee el modo de ejecuciï¿½n del procesador
  2047              		.loc 1 103 0
  2048              	@ 103 "../src/system.c" 1
  2049 0028 00000FE1 		mrs r0, cpsr               
@@ -153,9 +153,9 @@
  2054 0034 0D305BE5 		ldrb	r3, [fp, #-13]	@ zero_extendqisi2
  2055 0038 130053E3 		cmp	r3, #19
  2056 003c 0000000A 		beq	.L2
- 105:../src/system.c ****         sys_recovery();     // si no es SVC (por una reejecución de la aplicación tras una excepció
+ 105:../src/system.c ****         sys_recovery();     // si no es SVC (por una reejecuciï¿½n de la aplicaciï¿½n tras una exce
  2057              		.loc 1 105 0
- 2058 0040 CE0200EB 		bl	sys_recovery
+ 2058 0040 DF0200EB 		bl	sys_recovery
  2059              	.L2:
  106:../src/system.c **** 
  107:../src/system.c ****     // Configuracion del gestor de reloj
@@ -2496,559 +2496,617 @@
  4044              		.section	.rodata
  4045              		.align	2
  4046              	.LC32:
- 4047 05d8 0A0A2A2A 		.ascii	"\012\012*** WELCOME ***\012\012\000"
- 4047      2A205745 
- 4047      4C434F4D 
- 4047      45202A2A 
- 4047      2A0A0A00 
- 4048              		.align	2
+ 4047 05d8 0A0A00   		.ascii	"\012\012\000"
+ 4048 05db 00       		.align	2
  4049              	.LC33:
- 4050 05ec 2A204649 		.ascii	"* FIRMWARE:\012Gabriel Guillermo Saavedra Moreira\012"
- 4050      524D5741 
- 4050      52453A0A 
- 4050      47616272 
- 4050      69656C20 
- 4051 061b 44616E69 		.ascii	"Daniel Men\351ndez Crespo\012\012\000"
- 4051      656C204D 
- 4051      656EE96E 
- 4051      64657A20 
- 4051      43726573 
- 4052              		.align	2
- 4053              	.LC34:
- 4054 0634 2D20426F 		.ascii	"- Board: EMBEST S3CEV40\012\000"
- 4054      6172643A 
- 4054      20454D42 
- 4054      45535420 
- 4054      53334345 
- 4055 064d 000000   		.align	2
- 4056              	.LC35:
- 4057 0650 2D204350 		.ascii	"- CPU: Samsung S3C44B0X\012\000"
- 4057      553A2053 
- 4057      616D7375 
- 4057      6E672053 
- 4057      33433434 
- 4058 0669 000000   		.align	2
- 4059              	.LC36:
- 4060 066c 2D205665 		.ascii	"- Version: 24w42a\012\012\000"
- 4060      7273696F 
- 4060      6E3A2032 
- 4060      34773432 
- 4060      610A0A00 
- 4061              		.align	2
- 4062              	.LC37:
- 4063 0680 2D2D2D2D 		.ascii	"---------------\012\012\000"
- 4063      2D2D2D2D 
- 4063      2D2D2D2D 
- 4063      2D2D2D0A 
- 4063      0A00
- 4064 0692 0000     		.text
- 4065              		.align	2
- 4067              	show_sys_info:
- 4068              	.LFB35:
+ 4050 05dc 2A2A2A2A 		.ascii	"****************************\012\000"
+ 4050      2A2A2A2A 
+ 4050      2A2A2A2A 
+ 4050      2A2A2A2A 
+ 4050      2A2A2A2A 
+ 4051 05fa 0000     		.align	2
+ 4052              	.LC34:
+ 4053 05fc 20202020 		.ascii	"        *** WELCOME ***     \012\000"
+ 4053      20202020 
+ 4053      2A2A2A20 
+ 4053      57454C43 
+ 4053      4F4D4520 
+ 4054 061a 0000     		.align	2
+ 4055              	.LC35:
+ 4056 061c 2A2A2A2A 		.ascii	"****************************\012\012\000"
+ 4056      2A2A2A2A 
+ 4056      2A2A2A2A 
+ 4056      2A2A2A2A 
+ 4056      2A2A2A2A 
+ 4057 063b 00       		.align	2
+ 4058              	.LC36:
+ 4059 063c 20202046 		.ascii	"   FIRMWARE DEVELOPERS:\012\000"
+ 4059      49524D57 
+ 4059      41524520 
+ 4059      44455645 
+ 4059      4C4F5045 
+ 4060 0655 000000   		.align	2
+ 4061              	.LC37:
+ 4062 0658 20202020 		.ascii	"     Gabriel Guillermo Saavedra Moreira\012\000"
+ 4062      20476162 
+ 4062      7269656C 
+ 4062      20477569 
+ 4062      6C6C6572 
+ 4063 0681 000000   		.align	2
+ 4064              	.LC38:
+ 4065 0684 20202020 		.ascii	"     Daniel Men\303\251ndez Crespo\012\012\000"
+ 4065      2044616E 
+ 4065      69656C20 
+ 4065      4D656EC3 
+ 4065      A96E6465 
+ 4066 06a3 00       		.align	2
+ 4067              	.LC39:
+ 4068 06a4 20202042 		.ascii	"   BOARD INFORMATION:\012\000"
+ 4068      4F415244 
+ 4068      20494E46 
+ 4068      4F524D41 
+ 4068      54494F4E 
+ 4069 06bb 00       		.align	2
+ 4070              	.LC40:
+ 4071 06bc 20202020 		.ascii	"     - Board:   EMBEST S3CEV40\012\000"
+ 4071      202D2042 
+ 4071      6F617264 
+ 4071      3A202020 
+ 4071      454D4245 
+ 4072              		.align	2
+ 4073              	.LC41:
+ 4074 06dc 20202020 		.ascii	"     - CPU:     Samsung S3C44B0X\012\000"
+ 4074      202D2043 
+ 4074      50553A20 
+ 4074      20202020 
+ 4074      53616D73 
+ 4075 06fe 0000     		.align	2
+ 4076              	.LC42:
+ 4077 0700 20202020 		.ascii	"     - Version: 24w42a\012\012\000"
+ 4077      202D2056 
+ 4077      65727369 
+ 4077      6F6E3A20 
+ 4077      32347734 
+ 4078 0719 000000   		.text
+ 4079              		.align	2
+ 4081              	show_sys_info:
+ 4082              	.LFB35:
  399:../src/system.c **** }
  400:../src/system.c **** 
  401:../src/system.c **** static inline void show_sys_info( void ) {
- 4069              		.loc 1 401 0
- 4070              		.cfi_startproc
- 4071              		@ Function supports interworking.
- 4072              		@ args = 0, pretend = 0, frame = 0
- 4073              		@ frame_needed = 1, uses_anonymous_args = 0
- 4074 0af0 0DC0A0E1 		mov	ip, sp
- 4075              	.LCFI70:
- 4076              		.cfi_def_cfa_register 12
- 4077 0af4 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
- 4078 0af8 04B04CE2 		sub	fp, ip, #4
- 4079              		.cfi_offset 14, -8
- 4080              		.cfi_offset 13, -12
- 4081              		.cfi_offset 11, -16
- 4082              	.LCFI71:
- 4083              		.cfi_def_cfa 11, 4
- 402:../src/system.c **** 	uart0_puts("\n\n*** WELCOME ***\n\n");
- 4084              		.loc 1 402 0
- 4085 0afc 34009FE5 		ldr	r0, .L140
- 4086 0b00 FEFFFFEB 		bl	uart0_puts
- 403:../src/system.c **** 	uart0_puts("* FIRMWARE:\nGabriel Guillermo Saavedra Moreira\nDaniel Menéndez Crespo\n\n");
- 4087              		.loc 1 403 0
- 4088 0b04 30009FE5 		ldr	r0, .L140+4
- 4089 0b08 FEFFFFEB 		bl	uart0_puts
- 404:../src/system.c **** 	uart0_puts("- Board: EMBEST S3CEV40\n");
- 4090              		.loc 1 404 0
- 4091 0b0c 2C009FE5 		ldr	r0, .L140+8
- 4092 0b10 FEFFFFEB 		bl	uart0_puts
- 405:../src/system.c **** 	uart0_puts("- CPU: Samsung S3C44B0X\n");
- 4093              		.loc 1 405 0
- 4094 0b14 28009FE5 		ldr	r0, .L140+12
- 4095 0b18 FEFFFFEB 		bl	uart0_puts
- 406:../src/system.c **** 	uart0_puts("- Version: 24w42a\n\n");
- 4096              		.loc 1 406 0
- 4097 0b1c 24009FE5 		ldr	r0, .L140+16
- 4098 0b20 FEFFFFEB 		bl	uart0_puts
- 407:../src/system.c **** 	uart0_puts("---------------\n\n");
- 4099              		.loc 1 407 0
- 4100 0b24 20009FE5 		ldr	r0, .L140+20
- 4101 0b28 FEFFFFEB 		bl	uart0_puts
- 408:../src/system.c **** }
- 4102              		.loc 1 408 0
- 4103 0b2c 0CD04BE2 		sub	sp, fp, #12
- 4104 0b30 00689DE8 		ldmfd	sp, {fp, sp, lr}
- 4105 0b34 1EFF2FE1 		bx	lr
- 4106              	.L141:
- 4107              		.align	2
- 4108              	.L140:
- 4109 0b38 D8050000 		.word	.LC32
- 4110 0b3c EC050000 		.word	.LC33
- 4111 0b40 34060000 		.word	.LC34
- 4112 0b44 50060000 		.word	.LC35
- 4113 0b48 6C060000 		.word	.LC36
- 4114 0b4c 80060000 		.word	.LC37
- 4115              		.cfi_endproc
- 4116              	.LFE35:
- 4118              		.align	2
- 4119              		.global	sleep
- 4121              	sleep:
- 4122              	.LFB36:
- 409:../src/system.c **** 
- 410:../src/system.c **** inline void sleep( void )
- 411:../src/system.c **** {
- 4123              		.loc 1 411 0
- 4124              		.cfi_startproc
- 4125              		@ Function supports interworking.
- 4126              		@ args = 0, pretend = 0, frame = 0
- 4127              		@ frame_needed = 1, uses_anonymous_args = 0
- 4128 0b50 0DC0A0E1 		mov	ip, sp
- 4129              	.LCFI72:
- 4130              		.cfi_def_cfa_register 12
- 4131 0b54 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
- 4132 0b58 04B04CE2 		sub	fp, ip, #4
- 4133              		.cfi_offset 14, -8
- 4134              		.cfi_offset 13, -12
- 4135              		.cfi_offset 11, -16
- 4136              	.LCFI73:
- 4137              		.cfi_def_cfa 11, 4
- 412:../src/system.c ****     CLKCON |= (1 << 2);    // Pone a la CPU en estado IDLE
- 4138              		.loc 1 412 0
- 4139 0b5c 18309FE5 		ldr	r3, .L143
- 4140 0b60 14209FE5 		ldr	r2, .L143
- 4141 0b64 002092E5 		ldr	r2, [r2, #0]
- 4142 0b68 042082E3 		orr	r2, r2, #4
- 4143 0b6c 002083E5 		str	r2, [r3, #0]
- 413:../src/system.c **** }
- 4144              		.loc 1 413 0
- 4145 0b70 0CD04BE2 		sub	sp, fp, #12
- 4146 0b74 00689DE8 		ldmfd	sp, {fp, sp, lr}
- 4147 0b78 1EFF2FE1 		bx	lr
- 4148              	.L144:
- 4149              		.align	2
- 4150              	.L143:
- 4151 0b7c 0400D801 		.word	30932996
+ 4083              		.loc 1 401 0
+ 4084              		.cfi_startproc
+ 4085              		@ Function supports interworking.
+ 4086              		@ args = 0, pretend = 0, frame = 0
+ 4087              		@ frame_needed = 1, uses_anonymous_args = 0
+ 4088 0af0 0DC0A0E1 		mov	ip, sp
+ 4089              	.LCFI70:
+ 4090              		.cfi_def_cfa_register 12
+ 4091 0af4 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 4092 0af8 04B04CE2 		sub	fp, ip, #4
+ 4093              		.cfi_offset 14, -8
+ 4094              		.cfi_offset 13, -12
+ 4095              		.cfi_offset 11, -16
+ 4096              	.LCFI71:
+ 4097              		.cfi_def_cfa 11, 4
+ 402:../src/system.c **** 	uart0_puts("\n\n");
+ 4098              		.loc 1 402 0
+ 4099 0afc 64009FE5 		ldr	r0, .L140
+ 4100 0b00 FEFFFFEB 		bl	uart0_puts
+ 403:../src/system.c ****     uart0_puts("****************************\n");
+ 4101              		.loc 1 403 0
+ 4102 0b04 60009FE5 		ldr	r0, .L140+4
+ 4103 0b08 FEFFFFEB 		bl	uart0_puts
+ 404:../src/system.c ****     uart0_puts("        *** WELCOME ***     \n");
+ 4104              		.loc 1 404 0
+ 4105 0b0c 5C009FE5 		ldr	r0, .L140+8
+ 4106 0b10 FEFFFFEB 		bl	uart0_puts
+ 405:../src/system.c ****     uart0_puts("****************************\n\n");
+ 4107              		.loc 1 405 0
+ 4108 0b14 58009FE5 		ldr	r0, .L140+12
+ 4109 0b18 FEFFFFEB 		bl	uart0_puts
+ 406:../src/system.c **** 
+ 407:../src/system.c ****     uart0_puts("   FIRMWARE DEVELOPERS:\n");
+ 4110              		.loc 1 407 0
+ 4111 0b1c 54009FE5 		ldr	r0, .L140+16
+ 4112 0b20 FEFFFFEB 		bl	uart0_puts
+ 408:../src/system.c ****     uart0_puts("     Gabriel Guillermo Saavedra Moreira\n");
+ 4113              		.loc 1 408 0
+ 4114 0b24 50009FE5 		ldr	r0, .L140+20
+ 4115 0b28 FEFFFFEB 		bl	uart0_puts
+ 409:../src/system.c ****     uart0_puts("     Daniel MenÃ©ndez Crespo\n\n");
+ 4116              		.loc 1 409 0
+ 4117 0b2c 4C009FE5 		ldr	r0, .L140+24
+ 4118 0b30 FEFFFFEB 		bl	uart0_puts
+ 410:../src/system.c **** 
+ 411:../src/system.c ****     uart0_puts("   BOARD INFORMATION:\n");
+ 4119              		.loc 1 411 0
+ 4120 0b34 48009FE5 		ldr	r0, .L140+28
+ 4121 0b38 FEFFFFEB 		bl	uart0_puts
+ 412:../src/system.c ****     uart0_puts("     - Board:   EMBEST S3CEV40\n");
+ 4122              		.loc 1 412 0
+ 4123 0b3c 44009FE5 		ldr	r0, .L140+32
+ 4124 0b40 FEFFFFEB 		bl	uart0_puts
+ 413:../src/system.c ****     uart0_puts("     - CPU:     Samsung S3C44B0X\n");
+ 4125              		.loc 1 413 0
+ 4126 0b44 40009FE5 		ldr	r0, .L140+36
+ 4127 0b48 FEFFFFEB 		bl	uart0_puts
+ 414:../src/system.c ****     uart0_puts("     - Version: 24w42a\n\n");
+ 4128              		.loc 1 414 0
+ 4129 0b4c 3C009FE5 		ldr	r0, .L140+40
+ 4130 0b50 FEFFFFEB 		bl	uart0_puts
+ 415:../src/system.c **** 
+ 416:../src/system.c ****     uart0_puts("****************************\n\n");
+ 4131              		.loc 1 416 0
+ 4132 0b54 18009FE5 		ldr	r0, .L140+12
+ 4133 0b58 FEFFFFEB 		bl	uart0_puts
+ 417:../src/system.c **** }
+ 4134              		.loc 1 417 0
+ 4135 0b5c 0CD04BE2 		sub	sp, fp, #12
+ 4136 0b60 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 4137 0b64 1EFF2FE1 		bx	lr
+ 4138              	.L141:
+ 4139              		.align	2
+ 4140              	.L140:
+ 4141 0b68 D8050000 		.word	.LC32
+ 4142 0b6c DC050000 		.word	.LC33
+ 4143 0b70 FC050000 		.word	.LC34
+ 4144 0b74 1C060000 		.word	.LC35
+ 4145 0b78 3C060000 		.word	.LC36
+ 4146 0b7c 58060000 		.word	.LC37
+ 4147 0b80 84060000 		.word	.LC38
+ 4148 0b84 A4060000 		.word	.LC39
+ 4149 0b88 BC060000 		.word	.LC40
+ 4150 0b8c DC060000 		.word	.LC41
+ 4151 0b90 00070000 		.word	.LC42
  4152              		.cfi_endproc
- 4153              	.LFE36:
+ 4153              	.LFE35:
  4155              		.align	2
- 4157              	sys_recovery:
- 4158              	.LFB37:
- 414:../src/system.c **** 
- 415:../src/system.c **** static void sys_recovery( void ) // NO TOCAR
- 416:../src/system.c **** {
- 4159              		.loc 1 416 0
- 4160              		.cfi_startproc
- 4161              		@ Function supports interworking.
- 4162              		@ args = 0, pretend = 0, frame = 24
- 4163              		@ frame_needed = 1, uses_anonymous_args = 0
- 4164 0b80 0DC0A0E1 		mov	ip, sp
- 4165              	.LCFI74:
- 4166              		.cfi_def_cfa_register 12
- 4167 0b84 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
- 4168 0b88 04B04CE2 		sub	fp, ip, #4
- 4169              		.cfi_offset 14, -8
- 4170              		.cfi_offset 13, -12
- 4171              		.cfi_offset 11, -16
- 4172              	.LCFI75:
- 4173              		.cfi_def_cfa 11, 4
- 4174 0b8c 18D04DE2 		sub	sp, sp, #24
- 417:../src/system.c ****     uint8 mode;
- 418:../src/system.c ****     uint32 sp, fp;
- 419:../src/system.c ****     uint32 *addrSrc, *addrDst;
- 420:../src/system.c ****     uint32 diffStacks;
- 421:../src/system.c ****     
- 422:../src/system.c ****     asm volatile ( "str sp, %0" : "=m" (sp) : : );    // lee el puntero a la cima de la pila de exc
- 4175              		.loc 1 422 0
- 4176              	@ 422 "../src/system.c" 1
- 4177 0b90 1CD00BE5 		str sp, [fp, #-28]
- 4178              	@ 0 "" 2
- 423:../src/system.c ****     asm volatile ( "str fp, %0" : "=m" (fp) : : );    // lee el puntero al marco de activación (FP)
- 4179              		.loc 1 423 0
- 4180              	@ 423 "../src/system.c" 1
- 4181 0b94 20B00BE5 		str fp, [fp, #-32]
- 4182              	@ 0 "" 2
- 424:../src/system.c ****     
- 425:../src/system.c ****     GET_OPMODE( &mode );    // lee el modo de ejecución del procesador
- 4183              		.loc 1 425 0
- 4184              	@ 425 "../src/system.c" 1
- 4185 0b98 00000FE1 		mrs r0, cpsr               
- 4186 0b9c 1F0000E2 	and r0, r0, #0x1f          
- 4187 0ba0 15004BE5 	strb r0, [fp, #-21]                  
- 4188              	@ 0 "" 2
- 426:../src/system.c ****     switch( mode )
- 4189              		.loc 1 426 0
- 4190 0ba4 15305BE5 		ldrb	r3, [fp, #-21]	@ zero_extendqisi2
- 4191 0ba8 113043E2 		sub	r3, r3, #17
- 4192 0bac 0A0053E3 		cmp	r3, #10
- 4193 0bb0 03F19F97 		ldrls	pc, [pc, r3, asl #2]
- 4194 0bb4 1E0000EA 		b	.L146
- 4195              	.L151:
- 4196 0bb8 F80B0000 		.word	.L147
- 4197 0bbc E40B0000 		.word	.L148
- 4198 0bc0 340C0000 		.word	.L146
- 4199 0bc4 340C0000 		.word	.L146
- 4200 0bc8 340C0000 		.word	.L146
- 4201 0bcc 340C0000 		.word	.L146
- 4202 0bd0 0C0C0000 		.word	.L149
- 4203 0bd4 340C0000 		.word	.L146
- 4204 0bd8 340C0000 		.word	.L146
- 4205 0bdc 340C0000 		.word	.L146
- 4206 0be0 200C0000 		.word	.L150
- 4207              	.L148:
- 427:../src/system.c ****     {
- 428:../src/system.c ****         case IRQMODE:
- 429:../src/system.c ****             diffStacks = IRQSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
- 4208              		.loc 1 429 0
- 4209 0be4 033CA0E3 		mov	r3, #768
- 4210 0be8 14300BE5 		str	r3, [fp, #-20]
- 430:../src/system.c ****             addrSrc = (uint32 *)IRQSTACK;         // base de la pila IRQ
- 4211              		.loc 1 430 0
- 4212 0bec 98319FE5 		ldr	r3, .L155
- 4213 0bf0 24300BE5 		str	r3, [fp, #-36]
- 431:../src/system.c ****             break;
- 4214              		.loc 1 431 0
- 4215 0bf4 0F0000EA 		b	.L152
- 4216              	.L147:
- 432:../src/system.c ****         case FIQMODE:
- 433:../src/system.c ****             diffStacks = FIQSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
- 4217              		.loc 1 433 0
- 4218 0bf8 013BA0E3 		mov	r3, #1024
- 4219 0bfc 14300BE5 		str	r3, [fp, #-20]
- 434:../src/system.c ****             addrSrc = (uint32 *)FIQSTACK;         // base de la pila FIQ
+ 4156              		.global	sleep
+ 4158              	sleep:
+ 4159              	.LFB36:
+ 418:../src/system.c **** 
+ 419:../src/system.c **** inline void sleep( void )
+ 420:../src/system.c **** {
+ 4160              		.loc 1 420 0
+ 4161              		.cfi_startproc
+ 4162              		@ Function supports interworking.
+ 4163              		@ args = 0, pretend = 0, frame = 0
+ 4164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 4165 0b94 0DC0A0E1 		mov	ip, sp
+ 4166              	.LCFI72:
+ 4167              		.cfi_def_cfa_register 12
+ 4168 0b98 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 4169 0b9c 04B04CE2 		sub	fp, ip, #4
+ 4170              		.cfi_offset 14, -8
+ 4171              		.cfi_offset 13, -12
+ 4172              		.cfi_offset 11, -16
+ 4173              	.LCFI73:
+ 4174              		.cfi_def_cfa 11, 4
+ 421:../src/system.c ****     CLKCON |= (1 << 2);    // Pone a la CPU en estado IDLE
+ 4175              		.loc 1 421 0
+ 4176 0ba0 18309FE5 		ldr	r3, .L143
+ 4177 0ba4 14209FE5 		ldr	r2, .L143
+ 4178 0ba8 002092E5 		ldr	r2, [r2, #0]
+ 4179 0bac 042082E3 		orr	r2, r2, #4
+ 4180 0bb0 002083E5 		str	r2, [r3, #0]
+ 422:../src/system.c **** }
+ 4181              		.loc 1 422 0
+ 4182 0bb4 0CD04BE2 		sub	sp, fp, #12
+ 4183 0bb8 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 4184 0bbc 1EFF2FE1 		bx	lr
+ 4185              	.L144:
+ 4186              		.align	2
+ 4187              	.L143:
+ 4188 0bc0 0400D801 		.word	30932996
+ 4189              		.cfi_endproc
+ 4190              	.LFE36:
+ 4192              		.align	2
+ 4194              	sys_recovery:
+ 4195              	.LFB37:
+ 423:../src/system.c **** 
+ 424:../src/system.c **** static void sys_recovery( void ) // NO TOCAR
+ 425:../src/system.c **** {
+ 4196              		.loc 1 425 0
+ 4197              		.cfi_startproc
+ 4198              		@ Function supports interworking.
+ 4199              		@ args = 0, pretend = 0, frame = 24
+ 4200              		@ frame_needed = 1, uses_anonymous_args = 0
+ 4201 0bc4 0DC0A0E1 		mov	ip, sp
+ 4202              	.LCFI74:
+ 4203              		.cfi_def_cfa_register 12
+ 4204 0bc8 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 4205 0bcc 04B04CE2 		sub	fp, ip, #4
+ 4206              		.cfi_offset 14, -8
+ 4207              		.cfi_offset 13, -12
+ 4208              		.cfi_offset 11, -16
+ 4209              	.LCFI75:
+ 4210              		.cfi_def_cfa 11, 4
+ 4211 0bd0 18D04DE2 		sub	sp, sp, #24
+ 426:../src/system.c ****     uint8 mode;
+ 427:../src/system.c ****     uint32 sp, fp;
+ 428:../src/system.c ****     uint32 *addrSrc, *addrDst;
+ 429:../src/system.c ****     uint32 diffStacks;
+ 430:../src/system.c ****     
+ 431:../src/system.c ****     asm volatile ( "str sp, %0" : "=m" (sp) : : );    // lee el puntero a la cima de la pila de exc
+ 4212              		.loc 1 431 0
+ 4213              	@ 431 "../src/system.c" 1
+ 4214 0bd4 1CD00BE5 		str sp, [fp, #-28]
+ 4215              	@ 0 "" 2
+ 432:../src/system.c ****     asm volatile ( "str fp, %0" : "=m" (fp) : : );    // lee el puntero al marco de activaciï¿½n (F
+ 4216              		.loc 1 432 0
+ 4217              	@ 432 "../src/system.c" 1
+ 4218 0bd8 20B00BE5 		str fp, [fp, #-32]
+ 4219              	@ 0 "" 2
+ 433:../src/system.c ****     
+ 434:../src/system.c ****     GET_OPMODE( &mode );    // lee el modo de ejecuciï¿½n del procesador
  4220              		.loc 1 434 0
- 4221 0c00 88319FE5 		ldr	r3, .L155+4
- 4222 0c04 24300BE5 		str	r3, [fp, #-36]
- 435:../src/system.c ****             break;
- 4223              		.loc 1 435 0
- 4224 0c08 0A0000EA 		b	.L152
- 4225              	.L149:
- 436:../src/system.c ****         case ABTMODE:
- 437:../src/system.c ****             diffStacks = ABTSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
- 4226              		.loc 1 437 0
- 4227 0c0c 023CA0E3 		mov	r3, #512
- 4228 0c10 14300BE5 		str	r3, [fp, #-20]
- 438:../src/system.c ****             addrSrc = (uint32 *)ABTSTACK;         // base de la pila ABT
- 4229              		.loc 1 438 0
- 4230 0c14 78319FE5 		ldr	r3, .L155+8
- 4231 0c18 24300BE5 		str	r3, [fp, #-36]
- 439:../src/system.c ****             break;
- 4232              		.loc 1 439 0
- 4233 0c1c 050000EA 		b	.L152
- 4234              	.L150:
- 440:../src/system.c ****         case UNDMODE:
- 441:../src/system.c ****             diffStacks = UNDSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
- 4235              		.loc 1 441 0
- 4236 0c20 013CA0E3 		mov	r3, #256
- 4237 0c24 14300BE5 		str	r3, [fp, #-20]
- 442:../src/system.c ****             addrSrc = (uint32 *)UNDSTACK;         // base de la pila UND
- 4238              		.loc 1 442 0
- 4239 0c28 68319FE5 		ldr	r3, .L155+12
- 4240 0c2c 24300BE5 		str	r3, [fp, #-36]
- 443:../src/system.c ****             break;         
- 4241              		.loc 1 443 0
- 4242 0c30 000000EA 		b	.L152
- 4243              	.L146:
- 444:../src/system.c ****         case SYSMODE:
- 445:../src/system.c ****         case USRMODE:
- 446:../src/system.c ****             // Habría que hacer algo análogo a lo anterior y además para volver a modo SVC dado que
- 447:../src/system.c ****             // pISR_SWI = (uint32) isr_SWI;
- 448:../src/system.c ****             // SWI( 0 );  
- 449:../src/system.c ****         default:
- 450:../src/system.c ****             while( 1 );                           // aquí no debería llegarse
- 4244              		.loc 1 450 0 discriminator 1
- 4245 0c34 FEFFFFEA 		b	.L146
- 4246              	.L152:
- 451:../src/system.c ****             break;
- 452:../src/system.c ****     }    
- 453:../src/system.c ****         
- 454:../src/system.c ****     asm volatile ( "ldr sp, %0" : "=m" (addrSrc) : : );    // restaura el SP de excepción a su base
- 4247              		.loc 1 454 0
- 4248              	@ 454 "../src/system.c" 1
- 4249 0c38 24D01BE5 		ldr sp, [fp, #-36]
- 4250              	@ 0 "" 2
- 455:../src/system.c ****         
- 456:../src/system.c ****     for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo 
- 4251              		.loc 1 456 0
- 4252 0c3c 58319FE5 		ldr	r3, .L155+16
- 4253 0c40 10300BE5 		str	r3, [fp, #-16]
- 4254 0c44 090000EA 		b	.L153
- 4255              	.L154:
- 457:../src/system.c ****         *(--addrDst) = *(--addrSrc);
- 4256              		.loc 1 457 0
- 4257 0c48 10301BE5 		ldr	r3, [fp, #-16]
- 4258 0c4c 043043E2 		sub	r3, r3, #4
- 4259 0c50 10300BE5 		str	r3, [fp, #-16]
- 4260 0c54 24301BE5 		ldr	r3, [fp, #-36]
- 4261 0c58 043043E2 		sub	r3, r3, #4
- 4262 0c5c 24300BE5 		str	r3, [fp, #-36]
- 4263 0c60 24301BE5 		ldr	r3, [fp, #-36]
- 4264 0c64 002093E5 		ldr	r2, [r3, #0]
- 4265 0c68 10301BE5 		ldr	r3, [fp, #-16]
- 4266 0c6c 002083E5 		str	r2, [r3, #0]
- 4267              	.L153:
- 456:../src/system.c ****     for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo 
- 4268              		.loc 1 456 0 discriminator 1
- 4269 0c70 1C301BE5 		ldr	r3, [fp, #-28]
- 4270 0c74 0320A0E1 		mov	r2, r3
- 4271 0c78 24301BE5 		ldr	r3, [fp, #-36]
- 4272 0c7c 030052E1 		cmp	r2, r3
- 4273 0c80 F0FFFF3A 		bcc	.L154
- 458:../src/system.c **** 
- 459:../src/system.c ****     addrDst = (uint32 *)(fp-diffStacks);   // carga el puntero al marco de activación de sys_recove
- 4274              		.loc 1 459 0
- 4275 0c84 20201BE5 		ldr	r2, [fp, #-32]
- 4276 0c88 14301BE5 		ldr	r3, [fp, #-20]
- 4277 0c8c 023063E0 		rsb	r3, r3, r2
- 4278 0c90 10300BE5 		str	r3, [fp, #-16]
- 460:../src/system.c ****     addrDst--;                             // salta el PC apilado
- 4279              		.loc 1 460 0
- 4280 0c94 10301BE5 		ldr	r3, [fp, #-16]
- 4281 0c98 043043E2 		sub	r3, r3, #4
- 4282 0c9c 10300BE5 		str	r3, [fp, #-16]
- 461:../src/system.c ****     addrDst--;                             // salta el LR apilado
- 4283              		.loc 1 461 0
- 4284 0ca0 10301BE5 		ldr	r3, [fp, #-16]
- 4285 0ca4 043043E2 		sub	r3, r3, #4
- 4286 0ca8 10300BE5 		str	r3, [fp, #-16]
- 462:../src/system.c ****     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
- 4287              		.loc 1 462 0
- 4288 0cac 10301BE5 		ldr	r3, [fp, #-16]
- 4289 0cb0 002093E5 		ldr	r2, [r3, #0]
- 4290 0cb4 14301BE5 		ldr	r3, [fp, #-20]
- 4291 0cb8 022063E0 		rsb	r2, r3, r2
- 4292 0cbc 10301BE5 		ldr	r3, [fp, #-16]
- 4293 0cc0 002083E5 		str	r2, [r3, #0]
- 463:../src/system.c ****     addrDst--;                             // salta el SP apilado
- 4294              		.loc 1 463 0
- 4295 0cc4 10301BE5 		ldr	r3, [fp, #-16]
- 4296 0cc8 043043E2 		sub	r3, r3, #4
- 4297 0ccc 10300BE5 		str	r3, [fp, #-16]
- 464:../src/system.c ****     *addrDst -= diffStacks;                // actualiza el FP apilado para que apunte a la pila SVC
- 4298              		.loc 1 464 0
- 4299 0cd0 10301BE5 		ldr	r3, [fp, #-16]
- 4300 0cd4 002093E5 		ldr	r2, [r3, #0]
- 4301 0cd8 14301BE5 		ldr	r3, [fp, #-20]
- 4302 0cdc 022063E0 		rsb	r2, r3, r2
- 4303 0ce0 10301BE5 		ldr	r3, [fp, #-16]
- 4304 0ce4 002083E5 		str	r2, [r3, #0]
- 465:../src/system.c ****     
- 466:../src/system.c ****     addrDst = (uint32 *)(*addrDst);        // carga el puntero al marco de activación de sys_init()
- 4305              		.loc 1 466 0
- 4306 0ce8 10301BE5 		ldr	r3, [fp, #-16]
- 4307 0cec 003093E5 		ldr	r3, [r3, #0]
- 4308 0cf0 10300BE5 		str	r3, [fp, #-16]
- 467:../src/system.c ****     addrDst--;                             // salta el PC apilado
- 4309              		.loc 1 467 0
- 4310 0cf4 10301BE5 		ldr	r3, [fp, #-16]
- 4311 0cf8 043043E2 		sub	r3, r3, #4
- 4312 0cfc 10300BE5 		str	r3, [fp, #-16]
- 468:../src/system.c ****     addrDst--;                             // salta el LR apilado
- 4313              		.loc 1 468 0
- 4314 0d00 10301BE5 		ldr	r3, [fp, #-16]
- 4315 0d04 043043E2 		sub	r3, r3, #4
- 4316 0d08 10300BE5 		str	r3, [fp, #-16]
- 469:../src/system.c ****     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
- 4317              		.loc 1 469 0
- 4318 0d0c 10301BE5 		ldr	r3, [fp, #-16]
- 4319 0d10 002093E5 		ldr	r2, [r3, #0]
- 4320 0d14 14301BE5 		ldr	r3, [fp, #-20]
- 4321 0d18 022063E0 		rsb	r2, r3, r2
- 4322 0d1c 10301BE5 		ldr	r3, [fp, #-16]
- 4323 0d20 002083E5 		str	r2, [r3, #0]
- 470:../src/system.c ****     addrDst--;                             // salta el SP apilado
- 4324              		.loc 1 470 0
- 4325 0d24 10301BE5 		ldr	r3, [fp, #-16]
- 4326 0d28 043043E2 		sub	r3, r3, #4
- 4327 0d2c 10300BE5 		str	r3, [fp, #-16]
- 471:../src/system.c ****     *addrDst -= diffStacks;                // actualiza el FP apilado para que apunte a la pila SVC
- 4328              		.loc 1 471 0
- 4329 0d30 10301BE5 		ldr	r3, [fp, #-16]
- 4330 0d34 002093E5 		ldr	r2, [r3, #0]
- 4331 0d38 14301BE5 		ldr	r3, [fp, #-20]
- 4332 0d3c 022063E0 		rsb	r2, r3, r2
- 4333 0d40 10301BE5 		ldr	r3, [fp, #-16]
- 4334 0d44 002083E5 		str	r2, [r3, #0]
- 472:../src/system.c ****    
- 473:../src/system.c ****     SET_OPMODE( SVCMODE );                           // cambia a modo SVC
+ 4221              	@ 434 "../src/system.c" 1
+ 4222 0bdc 00000FE1 		mrs r0, cpsr               
+ 4223 0be0 1F0000E2 	and r0, r0, #0x1f          
+ 4224 0be4 15004BE5 	strb r0, [fp, #-21]                  
+ 4225              	@ 0 "" 2
+ 435:../src/system.c ****     switch( mode )
+ 4226              		.loc 1 435 0
+ 4227 0be8 15305BE5 		ldrb	r3, [fp, #-21]	@ zero_extendqisi2
+ 4228 0bec 113043E2 		sub	r3, r3, #17
+ 4229 0bf0 0A0053E3 		cmp	r3, #10
+ 4230 0bf4 03F19F97 		ldrls	pc, [pc, r3, asl #2]
+ 4231 0bf8 1E0000EA 		b	.L146
+ 4232              	.L151:
+ 4233 0bfc 3C0C0000 		.word	.L147
+ 4234 0c00 280C0000 		.word	.L148
+ 4235 0c04 780C0000 		.word	.L146
+ 4236 0c08 780C0000 		.word	.L146
+ 4237 0c0c 780C0000 		.word	.L146
+ 4238 0c10 780C0000 		.word	.L146
+ 4239 0c14 500C0000 		.word	.L149
+ 4240 0c18 780C0000 		.word	.L146
+ 4241 0c1c 780C0000 		.word	.L146
+ 4242 0c20 780C0000 		.word	.L146
+ 4243 0c24 640C0000 		.word	.L150
+ 4244              	.L148:
+ 436:../src/system.c ****     {
+ 437:../src/system.c ****         case IRQMODE:
+ 438:../src/system.c ****             diffStacks = IRQSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
+ 4245              		.loc 1 438 0
+ 4246 0c28 033CA0E3 		mov	r3, #768
+ 4247 0c2c 14300BE5 		str	r3, [fp, #-20]
+ 439:../src/system.c ****             addrSrc = (uint32 *)IRQSTACK;         // base de la pila IRQ
+ 4248              		.loc 1 439 0
+ 4249 0c30 98319FE5 		ldr	r3, .L155
+ 4250 0c34 24300BE5 		str	r3, [fp, #-36]
+ 440:../src/system.c ****             break;
+ 4251              		.loc 1 440 0
+ 4252 0c38 0F0000EA 		b	.L152
+ 4253              	.L147:
+ 441:../src/system.c ****         case FIQMODE:
+ 442:../src/system.c ****             diffStacks = FIQSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
+ 4254              		.loc 1 442 0
+ 4255 0c3c 013BA0E3 		mov	r3, #1024
+ 4256 0c40 14300BE5 		str	r3, [fp, #-20]
+ 443:../src/system.c ****             addrSrc = (uint32 *)FIQSTACK;         // base de la pila FIQ
+ 4257              		.loc 1 443 0
+ 4258 0c44 88319FE5 		ldr	r3, .L155+4
+ 4259 0c48 24300BE5 		str	r3, [fp, #-36]
+ 444:../src/system.c ****             break;
+ 4260              		.loc 1 444 0
+ 4261 0c4c 0A0000EA 		b	.L152
+ 4262              	.L149:
+ 445:../src/system.c ****         case ABTMODE:
+ 446:../src/system.c ****             diffStacks = ABTSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
+ 4263              		.loc 1 446 0
+ 4264 0c50 023CA0E3 		mov	r3, #512
+ 4265 0c54 14300BE5 		str	r3, [fp, #-20]
+ 447:../src/system.c ****             addrSrc = (uint32 *)ABTSTACK;         // base de la pila ABT
+ 4266              		.loc 1 447 0
+ 4267 0c58 78319FE5 		ldr	r3, .L155+8
+ 4268 0c5c 24300BE5 		str	r3, [fp, #-36]
+ 448:../src/system.c ****             break;
+ 4269              		.loc 1 448 0
+ 4270 0c60 050000EA 		b	.L152
+ 4271              	.L150:
+ 449:../src/system.c ****         case UNDMODE:
+ 450:../src/system.c ****             diffStacks = UNDSTACK - SVCSTACK;     // calcula la distancia entre la bases de la pila
+ 4272              		.loc 1 450 0
+ 4273 0c64 013CA0E3 		mov	r3, #256
+ 4274 0c68 14300BE5 		str	r3, [fp, #-20]
+ 451:../src/system.c ****             addrSrc = (uint32 *)UNDSTACK;         // base de la pila UND
+ 4275              		.loc 1 451 0
+ 4276 0c6c 68319FE5 		ldr	r3, .L155+12
+ 4277 0c70 24300BE5 		str	r3, [fp, #-36]
+ 452:../src/system.c ****             break;         
+ 4278              		.loc 1 452 0
+ 4279 0c74 000000EA 		b	.L152
+ 4280              	.L146:
+ 453:../src/system.c ****         case SYSMODE:
+ 454:../src/system.c ****         case USRMODE:
+ 455:../src/system.c ****             // Habrï¿½a que hacer algo anï¿½logo a lo anterior y ademï¿½s para volver a modo SVC da
+ 456:../src/system.c ****             // pISR_SWI = (uint32) isr_SWI;
+ 457:../src/system.c ****             // SWI( 0 );  
+ 458:../src/system.c ****         default:
+ 459:../src/system.c ****             while( 1 );                           // aquï¿½ no deberï¿½a llegarse
+ 4281              		.loc 1 459 0 discriminator 1
+ 4282 0c78 FEFFFFEA 		b	.L146
+ 4283              	.L152:
+ 460:../src/system.c ****             break;
+ 461:../src/system.c ****     }    
+ 462:../src/system.c ****         
+ 463:../src/system.c ****     asm volatile ( "ldr sp, %0" : "=m" (addrSrc) : : );    // restaura el SP de excepciï¿½n a su ba
+ 4284              		.loc 1 463 0
+ 4285              	@ 463 "../src/system.c" 1
+ 4286 0c7c 24D01BE5 		ldr sp, [fp, #-36]
+ 4287              	@ 0 "" 2
+ 464:../src/system.c ****         
+ 465:../src/system.c ****     for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo 
+ 4288              		.loc 1 465 0
+ 4289 0c80 58319FE5 		ldr	r3, .L155+16
+ 4290 0c84 10300BE5 		str	r3, [fp, #-16]
+ 4291 0c88 090000EA 		b	.L153
+ 4292              	.L154:
+ 466:../src/system.c ****         *(--addrDst) = *(--addrSrc);
+ 4293              		.loc 1 466 0
+ 4294 0c8c 10301BE5 		ldr	r3, [fp, #-16]
+ 4295 0c90 043043E2 		sub	r3, r3, #4
+ 4296 0c94 10300BE5 		str	r3, [fp, #-16]
+ 4297 0c98 24301BE5 		ldr	r3, [fp, #-36]
+ 4298 0c9c 043043E2 		sub	r3, r3, #4
+ 4299 0ca0 24300BE5 		str	r3, [fp, #-36]
+ 4300 0ca4 24301BE5 		ldr	r3, [fp, #-36]
+ 4301 0ca8 002093E5 		ldr	r2, [r3, #0]
+ 4302 0cac 10301BE5 		ldr	r3, [fp, #-16]
+ 4303 0cb0 002083E5 		str	r2, [r3, #0]
+ 4304              	.L153:
+ 465:../src/system.c ****     for( addrDst = (uint32 *)SVCSTACK; addrSrc > (uint32 *)sp; )    // copia el contenido completo 
+ 4305              		.loc 1 465 0 discriminator 1
+ 4306 0cb4 1C301BE5 		ldr	r3, [fp, #-28]
+ 4307 0cb8 0320A0E1 		mov	r2, r3
+ 4308 0cbc 24301BE5 		ldr	r3, [fp, #-36]
+ 4309 0cc0 030052E1 		cmp	r2, r3
+ 4310 0cc4 F0FFFF3A 		bcc	.L154
+ 467:../src/system.c **** 
+ 468:../src/system.c ****     addrDst = (uint32 *)(fp-diffStacks);   // carga el puntero al marco de activaciï¿½n de sys_reco
+ 4311              		.loc 1 468 0
+ 4312 0cc8 20201BE5 		ldr	r2, [fp, #-32]
+ 4313 0ccc 14301BE5 		ldr	r3, [fp, #-20]
+ 4314 0cd0 023063E0 		rsb	r3, r3, r2
+ 4315 0cd4 10300BE5 		str	r3, [fp, #-16]
+ 469:../src/system.c ****     addrDst--;                             // salta el PC apilado
+ 4316              		.loc 1 469 0
+ 4317 0cd8 10301BE5 		ldr	r3, [fp, #-16]
+ 4318 0cdc 043043E2 		sub	r3, r3, #4
+ 4319 0ce0 10300BE5 		str	r3, [fp, #-16]
+ 470:../src/system.c ****     addrDst--;                             // salta el LR apilado
+ 4320              		.loc 1 470 0
+ 4321 0ce4 10301BE5 		ldr	r3, [fp, #-16]
+ 4322 0ce8 043043E2 		sub	r3, r3, #4
+ 4323 0cec 10300BE5 		str	r3, [fp, #-16]
+ 471:../src/system.c ****     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
+ 4324              		.loc 1 471 0
+ 4325 0cf0 10301BE5 		ldr	r3, [fp, #-16]
+ 4326 0cf4 002093E5 		ldr	r2, [r3, #0]
+ 4327 0cf8 14301BE5 		ldr	r3, [fp, #-20]
+ 4328 0cfc 022063E0 		rsb	r2, r3, r2
+ 4329 0d00 10301BE5 		ldr	r3, [fp, #-16]
+ 4330 0d04 002083E5 		str	r2, [r3, #0]
+ 472:../src/system.c ****     addrDst--;                             // salta el SP apilado
+ 4331              		.loc 1 472 0
+ 4332 0d08 10301BE5 		ldr	r3, [fp, #-16]
+ 4333 0d0c 043043E2 		sub	r3, r3, #4
+ 4334 0d10 10300BE5 		str	r3, [fp, #-16]
+ 473:../src/system.c ****     *addrDst -= diffStacks;                // actualiza el FP apilado para que apunte a la pila SVC
  4335              		.loc 1 473 0
- 4336              	@ 473 "../src/system.c" 1
- 4337 0d48 00000FE1 		mrs r0, cpsr               
- 4338 0d4c 1F00C0E3 	bic r0, r0, #0x1f          
- 4339 0d50 130080E3 	orr r0, r0, #19             
- 4340 0d54 00F021E1 	msr cpsr_c, r0               
- 4341              	@ 0 "" 2
- 474:../src/system.c **** 
- 475:../src/system.c ****     sp -= diffStacks;
+ 4336 0d14 10301BE5 		ldr	r3, [fp, #-16]
+ 4337 0d18 002093E5 		ldr	r2, [r3, #0]
+ 4338 0d1c 14301BE5 		ldr	r3, [fp, #-20]
+ 4339 0d20 022063E0 		rsb	r2, r3, r2
+ 4340 0d24 10301BE5 		ldr	r3, [fp, #-16]
+ 4341 0d28 002083E5 		str	r2, [r3, #0]
+ 474:../src/system.c ****     
+ 475:../src/system.c ****     addrDst = (uint32 *)(*addrDst);        // carga el puntero al marco de activaciï¿½n de sys_init
  4342              		.loc 1 475 0
- 4343 0d58 1C201BE5 		ldr	r2, [fp, #-28]
- 4344 0d5c 14301BE5 		ldr	r3, [fp, #-20]
- 4345 0d60 023063E0 		rsb	r3, r3, r2
- 4346 0d64 1C300BE5 		str	r3, [fp, #-28]
- 476:../src/system.c ****     asm volatile ( "ldr sp, %0" : : "m" (sp) : );    // actualiza SP_svc para que apunte a la cima 
- 4347              		.loc 1 476 0
- 4348              	@ 476 "../src/system.c" 1
- 4349 0d68 1CD01BE5 		ldr sp, [fp, #-28]
- 4350              	@ 0 "" 2
- 477:../src/system.c ****     
- 478:../src/system.c ****     fp -= diffStacks;                 
- 4351              		.loc 1 478 0
- 4352 0d6c 20201BE5 		ldr	r2, [fp, #-32]
- 4353 0d70 14301BE5 		ldr	r3, [fp, #-20]
- 4354 0d74 023063E0 		rsb	r3, r3, r2
- 4355 0d78 20300BE5 		str	r3, [fp, #-32]
- 479:../src/system.c ****     asm volatile ( "ldr fp, %0" : : "m" (fp) : );    // actualiza FP para que apunte al marco de la
- 4356              		.loc 1 479 0
- 4357              	@ 479 "../src/system.c" 1
- 4358 0d7c 20B01BE5 		ldr fp, [fp, #-32]
- 4359              	@ 0 "" 2
- 480:../src/system.c **** }
- 4360              		.loc 1 480 0
- 4361 0d80 0CD04BE2 		sub	sp, fp, #12
- 4362 0d84 00689DE8 		ldmfd	sp, {fp, sp, lr}
- 4363 0d88 1EFF2FE1 		bx	lr
- 4364              	.L156:
- 4365              		.align	2
- 4366              	.L155:
- 4367 0d8c 00F47F0C 		.word	209712128
- 4368 0d90 00F57F0C 		.word	209712384
- 4369 0d94 00F37F0C 		.word	209711872
- 4370 0d98 00F27F0C 		.word	209711616
- 4371 0d9c 00F17F0C 		.word	209711360
- 4372              		.cfi_endproc
- 4373              	.LFE37:
- 4375              	.Letext0:
+ 4343 0d2c 10301BE5 		ldr	r3, [fp, #-16]
+ 4344 0d30 003093E5 		ldr	r3, [r3, #0]
+ 4345 0d34 10300BE5 		str	r3, [fp, #-16]
+ 476:../src/system.c ****     addrDst--;                             // salta el PC apilado
+ 4346              		.loc 1 476 0
+ 4347 0d38 10301BE5 		ldr	r3, [fp, #-16]
+ 4348 0d3c 043043E2 		sub	r3, r3, #4
+ 4349 0d40 10300BE5 		str	r3, [fp, #-16]
+ 477:../src/system.c ****     addrDst--;                             // salta el LR apilado
+ 4350              		.loc 1 477 0
+ 4351 0d44 10301BE5 		ldr	r3, [fp, #-16]
+ 4352 0d48 043043E2 		sub	r3, r3, #4
+ 4353 0d4c 10300BE5 		str	r3, [fp, #-16]
+ 478:../src/system.c ****     *addrDst -= diffStacks;                // actualiza SP apilado para que apunte a la pila SVC
+ 4354              		.loc 1 478 0
+ 4355 0d50 10301BE5 		ldr	r3, [fp, #-16]
+ 4356 0d54 002093E5 		ldr	r2, [r3, #0]
+ 4357 0d58 14301BE5 		ldr	r3, [fp, #-20]
+ 4358 0d5c 022063E0 		rsb	r2, r3, r2
+ 4359 0d60 10301BE5 		ldr	r3, [fp, #-16]
+ 4360 0d64 002083E5 		str	r2, [r3, #0]
+ 479:../src/system.c ****     addrDst--;                             // salta el SP apilado
+ 4361              		.loc 1 479 0
+ 4362 0d68 10301BE5 		ldr	r3, [fp, #-16]
+ 4363 0d6c 043043E2 		sub	r3, r3, #4
+ 4364 0d70 10300BE5 		str	r3, [fp, #-16]
+ 480:../src/system.c ****     *addrDst -= diffStacks;                // actualiza el FP apilado para que apunte a la pila SVC
+ 4365              		.loc 1 480 0
+ 4366 0d74 10301BE5 		ldr	r3, [fp, #-16]
+ 4367 0d78 002093E5 		ldr	r2, [r3, #0]
+ 4368 0d7c 14301BE5 		ldr	r3, [fp, #-20]
+ 4369 0d80 022063E0 		rsb	r2, r3, r2
+ 4370 0d84 10301BE5 		ldr	r3, [fp, #-16]
+ 4371 0d88 002083E5 		str	r2, [r3, #0]
+ 481:../src/system.c ****    
+ 482:../src/system.c ****     SET_OPMODE( SVCMODE );                           // cambia a modo SVC
+ 4372              		.loc 1 482 0
+ 4373              	@ 482 "../src/system.c" 1
+ 4374 0d8c 00000FE1 		mrs r0, cpsr               
+ 4375 0d90 1F00C0E3 	bic r0, r0, #0x1f          
+ 4376 0d94 130080E3 	orr r0, r0, #19             
+ 4377 0d98 00F021E1 	msr cpsr_c, r0               
+ 4378              	@ 0 "" 2
+ 483:../src/system.c **** 
+ 484:../src/system.c ****     sp -= diffStacks;
+ 4379              		.loc 1 484 0
+ 4380 0d9c 1C201BE5 		ldr	r2, [fp, #-28]
+ 4381 0da0 14301BE5 		ldr	r3, [fp, #-20]
+ 4382 0da4 023063E0 		rsb	r3, r3, r2
+ 4383 0da8 1C300BE5 		str	r3, [fp, #-28]
+ 485:../src/system.c ****     asm volatile ( "ldr sp, %0" : : "m" (sp) : );    // actualiza SP_svc para que apunte a la cima 
+ 4384              		.loc 1 485 0
+ 4385              	@ 485 "../src/system.c" 1
+ 4386 0dac 1CD01BE5 		ldr sp, [fp, #-28]
+ 4387              	@ 0 "" 2
+ 486:../src/system.c ****     
+ 487:../src/system.c ****     fp -= diffStacks;                 
+ 4388              		.loc 1 487 0
+ 4389 0db0 20201BE5 		ldr	r2, [fp, #-32]
+ 4390 0db4 14301BE5 		ldr	r3, [fp, #-20]
+ 4391 0db8 023063E0 		rsb	r3, r3, r2
+ 4392 0dbc 20300BE5 		str	r3, [fp, #-32]
+ 488:../src/system.c ****     asm volatile ( "ldr fp, %0" : : "m" (fp) : );    // actualiza FP para que apunte al marco de la
+ 4393              		.loc 1 488 0
+ 4394              	@ 488 "../src/system.c" 1
+ 4395 0dc0 20B01BE5 		ldr fp, [fp, #-32]
+ 4396              	@ 0 "" 2
+ 489:../src/system.c **** }
+ 4397              		.loc 1 489 0
+ 4398 0dc4 0CD04BE2 		sub	sp, fp, #12
+ 4399 0dc8 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 4400 0dcc 1EFF2FE1 		bx	lr
+ 4401              	.L156:
+ 4402              		.align	2
+ 4403              	.L155:
+ 4404 0dd0 00F47F0C 		.word	209712128
+ 4405 0dd4 00F57F0C 		.word	209712384
+ 4406 0dd8 00F37F0C 		.word	209711872
+ 4407 0ddc 00F27F0C 		.word	209711616
+ 4408 0de0 00F17F0C 		.word	209711360
+ 4409              		.cfi_endproc
+ 4410              	.LFE37:
+ 4412              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 system.c
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2018   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2021   .text:00000000 sys_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4157   .text:00000b80 sys_recovery
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2301   .text:000002d8 install_dummy_isr
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2159   .text:00000150 port_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4067   .text:00000af0 show_sys_info
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2139   .text:00000114 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2157   .text:00000150 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2267   .text:00000264 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2299   .text:000002d8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2453   .text:00000470 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2576   .text:0000059c isr_UNDEF_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2528   .text:00000570 isr_SWI_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2623   .text:000005c8 isr_IRQ_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2670   .text:000005f4 isr_FIQ_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2718   .text:00000620 isr_PABORT_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2766   .text:0000064c isr_DABORT_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2813   .text:00000678 isr_ADC_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2860   .text:000006a4 isr_RTC_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2908   .text:000006d0 isr_UTXD1_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2956   .text:000006fc isr_UTXD0_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3003   .text:00000728 isr_SIO_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3050   .text:00000754 isr_IIC_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3098   .text:00000780 isr_URXD1_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3146   .text:000007ac isr_URXD0_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3194   .text:000007d8 isr_TIMER5_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3242   .text:00000804 isr_TIMER4_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3290   .text:00000830 isr_TIMER3_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3338   .text:0000085c isr_TIMER2_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3386   .text:00000888 isr_TIMER1_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3434   .text:000008b4 isr_TIMER0_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3482   .text:000008e0 isr_UERR01_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3529   .text:0000090c isr_WDT_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3577   .text:00000938 isr_BDMA1_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3625   .text:00000964 isr_BDMA0_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3673   .text:00000990 isr_ZDMA1_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3721   .text:000009bc isr_ZDMA0_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3768   .text:000009e8 isr_TICK_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3815   .text:00000a14 isr_PB_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3863   .text:00000a40 isr_ETHERNET_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3910   .text:00000a6c isr_TS_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3958   .text:00000a98 isr_KEYPAD_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4005   .text:00000ac4 isr_USB_dummy
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2521   .rodata:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2525   .text:00000570 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2563   .text:00000598 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2573   .text:0000059c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2611   .text:000005c4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2620   .text:000005c8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2658   .text:000005f0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2667   .text:000005f4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2705   .text:0000061c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2715   .text:00000620 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2753   .text:00000648 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2763   .text:0000064c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2801   .text:00000674 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2810   .text:00000678 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2848   .text:000006a0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2857   .text:000006a4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2895   .text:000006cc $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2905   .text:000006d0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2943   .text:000006f8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2953   .text:000006fc $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:2991   .text:00000724 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3000   .text:00000728 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3038   .text:00000750 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3047   .text:00000754 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3085   .text:0000077c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3095   .text:00000780 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3133   .text:000007a8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3143   .text:000007ac $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3181   .text:000007d4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3191   .text:000007d8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3229   .text:00000800 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3239   .text:00000804 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3277   .text:0000082c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3287   .text:00000830 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3325   .text:00000858 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3335   .text:0000085c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3373   .text:00000884 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3383   .text:00000888 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3421   .text:000008b0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3431   .text:000008b4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3469   .text:000008dc $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3479   .text:000008e0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3517   .text:00000908 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3526   .text:0000090c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3564   .text:00000934 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3574   .text:00000938 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3612   .text:00000960 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3622   .text:00000964 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3660   .text:0000098c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3670   .text:00000990 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3708   .text:000009b8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3718   .text:000009bc $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3756   .text:000009e4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3765   .text:000009e8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3803   .text:00000a10 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3812   .text:00000a14 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3850   .text:00000a3c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3860   .text:00000a40 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3898   .text:00000a68 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3907   .text:00000a6c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3945   .text:00000a94 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3955   .text:00000a98 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:3993   .text:00000ac0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4002   .text:00000ac4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4040   .text:00000aec $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4065   .text:00000af0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4109   .text:00000b38 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4118   .text:00000b50 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4121   .text:00000b50 sleep
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4151   .text:00000b7c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4155   .text:00000b80 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4196   .text:00000bb8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4209   .text:00000be4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccR1Oi01.s:4367   .text:00000d8c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2018   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2021   .text:00000000 sys_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4194   .text:00000bc4 sys_recovery
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2301   .text:000002d8 install_dummy_isr
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2159   .text:00000150 port_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4081   .text:00000af0 show_sys_info
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2139   .text:00000114 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2157   .text:00000150 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2267   .text:00000264 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2299   .text:000002d8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2453   .text:00000470 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2576   .text:0000059c isr_UNDEF_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2528   .text:00000570 isr_SWI_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2623   .text:000005c8 isr_IRQ_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2670   .text:000005f4 isr_FIQ_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2718   .text:00000620 isr_PABORT_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2766   .text:0000064c isr_DABORT_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2813   .text:00000678 isr_ADC_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2860   .text:000006a4 isr_RTC_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2908   .text:000006d0 isr_UTXD1_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2956   .text:000006fc isr_UTXD0_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3003   .text:00000728 isr_SIO_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3050   .text:00000754 isr_IIC_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3098   .text:00000780 isr_URXD1_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3146   .text:000007ac isr_URXD0_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3194   .text:000007d8 isr_TIMER5_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3242   .text:00000804 isr_TIMER4_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3290   .text:00000830 isr_TIMER3_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3338   .text:0000085c isr_TIMER2_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3386   .text:00000888 isr_TIMER1_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3434   .text:000008b4 isr_TIMER0_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3482   .text:000008e0 isr_UERR01_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3529   .text:0000090c isr_WDT_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3577   .text:00000938 isr_BDMA1_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3625   .text:00000964 isr_BDMA0_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3673   .text:00000990 isr_ZDMA1_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3721   .text:000009bc isr_ZDMA0_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3768   .text:000009e8 isr_TICK_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3815   .text:00000a14 isr_PB_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3863   .text:00000a40 isr_ETHERNET_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3910   .text:00000a6c isr_TS_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3958   .text:00000a98 isr_KEYPAD_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4005   .text:00000ac4 isr_USB_dummy
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2521   .rodata:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2525   .text:00000570 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2563   .text:00000598 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2573   .text:0000059c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2611   .text:000005c4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2620   .text:000005c8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2658   .text:000005f0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2667   .text:000005f4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2705   .text:0000061c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2715   .text:00000620 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2753   .text:00000648 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2763   .text:0000064c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2801   .text:00000674 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2810   .text:00000678 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2848   .text:000006a0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2857   .text:000006a4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2895   .text:000006cc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2905   .text:000006d0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2943   .text:000006f8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2953   .text:000006fc $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:2991   .text:00000724 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3000   .text:00000728 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3038   .text:00000750 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3047   .text:00000754 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3085   .text:0000077c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3095   .text:00000780 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3133   .text:000007a8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3143   .text:000007ac $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3181   .text:000007d4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3191   .text:000007d8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3229   .text:00000800 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3239   .text:00000804 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3277   .text:0000082c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3287   .text:00000830 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3325   .text:00000858 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3335   .text:0000085c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3373   .text:00000884 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3383   .text:00000888 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3421   .text:000008b0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3431   .text:000008b4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3469   .text:000008dc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3479   .text:000008e0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3517   .text:00000908 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3526   .text:0000090c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3564   .text:00000934 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3574   .text:00000938 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3612   .text:00000960 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3622   .text:00000964 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3660   .text:0000098c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3670   .text:00000990 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3708   .text:000009b8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3718   .text:000009bc $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3756   .text:000009e4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3765   .text:000009e8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3803   .text:00000a10 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3812   .text:00000a14 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3850   .text:00000a3c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3860   .text:00000a40 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3898   .text:00000a68 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3907   .text:00000a6c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3945   .text:00000a94 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3955   .text:00000a98 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:3993   .text:00000ac0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4002   .text:00000ac4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4040   .text:00000aec $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4079   .text:00000af0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4141   .text:00000b68 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4155   .text:00000b94 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4158   .text:00000b94 sleep
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4188   .text:00000bc0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4192   .text:00000bc4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4233   .text:00000bfc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4246   .text:00000c28 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccNpqhOZ.s:4404   .text:00000dd0 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
