@@ -1,4 +1,3 @@
-/*
 #include <s3c44b0x.h>
 #include <s3cev40.h>
 #include <timers.h>
@@ -12,23 +11,28 @@ static void sw_delay_init( void );
 
 void timers_init( void )
 {
-    TCFG0 = ...;
-    TCFG1 = ...;
+    TCFG0 = 0x0;
+    TCFG1 = 0x0;
 
-    TCNTB0 = ...;
-    TCMPB0 = ...;
-    TCNTB1 = ...;
-    TCMPB1 = ...;
-    TCNTB2 = ...;
-    TCMPB2 = ...;
-    TCNTB3 = ...;
-    TCMPB3 = ...;
-    TCNTB4 = ...;
-    TCMPB4 = ...;    
-    TCNTB5 = ...;
+    TCNTB0 = 0x0;
+    TCMPB0 = 0x0;
+    TCNTB1 = 0x0;
+    TCMPB1 = 0x0;
+    TCNTB2 = 0x0;
+    TCMPB2 = 0x0;
+    TCNTB3 = 0x0;
+    TCMPB3 = 0x0;
+    TCNTB4 = 0x0;
+    TCMPB4 = 0x0;
+    TCNTB5 = 0x0;
 
-    TCON = ...;
-    TCON = ...;
+    TCON = (1 << 1)  |	// timer 0
+    	   (1 << 9)  |	// timer 1
+    	   (1 << 13) |	// timer 2
+    	   (1 << 17) |	// timer 3
+    	   (1 << 21) |	// timer 4
+    	   (1 << 25); 	// timer 5
+    TCON = 0x0;
 
     sw_delay_init();
 }
@@ -43,11 +47,29 @@ static void sw_delay_init( void )
     loop_ms = loop_s / 1000;
 };
 
-void timer3_delay_ms( uint16 n )
-{
-    for( ; n; n-- )
-    {
-        ...
+void wait_for_1ms(void) {
+	TCFG0  = (TCFG0 & ~(0xFF << 8)) | (0 << 8);  // Prescaler = 0
+	TCFG1  = (TCFG1 & ~(0xF << 12)) | (0 << 12); // T3 divisor = 2
+	TCNTB3 = 32000;								 // T3 count = 32000
+	TCON   = (TCON  & ~(0xF << 16)) | (1 << 17); // one shot, load TCNT3, stop T3
+	TCON   = (TCON  & ~(0xF << 16)) | (1 << 16); // one shot, unload TCNT3, start T3
+	while(!TCNTO3);
+	while(TCNTO3);
+}
+
+void wait_for_1s(void) {
+	TCFG0  = (TCFG0 & ~(0xFF << 8)) | (63 << 8); // Prescaler = 63
+	TCFG1  = (TCFG1 & ~(0xF << 12)) | (4 << 12); // T3 divisor = 32
+	TCNTB3 = 31250;								 // T3 count = 31250
+	TCON   = (TCON  & ~(0xF << 16)) | (1 << 17); // one shot, load TCNT3, stop T3
+	TCON   = (TCON  & ~(0xF << 16)) | (1 << 16); // one shot, unload TCNT3, start T3
+	while(!TCNTO3);
+	while(TCNTO3);
+}
+
+void timer3_delay_ms( uint16 n ) {
+    for( ; n; n-- ) {
+    	wait_for_1ms();
     }
 }
 
@@ -58,9 +80,10 @@ void sw_delay_ms( uint16 n )
     for( i=loop_ms*n; i; i-- );
 }
 
-void timer3_delay_s( uint16 n )
-{
-    ...
+void timer3_delay_s( uint16 n ) {
+    for( ; n; n--){
+    	timer3_hw_delay_1s();
+    }
 }
 
 void sw_delay_s( uint16 n )
@@ -133,27 +156,33 @@ void timer0_open_tick( void (*isr)(void), uint16 tps )
 
 void timer0_open_ms( void (*isr)(void), uint16 ms, uint8 mode )
 {
-    pISR_TIMER0 = ...;
-    I_ISPC      = ...;
-    INTMSK     &= ...;
+    pISR_TIMER0 = isr;
+    I_ISPC      = BIT_TIMER0;
+    INTMSK     &= ~(BIT_GLOBAL | BIT_TIMER0);
 
-    TCFG0 = ...;
-    TCFG1 = ...;
+    /*
+    ** We want a 100us timer setup so we use the formula t = (N + 1) * D / MCLK
+    ** Since N in [0, 1, ..., 255] then we solve for N 10^(-4) = ((N + 1) * 32)/(64 * 10^6)
+    ** Hence N is 199 and we need Divisor to be 32 in order to have N in range
+    ** This is a bit of trial and error
+	*/
+
+    TCFG0  = (TCFG0 & ~(0xff << 0)) | (199 << 0); // Set prescaler to 199
+    TCFG1  = (TCFG1 & ~(0xf << 0)) | (4 << 0);	 // Set divisor to 32
     TCNTB0 = 10*ms;
 
-    TCON = ...;
-    TCON = ...;
+    TCON   = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
+	TCON   = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
 }
 
 void timer0_close( void )
 {
-    TCNTB0 = ...;
-    TCMPB0 = ...;
+    TCNTB0 = 0x0;
+    TCMPB0 = 0x0;
 
-    TCON = ...;
-    TCON = ...;
+    TCON   = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
+   	TCON   = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
     
-    INTMSK     |= ...;
-    pISR_TIMER0 = ...;
+    INTMSK     |= BIT_GLOBAL | BIT_TIMER0;
+    pISR_TIMER0 = isr_TIMER0_dummy;
 }
-*/
