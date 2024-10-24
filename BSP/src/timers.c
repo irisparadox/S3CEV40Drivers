@@ -128,30 +128,48 @@ uint16 timer3_timeout( )
 
 void timer0_open_tick( void (*isr)(void), uint16 tps )
 {
-    pISR_TIMER0 = ...;
-    I_ISPC      = ...;
-    INTMSK     &= ...;
+    pISR_TIMER0 = isr;
+    I_ISPC      = BIT_TIMER0;
+    INTMSK     &= ~(BIT_GLOBAL | BIT_TIMER0);
+
+    /*
+	** We want a 25us, 2.5us, 0.25us and 31.25ns timer setup so we use the formula t = (N + 1) * D / MCLK
+	** Since N in [0, 1, ..., 255] then we solve for N t(seconds) = ((N + 1) * D)/(64 * 10^6)
+	** This is a bit of trial and error, since we want N to be in range. The divisor may vary.
+	*/
 
     if( tps > 0 && tps <= 10 ) {
-        TCFG0  = ...;
-        TCFG1  = ...;
+    	/*
+    	** Solving the formula we get N = 199 and D = 8
+    	*/
+    	TCFG0  = (TCFG0 & ~(0xff << 0)) | (199 << 0); // Set prescaler to 199
+		TCFG1  = (TCFG1 & ~(0xf << 0)) | (2 << 0);	  // Set divisor to 8
         TCNTB0 = (40000U / tps);
     } else if( tps > 10 && tps <= 100 ) {
-        TCFG0  = ...;
-        TCFG1  = ...;
+    	/*
+		** Solving the formula we get N = 79 and D = 2
+		*/
+    	TCFG0  = (TCFG0 & ~(0xff << 0)) | (79 << 0); // Set prescaler to 79
+		TCFG1  = (TCFG1 & ~(0xf << 0)) | (0 << 0);	 // Set divisor to 2
         TCNTB0 = (400000U / (uint32) tps);
     } else if( tps > 100 && tps <= 1000 ) {
-        TCFG0  = ...;
-        TCFG1  = ...;
+    	/*
+		** Solving the formula we get N = 7 and D = 2
+		*/
+    	TCFG0  = (TCFG0 & ~(0xff << 0)) | (7 << 0); // Set prescaler to 7
+		TCFG1  = (TCFG1 & ~(0xf << 0)) | (0 << 0);	// Set divisor to 2
         TCNTB0 = (4000000U / (uint32) tps);
     } else if ( tps > 1000 ) {
-        TCFG0  = ...;
-        TCFG1  = ...;
+    	/*
+		** Solving the formula we get N = 0 and D = 2
+		*/
+    	TCFG0  = (TCFG0 & ~(0xff << 0)) | (0 << 0); // Set prescaler to 0
+		TCFG1  = (TCFG1 & ~(0xf << 0)) | (0 << 0);	// Set divisor to 2
         TCNTB0 = (32000000U / (uint32) tps);
     }
 
-    TCON = ...;
-    TCON = ...;
+    TCON = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
+	TCON = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
 }
 
 void timer0_open_ms( void (*isr)(void), uint16 ms, uint8 mode )
