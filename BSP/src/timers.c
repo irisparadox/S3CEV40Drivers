@@ -186,7 +186,7 @@ void timer0_open_ms( void (*isr)(void), uint16 ms, uint8 mode )
 	*/
 
     TCFG0  = (TCFG0 & ~(0xff << 0)) | (199 << 0); // Set prescaler to 199
-    TCFG1  = (TCFG1 & ~(0xf << 0)) | (4 << 0);	 // Set divisor to 32
+    TCFG1  = (TCFG1 & ~(0xf << 0)) | (4 << 0);	  // Set divisor to 32
     TCNTB0 = 10*ms;
 
     TCON   = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
