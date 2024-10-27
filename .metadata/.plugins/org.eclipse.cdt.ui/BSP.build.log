@@ -1,4 +1,4 @@
-21:18:11 **** Build of configuration Debug for project BSP ****
+09:57:31 **** Build of configuration Debug for project BSP ****
 cs-make all 
 Building file: ../src/adc.c
 Invoking: ARM Sourcery Windows GCC C Compiler
@@ -22,5 +22,5 @@ arm-none-eabi-gcc -I..\..\BSP\include -O0 -Wall -Wa,-adhlns="src/font8x16.o.lst"
 compilation terminated.
 cs-make: *** [src/font8x16.o] Error 1
 
-21:18:12 Build Finished (took 1s.504ms)
+09:57:32 Build Finished (took 1s.381ms)
 
