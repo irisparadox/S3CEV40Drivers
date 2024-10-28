@@ -210,20 +210,20 @@
  2082              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 segs.c
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1906   .rodata:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1909   .rodata:00000000 hex2segs
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1927   .bss:00000000 state
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1928   .bss:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1930   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1933   .text:00000000 segs_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1962   .text:0000001c segs_off
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1995   .text:00000050 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:1999   .text:00000054 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:2002   .text:00000054 segs_putchar
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:2042   .text:000000a4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:2047   .text:000000ac $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:2050   .text:000000ac segs_status
-C:\Users\USUARI~2\AppData\Local\Temp\ccZrlDPW.s:2078   .text:000000d0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1906   .rodata:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1909   .rodata:00000000 hex2segs
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1927   .bss:00000000 state
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1928   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1930   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1933   .text:00000000 segs_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1962   .text:0000001c segs_off
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1995   .text:00000050 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:1999   .text:00000054 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:2002   .text:00000054 segs_putchar
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:2042   .text:000000a4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:2047   .text:000000ac $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:2050   .text:000000ac segs_status
+C:\Users\USUARI~2\AppData\Local\Temp\ccWD1Ufv.s:2078   .text:000000d0 $d
                      .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS

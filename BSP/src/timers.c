@@ -82,7 +82,7 @@ void sw_delay_ms( uint16 n )
 
 void timer3_delay_s( uint16 n ) {
     for( ; n; n--){
-    	timer3_hw_delay_1s();
+    	wait_for_1s();
     }
 }
 
@@ -168,8 +168,8 @@ void timer0_open_tick( void (*isr)(void), uint16 tps )
         TCNTB0 = (32000000U / (uint32) tps);
     }
 
-    TCON = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
-	TCON = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
+    TCON = (TCON  & ~(0xF << 0)) | (1 << 3) | (1 << 1); // one shot, load TCNT0, stop T0
+	TCON = (TCON  & ~(0xF << 0)) | (1 << 3) | (1 << 0); // one shot, unload TCNT0, start T0
 }
 
 void timer0_open_ms( void (*isr)(void), uint16 ms, uint8 mode )
@@ -189,8 +189,8 @@ void timer0_open_ms( void (*isr)(void), uint16 ms, uint8 mode )
     TCFG1  = (TCFG1 & ~(0xf << 0)) | (4 << 0);	  // Set divisor to 32
     TCNTB0 = 10*ms;
 
-    TCON   = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
-	TCON   = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
+    TCON   = (TCON  & ~(0xF << 0)) | (mode << 3) | (1 << 1); // load TCNT0, stop T0
+	TCON   = (TCON  & ~(0xF << 0)) | (mode << 3) | (1 << 0); // unload TCNT0, start T0
 }
 
 void timer0_close( void )
@@ -198,8 +198,8 @@ void timer0_close( void )
     TCNTB0 = 0x0;
     TCMPB0 = 0x0;
 
-    TCON   = (TCON  & ~(0xF << 0)) | (1 << 1); // one shot, load TCNT0, stop T0
-   	TCON   = (TCON  & ~(0xF << 0)) | (1 << 0); // one shot, unload TCNT0, start T0
+    TCON   = (TCON  & ~(0xF << 0)) | (1 << 3) | (1 << 1); // one shot, load TCNT0, stop T0
+   	TCON   = (TCON  & ~(0xF << 0)) | (1 << 3) | (1 << 0); // one shot, unload TCNT0, start T0
     
     INTMSK     |= BIT_GLOBAL | BIT_TIMER0;
     pISR_TIMER0 = isr_TIMER0_dummy;

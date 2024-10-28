@@ -33,19 +33,35 @@ uint8 keypad_scan( void )
 		else if( (aux & 0x1) == 0 )
 			return KEYPAD_KEY7;
 	}
-    aux = *( KEYPAD_ADDR + 0x18);
+    aux = *( KEYPAD_ADDR + 0x16);
     if( (aux & 0x0f) != 0x0f) {
     	if( (aux & 0x8) == 0 )
 			return KEYPAD_KEY8;
 		else if( (aux & 0x4) == 0 )
 			return KEYPAD_KEY9;
+		else if( (aux & 0x2) == 0 )
+			return KEYPAD_KEYA;
+		else if( (aux & 0x1) == 0 )
+			return KEYPAD_KEYB;
     }
+
+    aux = *( KEYPAD_ADDR + 0x0e);
+        if( (aux & 0x0f) != 0x0f) {
+        	if( (aux & 0x8) == 0 )
+    			return KEYPAD_KEYC;
+    		else if( (aux & 0x4) == 0 )
+    			return KEYPAD_KEYD;
+    		else if( (aux & 0x2) == 0 )
+    			return KEYPAD_KEYE;
+    		else if( (aux & 0x1) == 0 )
+    			return KEYPAD_KEYF;
+        }
 
     return KEYPAD_FAILURE;
 }
 
 uint8 keypad_pressed( void ) {
-    return keypad_scan() != KEYPAD_FAILURE;
+    return !( PDATG & (1 << 1) );
 }
 
 void keypad_open( void (*isr)(void) ) {
@@ -103,7 +119,7 @@ uint8 keypad_getchartime( uint16 *ms ) {
 uint8 keypad_timeout_getchar( uint16 ms ) {
     uint8 keycode;
 
-    timer3_start_timeout();
+    timer3_start_timeout(ms * 10);
     while( !keypad_pressed() ) {
     	if(timer3_timeout())
     		return KEYPAD_TIMEOUT;

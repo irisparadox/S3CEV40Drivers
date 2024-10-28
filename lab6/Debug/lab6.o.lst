@@ -1756,22 +1756,22 @@ DEFINED SYMBOLS
                             *COM*:00000001 flagTimer0
                             *COM*:00000001 flagKeypad
                             *COM*:00000001 flagPbs
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:2070   .rodata:00000000 $d
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:2206   .text:00000000 $a
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:2209   .text:00000000 main
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3045   .text:000008b4 one_second_loop
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:2991   .text:000007f4 $d
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3091   .text:000008f8 isr_timer0
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3135   .text:00000938 isr_keypad
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3179   .text:00000978 isr_pbs
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3042   .text:000008b4 $a
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3084   .text:000008f4 $d
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3088   .text:000008f8 $a
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3127   .text:00000930 $d
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3132   .text:00000938 $a
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3171   .text:00000970 $d
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3176   .text:00000978 $a
-C:\Users\gabri\AppData\Local\Temp\cc6rsqt3.s:3249   .text:00000a04 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:2070   .rodata:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:2206   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:2209   .text:00000000 main
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3045   .text:000008b4 one_second_loop
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:2991   .text:000007f4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3091   .text:000008f8 isr_timer0
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3135   .text:00000938 isr_keypad
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3179   .text:00000978 isr_pbs
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3042   .text:000008b4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3084   .text:000008f4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3088   .text:000008f8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3127   .text:00000930 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3132   .text:00000938 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3171   .text:00000970 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3176   .text:00000978 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfDSWKQ.s:3249   .text:00000a04 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

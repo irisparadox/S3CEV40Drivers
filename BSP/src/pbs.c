@@ -21,7 +21,7 @@ uint8 pb_scan( void )
 }
 
 uint8 pb_pressed( void ) {
-    return pb_scan() != PB_FAILURE;
+    return (!(PDATG & (1 << 6)) || !(PDATG & (1 << 7)));
 }
 
 uint8 pb_getchar( void ) {

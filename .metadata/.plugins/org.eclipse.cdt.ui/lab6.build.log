@@ -1,17 +1,11 @@
-09:57:40 **** Build of configuration Debug for project lab6 ****
+12:20:17 **** Incremental Build of configuration Debug for project lab6 ****
 cs-make all 
-Building file: ../lab6.c
-Invoking: ARM Sourcery Windows GCC C Compiler
-arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab6.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab6.d" -MT"lab6.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab6.o" "../lab6.c"
-../lab6.c:36:6: warning: return type of 'main' is not 'int'
-Finished building: ../lab6.c
- 
-Building target: lab6.elf
-Invoking: ARM Sourcery Windows GCC C Linker
-arm-none-eabi-gcc -T"../lab6.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab6.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab6.elf"  ./lab6.o   -lBSP
-c:/users/gabri/eclipsearm/sourcery-g++-lite-arm-2011.03/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/bin/ld.exe: cannot find -lBSP
-collect2: ld returned 1 exit status
-cs-make: *** [lab6.elf] Error 1
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab6.elf
+   text	   data	    bss	    dec	    hex	filename
+  19180	      0	     12	  19192	   4af8	lab6.elf
+'Finished building: lab6.siz'
+' '
 
-09:57:41 Build Finished (took 759ms)
+12:20:17 Build Finished (took 145ms)
 
