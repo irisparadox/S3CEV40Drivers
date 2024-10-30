@@ -10,7 +10,7 @@
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="1440" key="dialogWidth"/>
-		<item value="759" key="dialogHeight"/>
+		<item value="740" key="dialogHeight"/>
 		<list key="orderedProviders">
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
@@ -26,7 +26,7 @@
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="9" key="DIALOG_Y_ORIGIN"/>
-		<item value="560" key="DIALOG_X_ORIGIN"/>
+		<item value="1016" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.ui.wizards.new.file" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
