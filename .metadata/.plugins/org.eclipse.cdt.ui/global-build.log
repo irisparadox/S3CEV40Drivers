@@ -1,51 +1,8 @@
-12:14:59 **** Build of configuration Debug for project lab6 ****
+10:03:20 **** Build of configuration Debug for project BSP ****
 cs-make all 
-'Building file: ../lab6.c'
-'Invoking: ARM Sourcery Windows GCC C Compiler'
-arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab6.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab6.d" -MT"lab6.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab6.o" "../lab6.c"
-../lab6.c:36:6: warning: return type of 'main' is not 'int'
-'Finished building: ../lab6.c'
-' '
-'Building target: lab6.elf'
-'Invoking: ARM Sourcery Windows GCC C Linker'
-arm-none-eabi-gcc -T"../lab6.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab6.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab6.elf"  ./lab6.o   -lBSP
-'Finished building target: lab6.elf'
-' '
-'Invoking: ARM Sourcery Windows GNU Create Flash Image'
-arm-none-eabi-objcopy -O binary lab6.elf  "lab6.hex"
-'Finished building: lab6.hex'
-' '
-'Invoking: ARM Sourcery Windows GNU Create Listing'
-arm-none-eabi-objdump -h -S lab6.elf > "lab6.lst"
-'Finished building: lab6.lst'
-' '
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab6.elf
-   text	   data	    bss	    dec	    hex	filename
-  19180	      0	     12	  19192	   4af8	lab6.elf
-'Finished building: lab6.siz'
-' '
-12:15:08 **** Incremental Build of configuration Debug for project lab6 ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab6.elf
-   text	   data	    bss	    dec	    hex	filename
-  19180	      0	     12	  19192	   4af8	lab6.elf
-'Finished building: lab6.siz'
-' '
-12:16:45 **** Incremental Build of configuration Debug for project lab6 ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab6.elf
-   text	   data	    bss	    dec	    hex	filename
-  19180	      0	     12	  19192	   4af8	lab6.elf
-'Finished building: lab6.siz'
-' '
-12:20:17 **** Incremental Build of configuration Debug for project lab6 ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab6.elf
-   text	   data	    bss	    dec	    hex	filename
-  19180	      0	     12	  19192	   4af8	lab6.elf
-'Finished building: lab6.siz'
-' '
+Building file: ../src/adc.c
+Invoking: ARM Sourcery Windows GCC C Compiler
+arm-none-eabi-gcc -I..\..\BSP\include -O0 -Wall -Wa,-adhlns="src/adc.o.lst" -c -fmessage-length=0 -mapcs-frame -fno-builtin -MMD -MP -MF"src/adc.d" -MT"src/adc.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "src/adc.o" "../src/adc.c"
+../src/adc.c:1:22: fatal error: s3c44b0x.h: No such file or directory
+compilation terminated.
+cs-make: *** [src/adc.o] Error 1
