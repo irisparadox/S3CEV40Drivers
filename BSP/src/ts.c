@@ -57,10 +57,10 @@ static void ts_calibrate( void )
     lcd_on();
     do {    
         lcd_clear();
-    	lcd_puts(160-50, 120, BLACK, "Screen calibration procedure started");
+    	lcd_puts(20, 120, BLACK, "Screen calibration procedure started");
     	sw_delay_s( 1 );
     	lcd_clear();
-    	lcd_puts(160-50, 120, BLACK, "Please touch the box to calibrate");
+    	lcd_puts(20, 120, BLACK, "Please touch the box to calibrate");
 
     	lcd_draw_box(0, 0, 5, 5, BLACK, 1);
     
@@ -71,9 +71,9 @@ static void ts_calibrate( void )
         sw_delay_ms( TS_UP_DELAY );
 
         lcd_clear();
-        lcd_puts(160-50, 120, BLACK, "Please touch the box to calibrate");
+        lcd_puts(20, 120, BLACK, "Please touch the box to calibrate");
 
-        lcd_draw_box(314, 234, 319, 239, BLACK, 1);
+        lcd_draw_box(319-5, 239-5, 319, 239, BLACK, 1);
            
         while( !ts_pressed() );
         sw_delay_ms( TS_DOWN_DELAY );
@@ -82,21 +82,15 @@ static void ts_calibrate( void )
         sw_delay_ms( TS_UP_DELAY );
     
         lcd_clear();
-		lcd_puts(160-50, 50, BLACK, "Please touch the box to calibrate");
+		lcd_puts(20, 50, BLACK, "Please touch the box to calibrate");
 
-		lcd_draw_box(158, 118, 163, 123, BLACK, 1);
-
-		while( !ts_pressed() );
-		sw_delay_ms( TS_DOWN_DELAY );
-		ts_scan( &Vxmax, &Vymin );
-		while( ts_pressed() );
-		sw_delay_ms( TS_UP_DELAY );
+		lcd_draw_box(160-2, 120-2, 160+3, 120+3, BLACK, 1);
     
         ts_getpos( &x, &y );      
     
     } while( (x > LCD_WIDTH/2+PX_ERROR) || (x < LCD_WIDTH/2-PX_ERROR) || (y > LCD_HEIGHT/2+PX_ERROR) || (y < LCD_HEIGHT/2-PX_ERROR) );
     lcd_clear();
-    lcd_puts(160-50, 120, BLACK, "Screen calibrated");
+    lcd_puts(100, 120, BLACK, "Screen calibrated");
 	sw_delay_s( 1 );
 	lcd_clear();
 }
@@ -120,7 +114,7 @@ void ts_getpostime( uint16 *x, uint16 *y, uint16 *ms )
     sw_delay_ms( TS_DOWN_DELAY );
     ts_scan( &Vx, &Vy );
     while( ts_pressed() );
-    ms = timer3_stop() / 10;
+    *ms = timer3_stop() / 10;
     sw_delay_ms( TS_UP_DELAY );
     ts_sample2coord( Vx, Vy, x, y );
 }
@@ -166,7 +160,7 @@ static void ts_sample2coord( uint16 Vx, uint16 Vy, uint16 *x, uint16 *y )
     else if ( Vy < Vymin )
     	*y = LCD_HEIGHT - 1;
     else
-    	*y = LCD_HEIGHT * (Vymin - Vy) / (Vymax - Vymin);
+    	*y = LCD_HEIGHT * (Vymax - Vy) / (Vymax - Vymin);
 
 }
 

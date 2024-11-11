@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="PreferencesImportWizard">
 		<item value="C:\Users\gabri\EclipseARM\RainbowDrops.epf" key=""/>
+		<item value="C:\Users\gabri\EclipseARM\RainbowDrops.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="C:\Users\gabri\EclipseARM\RainbowDrops.epf"/>
 		</list>
@@ -25,8 +26,10 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="9" key="DIALOG_Y_ORIGIN"/>
-		<item value="1016" key="DIALOG_X_ORIGIN"/>
+		<item value="33" key="DIALOG_Y_ORIGIN"/>
+		<item value="789" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ZipFileImportWizard">
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.ui.wizards.new.file" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
@@ -34,14 +37,12 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
-	<section name="ZipFileImportWizard">
-	</section>
 	<section name="ShowViewDialog">
 		<item value="392" key="DIALOG_WIDTH"/>
 		<item value="org.eclipse.cdt.embsysregview.views.EmbSysRegView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="197" key="DIALOG_Y_ORIGIN"/>
-		<item value="653" key="DIALOG_X_ORIGIN"/>
 		<item value="477" key="DIALOG_HEIGHT"/>
+		<item value="653" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.debug.ui"/>

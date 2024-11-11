@@ -580,7 +580,7 @@
  2196 040c BE304BE1 		strh	r3, [fp, #-14]	@ movhi
  2197 0410 150000EA 		b	.L27
  2198              	.L30:
-  88:../src/lcd.c  **** 		for(j = y; j <= y + width; ++j) {
+  88:../src/lcd.c  **** 		for(j = y; j < y + width; ++j) {
  2199              		.loc 1 88 0
  2200 0414 BA315BE1 		ldrh	r3, [fp, #-26]	@ movhi
  2201 0418 B0314BE1 		strh	r3, [fp, #-16]	@ movhi
@@ -595,20 +595,20 @@
  2209 0430 0210A0E1 		mov	r1, r2
  2210 0434 0320A0E1 		mov	r2, r3
  2211 0438 FEFFFFEB 		bl	lcd_putpixel
-  88:../src/lcd.c  **** 		for(j = y; j <= y + width; ++j) {
+  88:../src/lcd.c  **** 		for(j = y; j < y + width; ++j) {
  2212              		.loc 1 88 0 discriminator 2
  2213 043c B0315BE1 		ldrh	r3, [fp, #-16]	@ movhi
  2214 0440 013083E2 		add	r3, r3, #1
  2215 0444 B0314BE1 		strh	r3, [fp, #-16]	@ movhi
  2216              	.L28:
-  88:../src/lcd.c  **** 		for(j = y; j <= y + width; ++j) {
+  88:../src/lcd.c  **** 		for(j = y; j < y + width; ++j) {
  2217              		.loc 1 88 0 is_stmt 0 discriminator 1
  2218 0448 B0215BE1 		ldrh	r2, [fp, #-16]
  2219 044c BA115BE1 		ldrh	r1, [fp, #-26]
  2220 0450 B430DBE1 		ldrh	r3, [fp, #4]
  2221 0454 033081E0 		add	r3, r1, r3
  2222 0458 030052E1 		cmp	r2, r3
- 2223 045c EFFFFFDA 		ble	.L29
+ 2223 045c EFFFFFBA 		blt	.L29
   87:../src/lcd.c  **** 	for(i = xleft; i <= xright + 4; ++i) {
  2224              		.loc 1 87 0 is_stmt 1
  2225 0460 BE305BE1 		ldrh	r3, [fp, #-14]	@ movhi
@@ -664,7 +664,7 @@
  2269 04b0 BE304BE1 		strh	r3, [fp, #-14]	@ movhi
  2270 04b4 140000EA 		b	.L32
  2271              	.L35:
-  97:../src/lcd.c  ****     	for(j = yup; j <= ydown + 4; ++j) {
+  97:../src/lcd.c  ****     	for(j = yup; j < ydown + 4; ++j) {
  2272              		.loc 1 97 0
  2273 04b8 B6315BE1 		ldrh	r3, [fp, #-22]	@ movhi
  2274 04bc B0314BE1 		strh	r3, [fp, #-16]	@ movhi
@@ -679,19 +679,19 @@
  2282 04d4 0210A0E1 		mov	r1, r2
  2283 04d8 0320A0E1 		mov	r2, r3
  2284 04dc FEFFFFEB 		bl	lcd_putpixel
-  97:../src/lcd.c  ****     	for(j = yup; j <= ydown + 4; ++j) {
+  97:../src/lcd.c  ****     	for(j = yup; j < ydown + 4; ++j) {
  2285              		.loc 1 97 0 discriminator 2
  2286 04e0 B0315BE1 		ldrh	r3, [fp, #-16]	@ movhi
  2287 04e4 013083E2 		add	r3, r3, #1
  2288 04e8 B0314BE1 		strh	r3, [fp, #-16]	@ movhi
  2289              	.L33:
-  97:../src/lcd.c  ****     	for(j = yup; j <= ydown + 4; ++j) {
+  97:../src/lcd.c  ****     	for(j = yup; j < ydown + 4; ++j) {
  2290              		.loc 1 97 0 is_stmt 0 discriminator 1
  2291 04ec B0215BE1 		ldrh	r2, [fp, #-16]
  2292 04f0 B8315BE1 		ldrh	r3, [fp, #-24]
  2293 04f4 043083E2 		add	r3, r3, #4
  2294 04f8 030052E1 		cmp	r2, r3
- 2295 04fc F0FFFFDA 		ble	.L34
+ 2295 04fc F0FFFFBA 		blt	.L34
   96:../src/lcd.c  ****     for(i = x; i <= x + width; ++i) {
  2296              		.loc 1 96 0 is_stmt 1
  2297 0500 BE305BE1 		ldrh	r3, [fp, #-14]	@ movhi
@@ -1954,51 +1954,51 @@
 DEFINED SYMBOLS
                             *ABS*:00000000 lcd.c
                             *COM*:00009600 lcd_buffer
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1704   .bss:00000000 state
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1705   .bss:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1707   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1710   .text:00000000 lcd_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1891   .text:000001c0 lcd_off
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1815   .text:00000110 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1847   .text:00000184 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1850   .text:00000184 lcd_on
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1884   .text:000001bc $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1888   .text:000001c0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1925   .text:000001f8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1929   .text:000001fc $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1932   .text:000001fc lcd_status
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1960   .text:00000220 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1964   .text:00000224 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:1967   .text:00000224 lcd_clear
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2012   .text:00000278 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2017   .text:00000280 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2020   .text:00000280 lcd_putpixel
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2107   .text:00000368 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2111   .text:0000036c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2114   .text:0000036c lcd_getpixel
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2165   .text:000003e4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2169   .text:000003e8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2172   .text:000003e8 lcd_draw_hrow
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2245   .text:0000048c lcd_draw_vrow
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2318   .text:00000530 lcd_draw_box
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2382   .text:000005cc lcd_putchar
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2500   .text:0000071c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2504   .text:00000720 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2507   .text:00000720 lcd_puts
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2571   .text:000007ac lcd_putint
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2704   .text:00000920 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2708   .text:00000924 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2711   .text:00000924 lcd_puthex
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2800   .text:00000a04 lcd_putchar_x2
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2946   .text:00000ba4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2950   .text:00000ba8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:2953   .text:00000ba8 lcd_puts_x2
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3017   .text:00000c34 lcd_putint_x2
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3150   .text:00000da8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3154   .text:00000dac $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3157   .text:00000dac lcd_puthex_x2
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3246   .text:00000e8c lcd_putWallpaper
-C:\Users\USUARI~2\AppData\Local\Temp\ccFPBhld.s:3365   .text:00000fe4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1704   .bss:00000000 state
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1705   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1707   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1710   .text:00000000 lcd_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1891   .text:000001c0 lcd_off
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1815   .text:00000110 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1847   .text:00000184 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1850   .text:00000184 lcd_on
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1884   .text:000001bc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1888   .text:000001c0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1925   .text:000001f8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1929   .text:000001fc $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1932   .text:000001fc lcd_status
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1960   .text:00000220 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1964   .text:00000224 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:1967   .text:00000224 lcd_clear
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2012   .text:00000278 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2017   .text:00000280 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2020   .text:00000280 lcd_putpixel
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2107   .text:00000368 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2111   .text:0000036c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2114   .text:0000036c lcd_getpixel
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2165   .text:000003e4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2169   .text:000003e8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2172   .text:000003e8 lcd_draw_hrow
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2245   .text:0000048c lcd_draw_vrow
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2318   .text:00000530 lcd_draw_box
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2382   .text:000005cc lcd_putchar
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2500   .text:0000071c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2504   .text:00000720 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2507   .text:00000720 lcd_puts
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2571   .text:000007ac lcd_putint
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2704   .text:00000920 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2708   .text:00000924 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2711   .text:00000924 lcd_puthex
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2800   .text:00000a04 lcd_putchar_x2
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2946   .text:00000ba4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2950   .text:00000ba8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:2953   .text:00000ba8 lcd_puts_x2
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3017   .text:00000c34 lcd_putint_x2
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3150   .text:00000da8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3154   .text:00000dac $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3157   .text:00000dac lcd_puthex_x2
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3246   .text:00000e8c lcd_putWallpaper
+C:\Users\USUARI~2\AppData\Local\Temp\ccCmyzUc.s:3365   .text:00000fe4 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

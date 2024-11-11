@@ -33,12 +33,12 @@ uint16 adc_getSample( uint8 ch )
     uint32 sample;
     uint8 i;
     
-    ADCCON = 1 | (0 << 1) | ((ch & 0x3) << 2);
+    ADCCON = (1 << 0) | (0 << 1) | ((ch & 0x3) << 2);
     sw_delay_ms( 10 );
     for( i=0, sample=0; i<5; i++ )
     {
-        ADCCON |= 1;
-        while( ADCCON & 1 );
+        ADCCON |= (1 << 0);
+        while( ADCCON & (1 << 0) );
         while( !(ADCCON & (1 << 6)) );
         sample += ADCDAT & 0x3ff;
     }

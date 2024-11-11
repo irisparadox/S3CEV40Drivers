@@ -1,8 +1,35 @@
-10:03:20 **** Build of configuration Debug for project BSP ****
+11:47:39 **** Build of configuration Debug for project lab10 ****
 cs-make all 
-Building file: ../src/adc.c
-Invoking: ARM Sourcery Windows GCC C Compiler
-arm-none-eabi-gcc -I..\..\BSP\include -O0 -Wall -Wa,-adhlns="src/adc.o.lst" -c -fmessage-length=0 -mapcs-frame -fno-builtin -MMD -MP -MF"src/adc.d" -MT"src/adc.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "src/adc.o" "../src/adc.c"
-../src/adc.c:1:22: fatal error: s3c44b0x.h: No such file or directory
-compilation terminated.
-cs-make: *** [src/adc.o] Error 1
+'Building file: ../lab10.c'
+'Invoking: ARM Sourcery Windows GCC C Compiler'
+arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab10.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab10.d" -MT"lab10.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab10.o" "../lab10.c"
+../lab10.c:27:6: warning: return type of 'main' is not 'int'
+'Finished building: ../lab10.c'
+' '
+'Building target: lab10.elf'
+'Invoking: ARM Sourcery Windows GCC C Linker'
+arm-none-eabi-gcc -T"../lab10.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab10.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab10.elf"  ./lab10.o   -lBSP
+'Finished building target: lab10.elf'
+' '
+'Invoking: ARM Sourcery Windows GNU Create Flash Image'
+arm-none-eabi-objcopy -O binary lab10.elf  "lab10.hex"
+'Finished building: lab10.hex'
+' '
+'Invoking: ARM Sourcery Windows GNU Create Listing'
+arm-none-eabi-objdump -h -S lab10.elf > "lab10.lst"
+'Finished building: lab10.lst'
+' '
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab10.elf
+   text	   data	    bss	    dec	    hex	filename
+  26600	      0	  38424	  65024	   fe00	lab10.elf
+'Finished building: lab10.siz'
+' '
+11:47:43 **** Incremental Build of configuration Debug for project lab10 ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab10.elf
+   text	   data	    bss	    dec	    hex	filename
+  26600	      0	  38424	  65024	   fe00	lab10.elf
+'Finished building: lab10.siz'
+' '
