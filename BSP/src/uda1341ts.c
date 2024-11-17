@@ -1,4 +1,3 @@
-/*
 #include <l3.h>
 #include <uda1341ts.h>
 
@@ -61,4 +60,3 @@ uint8 uda1341ts_getvol( void )
 {
     ...  
 };
-*/
