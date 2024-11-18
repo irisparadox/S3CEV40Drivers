@@ -532,24 +532,24 @@
  2380              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 pbs.c
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:1935   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:1938   .text:00000000 pbs_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:1967   .text:0000001c pb_scan
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2015   .text:00000074 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2019   .text:00000078 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2022   .text:00000078 pb_pressed
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2068   .text:000000cc $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2072   .text:000000d0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2075   .text:000000d0 pb_getchar
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2132   .text:00000138 pb_getchartime
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2200   .text:000001d0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2204   .text:000001d4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2207   .text:000001d4 pb_timeout_getchar
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2286   .text:00000280 pbs_open
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2330   .text:000002d8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2337   .text:000002e8 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2340   .text:000002e8 pbs_close
-C:\Users\USUARI~2\AppData\Local\Temp\ccLsSSBf.s:2374   .text:00000320 $d
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:1935   .text:00000000 $a
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:1938   .text:00000000 pbs_init
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:1967   .text:0000001c pb_scan
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2015   .text:00000074 $d
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2019   .text:00000078 $a
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2022   .text:00000078 pb_pressed
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2068   .text:000000cc $d
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2072   .text:000000d0 $a
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2075   .text:000000d0 pb_getchar
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2132   .text:00000138 pb_getchartime
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2200   .text:000001d0 $d
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2204   .text:000001d4 $a
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2207   .text:000001d4 pb_timeout_getchar
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2286   .text:00000280 pbs_open
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2330   .text:000002d8 $d
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2337   .text:000002e8 $a
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2340   .text:000002e8 pbs_close
+C:\Users\rusaa\AppData\Local\Temp\ccEoIxVE.s:2374   .text:00000320 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

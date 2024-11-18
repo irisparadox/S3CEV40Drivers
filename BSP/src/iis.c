@@ -62,19 +62,25 @@ void iis_play( int16 *buffer, uint32 length, uint8 loop )
         }
     }
     if( iomode == IIS_DMA ) {
-    	while( IISCON & 1);
-    	BDISRC0  = (1 << 30) | (1 << 28) | (uint32) buffer;
-    	BDIDES0  = (1 << 30) | (3 << 28) | (uint32) &IISFIF;
-    	BDCON0   = 0;
-    	BDICNT0  = (1 << 30) | (1 << 26) | (loop << 21) | (0xfffff & length);
-    	BDICNT0 |= (1 << 20);
-    	if(loop)
-    		BDICNT0 &= ~(3 << 22);
-    	else
-    		BDICNT0 |= (3 << 2);
+    	while( IISCON & 1  );
+		BDISRC0  = (1 << 30) | (1 << 28) | (uint32) buffer;
+		BDIDES0  = (1 << 30) | (3 << 28) | (uint32) &IISFIF;
+		BDCON0   = 0;
+		BDICNT0  = (1 << 30) | (1 << 26) | (0xfffff & length);
+		BDICNT0 |= (1 << 20);
+		if (loop){
+			BDICNT0 |= (1 << 21);
+			BDICNT0 &= ~(3 << 22);
+		}
+		else{
+			BDICNT0 &= ~(1 << 21);
+			BDICNT0 |= (3 << 22);
+		}
 
-    	IISMOD  = (IISMOD & ~(3 << 6)) | (2 << 6);
-    	IISCON |= 1;
+
+		IISMOD = (IISMOD & ~(3 << 6)) | (2 << 6);
+
+		IISCON |= 1 << 0;
     }
 }
 
@@ -85,9 +91,9 @@ void iis_rec( int16 *buffer, uint32 length )
 
     if( iomode == IIS_POLLING )
         for( i = 0; i < length/2; ) {
-        	iis_getSample(ch1, ch2);
-        	*buffer[i++] = ch1;
-        	*buffer[i++] = ch2;
+        	iis_getSample(&ch1, &ch2);
+        	buffer[i++] = ch1;
+        	buffer[i++] = ch2;
         }
     if( iomode == IIS_DMA )
     {
@@ -99,7 +105,7 @@ void iis_rec( int16 *buffer, uint32 length )
         BDICNT0 |= (1 << 20);
 
         IISMOD   = (IISMOD & ~(3 << 6)) | (1 << 6);
-        IISCON  |= 1;
+        IISCON  |= 1 << 0;
     }
 }
 
@@ -115,7 +121,7 @@ void iis_continue( void )
 
 uint8 iis_status( void )
 {
-    return (IISCON & 1) ? ON : OFF;
+    return (IISCON & 1);
 }
 
 void iis_playWawFile( int16 *wav, uint8 loop )

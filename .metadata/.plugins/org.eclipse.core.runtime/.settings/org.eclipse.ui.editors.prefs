@@ -1,3 +1,6 @@
+AbstractTextEditor.Color.Background=52,52,52
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.Foreground.SystemDefault=false
 currentLine=false
 eclipse.preferences.version=1
 highlight.text.style=NONE

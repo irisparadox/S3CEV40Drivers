@@ -11,8 +11,945 @@
   11              		.file	"iis.c"
   21              	.Ltext0:
   22              		.file 1 "../src/iis.c"
- 965              	.Letext0:
+ 1917              	iomode:
+ 1918 0000 00       		.space	1
+ 1919              		.text
+ 1920              		.align	2
+ 1921              		.global	iis_init
+ 1923              	iis_init:
+ 1924              	.LFB0:
+   1:../src/iis.c  **** #include <s3c44b0x.h>
+   2:../src/iis.c  **** #include <s3cev40.h>
+   3:../src/iis.c  **** #include <iis.h>
+   4:../src/iis.c  **** #include <dma.h>
+   5:../src/iis.c  **** 
+   6:../src/iis.c  **** static void isr_bdma0( void ) __attribute__ ((interrupt ("IRQ")));
+   7:../src/iis.c  **** 
+   8:../src/iis.c  **** static uint8 iomode;
+   9:../src/iis.c  **** 
+  10:../src/iis.c  **** void iis_init( uint8 mode )
+  11:../src/iis.c  **** {
+ 1925              		.loc 1 11 0
+ 1926              		.cfi_startproc
+ 1927              		@ Function supports interworking.
+ 1928              		@ args = 0, pretend = 0, frame = 8
+ 1929              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1930 0000 0DC0A0E1 		mov	ip, sp
+ 1931              	.LCFI0:
+ 1932              		.cfi_def_cfa_register 12
+ 1933 0004 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 1934 0008 04B04CE2 		sub	fp, ip, #4
+ 1935              		.cfi_offset 14, -8
+ 1936              		.cfi_offset 13, -12
+ 1937              		.cfi_offset 11, -16
+ 1938              	.LCFI1:
+ 1939              		.cfi_def_cfa 11, 4
+ 1940 000c 08D04DE2 		sub	sp, sp, #8
+ 1941 0010 0030A0E1 		mov	r3, r0
+ 1942 0014 0D304BE5 		strb	r3, [fp, #-13]
+  12:../src/iis.c  ****     iomode = mode;
+ 1943              		.loc 1 12 0
+ 1944 0018 9C309FE5 		ldr	r3, .L4
+ 1945 001c 0D205BE5 		ldrb	r2, [fp, #-13]
+ 1946 0020 0020C3E5 		strb	r2, [r3, #0]
+  13:../src/iis.c  **** 
+  14:../src/iis.c  ****     if( iomode == IIS_POLLING )
+ 1947              		.loc 1 14 0
+ 1948 0024 90309FE5 		ldr	r3, .L4
+ 1949 0028 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 1950 002c 020053E3 		cmp	r3, #2
+ 1951 0030 0B00001A 		bne	.L2
+  15:../src/iis.c  ****     {
+  16:../src/iis.c  ****         IISPSR  = 0x77;
+ 1952              		.loc 1 16 0
+ 1953 0034 84309FE5 		ldr	r3, .L4+4
+ 1954 0038 7720A0E3 		mov	r2, #119
+ 1955 003c 002083E5 		str	r2, [r3, #0]
+  17:../src/iis.c  ****         IISMOD  = 0xc9;
+ 1956              		.loc 1 17 0
+ 1957 0040 7C309FE5 		ldr	r3, .L4+8
+ 1958 0044 C920A0E3 		mov	r2, #201
+ 1959 0048 002083E5 		str	r2, [r3, #0]
+  18:../src/iis.c  ****         IISFCON = 0x300;
+ 1960              		.loc 1 18 0
+ 1961 004c 74309FE5 		ldr	r3, .L4+12
+ 1962 0050 032CA0E3 		mov	r2, #768
+ 1963 0054 002083E5 		str	r2, [r3, #0]
+  19:../src/iis.c  ****         IISCON  = 0x3;
+ 1964              		.loc 1 19 0
+ 1965 0058 6C309FE5 		ldr	r3, .L4+16
+ 1966 005c 0320A0E3 		mov	r2, #3
+ 1967 0060 002083E5 		str	r2, [r3, #0]
+ 1968              	.L2:
+  20:../src/iis.c  ****     }
+  21:../src/iis.c  ****     if( iomode == IIS_DMA )
+ 1969              		.loc 1 21 0
+ 1970 0064 50309FE5 		ldr	r3, .L4
+ 1971 0068 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 1972 006c 010053E3 		cmp	r3, #1
+ 1973 0070 0E00001A 		bne	.L1
+  22:../src/iis.c  ****     {
+  23:../src/iis.c  ****         IISPSR  = 0x77;
+ 1974              		.loc 1 23 0
+ 1975 0074 44309FE5 		ldr	r3, .L4+4
+ 1976 0078 7720A0E3 		mov	r2, #119
+ 1977 007c 002083E5 		str	r2, [r3, #0]
+  24:../src/iis.c  ****         IISMOD  = 0x9;
+ 1978              		.loc 1 24 0
+ 1979 0080 3C309FE5 		ldr	r3, .L4+8
+ 1980 0084 0920A0E3 		mov	r2, #9
+ 1981 0088 002083E5 		str	r2, [r3, #0]
+  25:../src/iis.c  ****         IISFCON = 0xf00;
+ 1982              		.loc 1 25 0
+ 1983 008c 34309FE5 		ldr	r3, .L4+12
+ 1984 0090 0F2CA0E3 		mov	r2, #3840
+ 1985 0094 002083E5 		str	r2, [r3, #0]
+  26:../src/iis.c  ****         IISCON  = 0x32;
+ 1986              		.loc 1 26 0
+ 1987 0098 2C309FE5 		ldr	r3, .L4+16
+ 1988 009c 3220A0E3 		mov	r2, #50
+ 1989 00a0 002083E5 		str	r2, [r3, #0]
+  27:../src/iis.c  ****         bdma0_init();
+ 1990              		.loc 1 27 0
+ 1991 00a4 FEFFFFEB 		bl	bdma0_init
+  28:../src/iis.c  ****         bdma0_open( isr_bdma0 );
+ 1992              		.loc 1 28 0
+ 1993 00a8 20009FE5 		ldr	r0, .L4+20
+ 1994 00ac FEFFFFEB 		bl	bdma0_open
+ 1995              	.L1:
+  29:../src/iis.c  ****     }
+  30:../src/iis.c  **** }
+ 1996              		.loc 1 30 0
+ 1997 00b0 0CD04BE2 		sub	sp, fp, #12
+ 1998 00b4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 1999 00b8 1EFF2FE1 		bx	lr
+ 2000              	.L5:
+ 2001              		.align	2
+ 2002              	.L4:
+ 2003 00bc 00000000 		.word	iomode
+ 2004 00c0 0880D101 		.word	30507016
+ 2005 00c4 0480D101 		.word	30507012
+ 2006 00c8 0C80D101 		.word	30507020
+ 2007 00cc 0080D101 		.word	30507008
+ 2008 00d0 00000000 		.word	isr_bdma0
+ 2009              		.cfi_endproc
+ 2010              	.LFE0:
+ 2012              		.align	2
+ 2014              	isr_bdma0:
+ 2015              	.LFB1:
+  31:../src/iis.c  **** 
+  32:../src/iis.c  **** static void isr_bdma0( void )
+  33:../src/iis.c  **** {
+ 2016              		.loc 1 33 0
+ 2017              		.cfi_startproc
+ 2018              		@ Interrupt Service Routine.
+ 2019              		@ args = 0, pretend = 0, frame = 0
+ 2020              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2021 00d4 04C02DE5 		str	ip, [sp, #-4]!
+ 2022 00d8 0DC0A0E1 		mov	ip, sp
+ 2023              	.LCFI2:
+ 2024              		.cfi_def_cfa_register 12
+ 2025 00dc 0CD82DE9 		stmfd	sp!, {r2, r3, fp, ip, lr, pc}
+ 2026 00e0 04B04CE2 		sub	fp, ip, #4
+ 2027              		.cfi_offset 14, -8
+ 2028              		.cfi_offset 13, -12
+ 2029              		.cfi_offset 11, -16
+ 2030              		.cfi_offset 3, -20
+ 2031              		.cfi_offset 2, -24
+ 2032              	.LCFI3:
+ 2033              		.cfi_def_cfa 11, 4
+  34:../src/iis.c  ****     IISCON &= ~1;
+ 2034              		.loc 1 34 0
+ 2035 00e4 28309FE5 		ldr	r3, .L7
+ 2036 00e8 24209FE5 		ldr	r2, .L7
+ 2037 00ec 002092E5 		ldr	r2, [r2, #0]
+ 2038 00f0 0120C2E3 		bic	r2, r2, #1
+ 2039 00f4 002083E5 		str	r2, [r3, #0]
+  35:../src/iis.c  ****     I_ISPC = BIT_BDMA0; 
+ 2040              		.loc 1 35 0
+ 2041 00f8 18309FE5 		ldr	r3, .L7+4
+ 2042 00fc 0228A0E3 		mov	r2, #131072
+ 2043 0100 002083E5 		str	r2, [r3, #0]
+  36:../src/iis.c  **** }
+ 2044              		.loc 1 36 0
+ 2045 0104 14D04BE2 		sub	sp, fp, #20
+ 2046 0108 0C689DE8 		ldmfd	sp, {r2, r3, fp, sp, lr}
+ 2047 010c 04C09DE4 		ldmfd	sp!, {ip}
+ 2048 0110 04F05EE2 		subs	pc, lr, #4
+ 2049              	.L8:
+ 2050              		.align	2
+ 2051              	.L7:
+ 2052 0114 0080D101 		.word	30507008
+ 2053 0118 2400E001 		.word	31457316
+ 2054              		.cfi_endproc
+ 2055              	.LFE1:
+ 2057              		.align	2
+ 2058              		.global	iis_putSample
+ 2060              	iis_putSample:
+ 2061              	.LFB2:
+  37:../src/iis.c  **** 
+  38:../src/iis.c  **** inline void iis_putSample( int16 ch0, int16 ch1 )
+  39:../src/iis.c  **** {
+ 2062              		.loc 1 39 0
+ 2063              		.cfi_startproc
+ 2064              		@ Function supports interworking.
+ 2065              		@ args = 0, pretend = 0, frame = 8
+ 2066              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2067 011c 0DC0A0E1 		mov	ip, sp
+ 2068              	.LCFI4:
+ 2069              		.cfi_def_cfa_register 12
+ 2070 0120 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2071 0124 04B04CE2 		sub	fp, ip, #4
+ 2072              		.cfi_offset 14, -8
+ 2073              		.cfi_offset 13, -12
+ 2074              		.cfi_offset 11, -16
+ 2075              	.LCFI5:
+ 2076              		.cfi_def_cfa 11, 4
+ 2077 0128 08D04DE2 		sub	sp, sp, #8
+ 2078 012c 0020A0E1 		mov	r2, r0
+ 2079 0130 0130A0E1 		mov	r3, r1
+ 2080 0134 BE204BE1 		strh	r2, [fp, #-14]	@ movhi
+ 2081 0138 B0314BE1 		strh	r3, [fp, #-16]	@ movhi
+  40:../src/iis.c  ****     while( (IISFCON & 0xf0) > 6 );
+ 2082              		.loc 1 40 0
+ 2083 013c 0000A0E1 		mov	r0, r0	@ nop
+ 2084              	.L10:
+ 2085              		.loc 1 40 0 is_stmt 0 discriminator 1
+ 2086 0140 30309FE5 		ldr	r3, .L11
+ 2087 0144 003093E5 		ldr	r3, [r3, #0]
+ 2088 0148 F03003E2 		and	r3, r3, #240
+ 2089 014c 060053E3 		cmp	r3, #6
+ 2090 0150 FAFFFF8A 		bhi	.L10
+  41:../src/iis.c  ****     IISFIF = ch0;
+ 2091              		.loc 1 41 0 is_stmt 1
+ 2092 0154 20309FE5 		ldr	r3, .L11+4
+ 2093 0158 FE205BE1 		ldrsh	r2, [fp, #-14]
+ 2094 015c 002083E5 		str	r2, [r3, #0]
+  42:../src/iis.c  ****     IISFIF = ch1;
+ 2095              		.loc 1 42 0
+ 2096 0160 14309FE5 		ldr	r3, .L11+4
+ 2097 0164 F0215BE1 		ldrsh	r2, [fp, #-16]
+ 2098 0168 002083E5 		str	r2, [r3, #0]
+  43:../src/iis.c  **** }
+ 2099              		.loc 1 43 0
+ 2100 016c 0CD04BE2 		sub	sp, fp, #12
+ 2101 0170 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2102 0174 1EFF2FE1 		bx	lr
+ 2103              	.L12:
+ 2104              		.align	2
+ 2105              	.L11:
+ 2106 0178 0C80D101 		.word	30507020
+ 2107 017c 1080D101 		.word	30507024
+ 2108              		.cfi_endproc
+ 2109              	.LFE2:
+ 2111              		.align	2
+ 2112              		.global	iis_getSample
+ 2114              	iis_getSample:
+ 2115              	.LFB3:
+  44:../src/iis.c  **** 
+  45:../src/iis.c  **** inline void iis_getSample( int16 *ch0, int16 *ch1 )
+  46:../src/iis.c  **** {
+ 2116              		.loc 1 46 0
+ 2117              		.cfi_startproc
+ 2118              		@ Function supports interworking.
+ 2119              		@ args = 0, pretend = 0, frame = 8
+ 2120              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2121 0180 0DC0A0E1 		mov	ip, sp
+ 2122              	.LCFI6:
+ 2123              		.cfi_def_cfa_register 12
+ 2124 0184 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2125 0188 04B04CE2 		sub	fp, ip, #4
+ 2126              		.cfi_offset 14, -8
+ 2127              		.cfi_offset 13, -12
+ 2128              		.cfi_offset 11, -16
+ 2129              	.LCFI7:
+ 2130              		.cfi_def_cfa 11, 4
+ 2131 018c 08D04DE2 		sub	sp, sp, #8
+ 2132 0190 10000BE5 		str	r0, [fp, #-16]
+ 2133 0194 14100BE5 		str	r1, [fp, #-20]
+  47:../src/iis.c  ****     while( (IISFCON & 0xf) < 2);
+ 2134              		.loc 1 47 0
+ 2135 0198 0000A0E1 		mov	r0, r0	@ nop
+ 2136              	.L14:
+ 2137              		.loc 1 47 0 is_stmt 0 discriminator 1
+ 2138 019c 48309FE5 		ldr	r3, .L15
+ 2139 01a0 003093E5 		ldr	r3, [r3, #0]
+ 2140 01a4 0F3003E2 		and	r3, r3, #15
+ 2141 01a8 010053E3 		cmp	r3, #1
+ 2142 01ac FAFFFF9A 		bls	.L14
+  48:../src/iis.c  ****     *ch0 = IISFIF;
+ 2143              		.loc 1 48 0 is_stmt 1
+ 2144 01b0 38309FE5 		ldr	r3, .L15+4
+ 2145 01b4 003093E5 		ldr	r3, [r3, #0]
+ 2146 01b8 0338A0E1 		mov	r3, r3, asl #16
+ 2147 01bc 2328A0E1 		mov	r2, r3, lsr #16
+ 2148 01c0 10301BE5 		ldr	r3, [fp, #-16]
+ 2149 01c4 B020C3E1 		strh	r2, [r3, #0]	@ movhi
+  49:../src/iis.c  ****     *ch1 = IISFIF;
+ 2150              		.loc 1 49 0
+ 2151 01c8 20309FE5 		ldr	r3, .L15+4
+ 2152 01cc 003093E5 		ldr	r3, [r3, #0]
+ 2153 01d0 0338A0E1 		mov	r3, r3, asl #16
+ 2154 01d4 2328A0E1 		mov	r2, r3, lsr #16
+ 2155 01d8 14301BE5 		ldr	r3, [fp, #-20]
+ 2156 01dc B020C3E1 		strh	r2, [r3, #0]	@ movhi
+  50:../src/iis.c  **** }
+ 2157              		.loc 1 50 0
+ 2158 01e0 0CD04BE2 		sub	sp, fp, #12
+ 2159 01e4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2160 01e8 1EFF2FE1 		bx	lr
+ 2161              	.L16:
+ 2162              		.align	2
+ 2163              	.L15:
+ 2164 01ec 0C80D101 		.word	30507020
+ 2165 01f0 1080D101 		.word	30507024
+ 2166              		.cfi_endproc
+ 2167              	.LFE3:
+ 2169              		.align	2
+ 2170              		.global	iis_play
+ 2172              	iis_play:
+ 2173              	.LFB4:
+  51:../src/iis.c  **** 
+  52:../src/iis.c  **** void iis_play( int16 *buffer, uint32 length, uint8 loop )
+  53:../src/iis.c  **** {
+ 2174              		.loc 1 53 0
+ 2175              		.cfi_startproc
+ 2176              		@ Function supports interworking.
+ 2177              		@ args = 0, pretend = 0, frame = 24
+ 2178              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2179 01f4 0DC0A0E1 		mov	ip, sp
+ 2180              	.LCFI8:
+ 2181              		.cfi_def_cfa_register 12
+ 2182 01f8 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2183 01fc 04B04CE2 		sub	fp, ip, #4
+ 2184              		.cfi_offset 14, -8
+ 2185              		.cfi_offset 13, -12
+ 2186              		.cfi_offset 11, -16
+ 2187              	.LCFI9:
+ 2188              		.cfi_def_cfa 11, 4
+ 2189 0200 18D04DE2 		sub	sp, sp, #24
+ 2190 0204 18000BE5 		str	r0, [fp, #-24]
+ 2191 0208 1C100BE5 		str	r1, [fp, #-28]
+ 2192 020c 0230A0E1 		mov	r3, r2
+ 2193 0210 1D304BE5 		strb	r3, [fp, #-29]
+  54:../src/iis.c  ****     uint32 i;
+  55:../src/iis.c  ****     int16 ch1, ch2;
+  56:../src/iis.c  **** 
+  57:../src/iis.c  ****     if( iomode == IIS_POLLING ) {
+ 2194              		.loc 1 57 0
+ 2195 0214 9C319FE5 		ldr	r3, .L25
+ 2196 0218 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2197 021c 020053E3 		cmp	r3, #2
+ 2198 0220 1E00001A 		bne	.L18
+  58:../src/iis.c  ****         for( i=0; i<length/2; ) {
+ 2199              		.loc 1 58 0
+ 2200 0224 0030A0E3 		mov	r3, #0
+ 2201 0228 10300BE5 		str	r3, [fp, #-16]
+ 2202 022c 160000EA 		b	.L19
+ 2203              	.L20:
+  59:../src/iis.c  ****             ch1 = buffer[i++];
+ 2204              		.loc 1 59 0
+ 2205 0230 10301BE5 		ldr	r3, [fp, #-16]
+ 2206 0234 8330A0E1 		mov	r3, r3, asl #1
+ 2207 0238 18201BE5 		ldr	r2, [fp, #-24]
+ 2208 023c 033082E0 		add	r3, r2, r3
+ 2209 0240 B030D3E1 		ldrh	r3, [r3, #0]	@ movhi
+ 2210 0244 B2314BE1 		strh	r3, [fp, #-18]	@ movhi
+ 2211 0248 10301BE5 		ldr	r3, [fp, #-16]
+ 2212 024c 013083E2 		add	r3, r3, #1
+ 2213 0250 10300BE5 		str	r3, [fp, #-16]
+  60:../src/iis.c  ****             ch2 = buffer[i++];
+ 2214              		.loc 1 60 0
+ 2215 0254 10301BE5 		ldr	r3, [fp, #-16]
+ 2216 0258 8330A0E1 		mov	r3, r3, asl #1
+ 2217 025c 18201BE5 		ldr	r2, [fp, #-24]
+ 2218 0260 033082E0 		add	r3, r2, r3
+ 2219 0264 B030D3E1 		ldrh	r3, [r3, #0]	@ movhi
+ 2220 0268 B4314BE1 		strh	r3, [fp, #-20]	@ movhi
+ 2221 026c 10301BE5 		ldr	r3, [fp, #-16]
+ 2222 0270 013083E2 		add	r3, r3, #1
+ 2223 0274 10300BE5 		str	r3, [fp, #-16]
+  61:../src/iis.c  ****             iis_putSample( ch1, ch2 );
+ 2224              		.loc 1 61 0
+ 2225 0278 F2215BE1 		ldrsh	r2, [fp, #-18]
+ 2226 027c F4315BE1 		ldrsh	r3, [fp, #-20]
+ 2227 0280 0200A0E1 		mov	r0, r2
+ 2228 0284 0310A0E1 		mov	r1, r3
+ 2229 0288 FEFFFFEB 		bl	iis_putSample
+ 2230              	.L19:
+  58:../src/iis.c  ****         for( i=0; i<length/2; ) {
+ 2231              		.loc 1 58 0 discriminator 1
+ 2232 028c 1C301BE5 		ldr	r3, [fp, #-28]
+ 2233 0290 A320A0E1 		mov	r2, r3, lsr #1
+ 2234 0294 10301BE5 		ldr	r3, [fp, #-16]
+ 2235 0298 030052E1 		cmp	r2, r3
+ 2236 029c E3FFFF8A 		bhi	.L20
+ 2237              	.L18:
+  62:../src/iis.c  ****         }
+  63:../src/iis.c  ****     }
+  64:../src/iis.c  ****     if( iomode == IIS_DMA ) {
+ 2238              		.loc 1 64 0
+ 2239 02a0 10319FE5 		ldr	r3, .L25
+ 2240 02a4 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2241 02a8 010053E3 		cmp	r3, #1
+ 2242 02ac 3E00001A 		bne	.L17
+  65:../src/iis.c  ****     	while( IISCON & 1  );
+ 2243              		.loc 1 65 0
+ 2244 02b0 0000A0E1 		mov	r0, r0	@ nop
+ 2245              	.L22:
+ 2246              		.loc 1 65 0 is_stmt 0 discriminator 1
+ 2247 02b4 00319FE5 		ldr	r3, .L25+4
+ 2248 02b8 003093E5 		ldr	r3, [r3, #0]
+ 2249 02bc 013003E2 		and	r3, r3, #1
+ 2250 02c0 FF3003E2 		and	r3, r3, #255
+ 2251 02c4 000053E3 		cmp	r3, #0
+ 2252 02c8 F9FFFF1A 		bne	.L22
+  66:../src/iis.c  **** 		BDISRC0  = (1 << 30) | (1 << 28) | (uint32) buffer;
+ 2253              		.loc 1 66 0 is_stmt 1
+ 2254 02cc EC309FE5 		ldr	r3, .L25+8
+ 2255 02d0 18201BE5 		ldr	r2, [fp, #-24]
+ 2256 02d4 052282E3 		orr	r2, r2, #1342177280
+ 2257 02d8 002083E5 		str	r2, [r3, #0]
+  67:../src/iis.c  **** 		BDIDES0  = (1 << 30) | (3 << 28) | (uint32) &IISFIF;
+ 2258              		.loc 1 67 0
+ 2259 02dc E0309FE5 		ldr	r3, .L25+12
+ 2260 02e0 E0209FE5 		ldr	r2, .L25+16
+ 2261 02e4 002083E5 		str	r2, [r3, #0]
+  68:../src/iis.c  **** 		BDCON0   = 0;
+ 2262              		.loc 1 68 0
+ 2263 02e8 7E37A0E3 		mov	r3, #33030144
+ 2264 02ec 0020A0E3 		mov	r2, #0
+ 2265 02f0 002083E5 		str	r2, [r3, #0]
+  69:../src/iis.c  **** 		BDICNT0  = (1 << 30) | (1 << 26) | (0xfffff & length);
+ 2266              		.loc 1 69 0
+ 2267 02f4 D0209FE5 		ldr	r2, .L25+20
+ 2268 02f8 1C301BE5 		ldr	r3, [fp, #-28]
+ 2269 02fc FF34C3E3 		bic	r3, r3, #-16777216
+ 2270 0300 0F36C3E3 		bic	r3, r3, #15728640
+ 2271 0304 113383E3 		orr	r3, r3, #1140850688
+ 2272 0308 003082E5 		str	r3, [r2, #0]
+  70:../src/iis.c  **** 		BDICNT0 |= (1 << 20);
+ 2273              		.loc 1 70 0
+ 2274 030c B8309FE5 		ldr	r3, .L25+20
+ 2275 0310 B4209FE5 		ldr	r2, .L25+20
+ 2276 0314 002092E5 		ldr	r2, [r2, #0]
+ 2277 0318 012682E3 		orr	r2, r2, #1048576
+ 2278 031c 002083E5 		str	r2, [r3, #0]
+  71:../src/iis.c  **** 		if (loop){
+ 2279              		.loc 1 71 0
+ 2280 0320 1D305BE5 		ldrb	r3, [fp, #-29]	@ zero_extendqisi2
+ 2281 0324 000053E3 		cmp	r3, #0
+ 2282 0328 0A00000A 		beq	.L23
+  72:../src/iis.c  **** 			BDICNT0 |= (1 << 21);
+ 2283              		.loc 1 72 0
+ 2284 032c 98309FE5 		ldr	r3, .L25+20
+ 2285 0330 94209FE5 		ldr	r2, .L25+20
+ 2286 0334 002092E5 		ldr	r2, [r2, #0]
+ 2287 0338 022682E3 		orr	r2, r2, #2097152
+ 2288 033c 002083E5 		str	r2, [r3, #0]
+  73:../src/iis.c  **** 			BDICNT0 &= ~(3 << 22);
+ 2289              		.loc 1 73 0
+ 2290 0340 84309FE5 		ldr	r3, .L25+20
+ 2291 0344 80209FE5 		ldr	r2, .L25+20
+ 2292 0348 002092E5 		ldr	r2, [r2, #0]
+ 2293 034c 0325C2E3 		bic	r2, r2, #12582912
+ 2294 0350 002083E5 		str	r2, [r3, #0]
+ 2295 0354 090000EA 		b	.L24
+ 2296              	.L23:
+  74:../src/iis.c  **** 		}
+  75:../src/iis.c  **** 		else{
+  76:../src/iis.c  **** 			BDICNT0 &= ~(1 << 21);
+ 2297              		.loc 1 76 0
+ 2298 0358 6C309FE5 		ldr	r3, .L25+20
+ 2299 035c 68209FE5 		ldr	r2, .L25+20
+ 2300 0360 002092E5 		ldr	r2, [r2, #0]
+ 2301 0364 0226C2E3 		bic	r2, r2, #2097152
+ 2302 0368 002083E5 		str	r2, [r3, #0]
+  77:../src/iis.c  **** 			BDICNT0 |= (3 << 22);
+ 2303              		.loc 1 77 0
+ 2304 036c 58309FE5 		ldr	r3, .L25+20
+ 2305 0370 54209FE5 		ldr	r2, .L25+20
+ 2306 0374 002092E5 		ldr	r2, [r2, #0]
+ 2307 0378 032582E3 		orr	r2, r2, #12582912
+ 2308 037c 002083E5 		str	r2, [r3, #0]
+ 2309              	.L24:
+  78:../src/iis.c  **** 		}
+  79:../src/iis.c  **** 
+  80:../src/iis.c  **** 
+  81:../src/iis.c  **** 		IISMOD = (IISMOD & ~(3 << 6)) | (2 << 6);
+ 2310              		.loc 1 81 0
+ 2311 0380 48309FE5 		ldr	r3, .L25+24
+ 2312 0384 44209FE5 		ldr	r2, .L25+24
+ 2313 0388 002092E5 		ldr	r2, [r2, #0]
+ 2314 038c C020C2E3 		bic	r2, r2, #192
+ 2315 0390 802082E3 		orr	r2, r2, #128
+ 2316 0394 002083E5 		str	r2, [r3, #0]
+  82:../src/iis.c  **** 
+  83:../src/iis.c  **** 		IISCON |= 1 << 0;
+ 2317              		.loc 1 83 0
+ 2318 0398 1C309FE5 		ldr	r3, .L25+4
+ 2319 039c 18209FE5 		ldr	r2, .L25+4
+ 2320 03a0 002092E5 		ldr	r2, [r2, #0]
+ 2321 03a4 012082E3 		orr	r2, r2, #1
+ 2322 03a8 002083E5 		str	r2, [r3, #0]
+ 2323              	.L17:
+  84:../src/iis.c  ****     }
+  85:../src/iis.c  **** }
+ 2324              		.loc 1 85 0
+ 2325 03ac 0CD04BE2 		sub	sp, fp, #12
+ 2326 03b0 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2327 03b4 1EFF2FE1 		bx	lr
+ 2328              	.L26:
+ 2329              		.align	2
+ 2330              	.L25:
+ 2331 03b8 00000000 		.word	iomode
+ 2332 03bc 0080D101 		.word	30507008
+ 2333 03c0 0400F801 		.word	33030148
+ 2334 03c4 0800F801 		.word	33030152
+ 2335 03c8 1080D171 		.word	1909555216
+ 2336 03cc 0C00F801 		.word	33030156
+ 2337 03d0 0480D101 		.word	30507012
+ 2338              		.cfi_endproc
+ 2339              	.LFE4:
+ 2341              		.align	2
+ 2342              		.global	iis_rec
+ 2344              	iis_rec:
+ 2345              	.LFB5:
+  86:../src/iis.c  **** 
+  87:../src/iis.c  **** void iis_rec( int16 *buffer, uint32 length )
+  88:../src/iis.c  **** {
+ 2346              		.loc 1 88 0
+ 2347              		.cfi_startproc
+ 2348              		@ Function supports interworking.
+ 2349              		@ args = 0, pretend = 0, frame = 16
+ 2350              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2351 03d4 0DC0A0E1 		mov	ip, sp
+ 2352              	.LCFI10:
+ 2353              		.cfi_def_cfa_register 12
+ 2354 03d8 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2355 03dc 04B04CE2 		sub	fp, ip, #4
+ 2356              		.cfi_offset 14, -8
+ 2357              		.cfi_offset 13, -12
+ 2358              		.cfi_offset 11, -16
+ 2359              	.LCFI11:
+ 2360              		.cfi_def_cfa 11, 4
+ 2361 03e0 10D04DE2 		sub	sp, sp, #16
+ 2362 03e4 18000BE5 		str	r0, [fp, #-24]
+ 2363 03e8 1C100BE5 		str	r1, [fp, #-28]
+  89:../src/iis.c  ****     uint32 i;
+  90:../src/iis.c  ****     int16 ch1, ch2;
+  91:../src/iis.c  **** 
+  92:../src/iis.c  ****     if( iomode == IIS_POLLING )
+ 2364              		.loc 1 92 0
+ 2365 03ec 40319FE5 		ldr	r3, .L33
+ 2366 03f0 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2367 03f4 020053E3 		cmp	r3, #2
+ 2368 03f8 1E00001A 		bne	.L28
+  93:../src/iis.c  ****         for( i = 0; i < length/2; ) {
+ 2369              		.loc 1 93 0
+ 2370 03fc 0030A0E3 		mov	r3, #0
+ 2371 0400 10300BE5 		str	r3, [fp, #-16]
+ 2372 0404 160000EA 		b	.L29
+ 2373              	.L30:
+  94:../src/iis.c  ****         	iis_getSample(&ch1, &ch2);
+ 2374              		.loc 1 94 0
+ 2375 0408 12204BE2 		sub	r2, fp, #18
+ 2376 040c 14304BE2 		sub	r3, fp, #20
+ 2377 0410 0200A0E1 		mov	r0, r2
+ 2378 0414 0310A0E1 		mov	r1, r3
+ 2379 0418 FEFFFFEB 		bl	iis_getSample
+  95:../src/iis.c  ****         	buffer[i++] = ch1;
+ 2380              		.loc 1 95 0
+ 2381 041c 10301BE5 		ldr	r3, [fp, #-16]
+ 2382 0420 8330A0E1 		mov	r3, r3, asl #1
+ 2383 0424 18201BE5 		ldr	r2, [fp, #-24]
+ 2384 0428 033082E0 		add	r3, r2, r3
+ 2385 042c B2215BE1 		ldrh	r2, [fp, #-18]
+ 2386 0430 B020C3E1 		strh	r2, [r3, #0]	@ movhi
+ 2387 0434 10301BE5 		ldr	r3, [fp, #-16]
+ 2388 0438 013083E2 		add	r3, r3, #1
+ 2389 043c 10300BE5 		str	r3, [fp, #-16]
+  96:../src/iis.c  ****         	buffer[i++] = ch2;
+ 2390              		.loc 1 96 0
+ 2391 0440 10301BE5 		ldr	r3, [fp, #-16]
+ 2392 0444 8330A0E1 		mov	r3, r3, asl #1
+ 2393 0448 18201BE5 		ldr	r2, [fp, #-24]
+ 2394 044c 033082E0 		add	r3, r2, r3
+ 2395 0450 B4215BE1 		ldrh	r2, [fp, #-20]
+ 2396 0454 B020C3E1 		strh	r2, [r3, #0]	@ movhi
+ 2397 0458 10301BE5 		ldr	r3, [fp, #-16]
+ 2398 045c 013083E2 		add	r3, r3, #1
+ 2399 0460 10300BE5 		str	r3, [fp, #-16]
+ 2400              	.L29:
+  93:../src/iis.c  ****         for( i = 0; i < length/2; ) {
+ 2401              		.loc 1 93 0 discriminator 1
+ 2402 0464 1C301BE5 		ldr	r3, [fp, #-28]
+ 2403 0468 A320A0E1 		mov	r2, r3, lsr #1
+ 2404 046c 10301BE5 		ldr	r3, [fp, #-16]
+ 2405 0470 030052E1 		cmp	r2, r3
+ 2406 0474 E3FFFF8A 		bhi	.L30
+ 2407              	.L28:
+  97:../src/iis.c  ****         }
+  98:../src/iis.c  ****     if( iomode == IIS_DMA )
+ 2408              		.loc 1 98 0
+ 2409 0478 B4309FE5 		ldr	r3, .L33
+ 2410 047c 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2411 0480 010053E3 		cmp	r3, #1
+ 2412 0484 2700001A 		bne	.L27
+  99:../src/iis.c  ****     {
+ 100:../src/iis.c  ****         while( IISCON & 1  );
+ 2413              		.loc 1 100 0
+ 2414 0488 0000A0E1 		mov	r0, r0	@ nop
+ 2415              	.L32:
+ 2416              		.loc 1 100 0 is_stmt 0 discriminator 1
+ 2417 048c A4309FE5 		ldr	r3, .L33+4
+ 2418 0490 003093E5 		ldr	r3, [r3, #0]
+ 2419 0494 013003E2 		and	r3, r3, #1
+ 2420 0498 FF3003E2 		and	r3, r3, #255
+ 2421 049c 000053E3 		cmp	r3, #0
+ 2422 04a0 F9FFFF1A 		bne	.L32
+ 101:../src/iis.c  ****         BDISRC0  = (1 << 30) | (3 << 28) | (uint32) &IISFIF;
+ 2423              		.loc 1 101 0 is_stmt 1
+ 2424 04a4 90309FE5 		ldr	r3, .L33+8
+ 2425 04a8 90209FE5 		ldr	r2, .L33+12
+ 2426 04ac 002083E5 		str	r2, [r3, #0]
+ 102:../src/iis.c  ****         BDIDES0  = (2 << 30) | (1 << 28) | (uint32) buffer;      
+ 2427              		.loc 1 102 0
+ 2428 04b0 8C309FE5 		ldr	r3, .L33+16
+ 2429 04b4 18201BE5 		ldr	r2, [fp, #-24]
+ 2430 04b8 092282E3 		orr	r2, r2, #-1879048192
+ 2431 04bc 002083E5 		str	r2, [r3, #0]
+ 103:../src/iis.c  ****         BDCON0   = 0;
+ 2432              		.loc 1 103 0
+ 2433 04c0 7E37A0E3 		mov	r3, #33030144
+ 2434 04c4 0020A0E3 		mov	r2, #0
+ 2435 04c8 002083E5 		str	r2, [r3, #0]
+ 104:../src/iis.c  ****         BDICNT0  = (1 << 30) | (1 << 26) | (3 << 22) | (0xfffff & length); 
+ 2436              		.loc 1 104 0
+ 2437 04cc 74209FE5 		ldr	r2, .L33+20
+ 2438 04d0 1C301BE5 		ldr	r3, [fp, #-28]
+ 2439 04d4 FF34C3E3 		bic	r3, r3, #-16777216
+ 2440 04d8 0F36C3E3 		bic	r3, r3, #15728640
+ 2441 04dc 113383E3 		orr	r3, r3, #1140850688
+ 2442 04e0 033583E3 		orr	r3, r3, #12582912
+ 2443 04e4 003082E5 		str	r3, [r2, #0]
+ 105:../src/iis.c  ****         BDICNT0 |= (1 << 20);
+ 2444              		.loc 1 105 0
+ 2445 04e8 58309FE5 		ldr	r3, .L33+20
+ 2446 04ec 54209FE5 		ldr	r2, .L33+20
+ 2447 04f0 002092E5 		ldr	r2, [r2, #0]
+ 2448 04f4 012682E3 		orr	r2, r2, #1048576
+ 2449 04f8 002083E5 		str	r2, [r3, #0]
+ 106:../src/iis.c  **** 
+ 107:../src/iis.c  ****         IISMOD   = (IISMOD & ~(3 << 6)) | (1 << 6);
+ 2450              		.loc 1 107 0
+ 2451 04fc 48309FE5 		ldr	r3, .L33+24
+ 2452 0500 44209FE5 		ldr	r2, .L33+24
+ 2453 0504 002092E5 		ldr	r2, [r2, #0]
+ 2454 0508 C020C2E3 		bic	r2, r2, #192
+ 2455 050c 402082E3 		orr	r2, r2, #64
+ 2456 0510 002083E5 		str	r2, [r3, #0]
+ 108:../src/iis.c  ****         IISCON  |= 1 << 0;
+ 2457              		.loc 1 108 0
+ 2458 0514 1C309FE5 		ldr	r3, .L33+4
+ 2459 0518 18209FE5 		ldr	r2, .L33+4
+ 2460 051c 002092E5 		ldr	r2, [r2, #0]
+ 2461 0520 012082E3 		orr	r2, r2, #1
+ 2462 0524 002083E5 		str	r2, [r3, #0]
+ 2463              	.L27:
+ 109:../src/iis.c  ****     }
+ 110:../src/iis.c  **** }
+ 2464              		.loc 1 110 0
+ 2465 0528 0CD04BE2 		sub	sp, fp, #12
+ 2466 052c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2467 0530 1EFF2FE1 		bx	lr
+ 2468              	.L34:
+ 2469              		.align	2
+ 2470              	.L33:
+ 2471 0534 00000000 		.word	iomode
+ 2472 0538 0080D101 		.word	30507008
+ 2473 053c 0400F801 		.word	33030148
+ 2474 0540 1080D171 		.word	1909555216
+ 2475 0544 0800F801 		.word	33030152
+ 2476 0548 0C00F801 		.word	33030156
+ 2477 054c 0480D101 		.word	30507012
+ 2478              		.cfi_endproc
+ 2479              	.LFE5:
+ 2481              		.align	2
+ 2482              		.global	iis_pause
+ 2484              	iis_pause:
+ 2485              	.LFB6:
+ 111:../src/iis.c  **** 
+ 112:../src/iis.c  **** void iis_pause( void )
+ 113:../src/iis.c  **** {
+ 2486              		.loc 1 113 0
+ 2487              		.cfi_startproc
+ 2488              		@ Function supports interworking.
+ 2489              		@ args = 0, pretend = 0, frame = 0
+ 2490              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2491 0550 0DC0A0E1 		mov	ip, sp
+ 2492              	.LCFI12:
+ 2493              		.cfi_def_cfa_register 12
+ 2494 0554 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2495 0558 04B04CE2 		sub	fp, ip, #4
+ 2496              		.cfi_offset 14, -8
+ 2497              		.cfi_offset 13, -12
+ 2498              		.cfi_offset 11, -16
+ 2499              	.LCFI13:
+ 2500              		.cfi_def_cfa 11, 4
+ 114:../src/iis.c  ****     IISCON &= ~1;
+ 2501              		.loc 1 114 0
+ 2502 055c 18309FE5 		ldr	r3, .L36
+ 2503 0560 14209FE5 		ldr	r2, .L36
+ 2504 0564 002092E5 		ldr	r2, [r2, #0]
+ 2505 0568 0120C2E3 		bic	r2, r2, #1
+ 2506 056c 002083E5 		str	r2, [r3, #0]
+ 115:../src/iis.c  **** }
+ 2507              		.loc 1 115 0
+ 2508 0570 0CD04BE2 		sub	sp, fp, #12
+ 2509 0574 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2510 0578 1EFF2FE1 		bx	lr
+ 2511              	.L37:
+ 2512              		.align	2
+ 2513              	.L36:
+ 2514 057c 0080D101 		.word	30507008
+ 2515              		.cfi_endproc
+ 2516              	.LFE6:
+ 2518              		.align	2
+ 2519              		.global	iis_continue
+ 2521              	iis_continue:
+ 2522              	.LFB7:
+ 116:../src/iis.c  **** 
+ 117:../src/iis.c  **** void iis_continue( void )
+ 118:../src/iis.c  **** {
+ 2523              		.loc 1 118 0
+ 2524              		.cfi_startproc
+ 2525              		@ Function supports interworking.
+ 2526              		@ args = 0, pretend = 0, frame = 0
+ 2527              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2528 0580 0DC0A0E1 		mov	ip, sp
+ 2529              	.LCFI14:
+ 2530              		.cfi_def_cfa_register 12
+ 2531 0584 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2532 0588 04B04CE2 		sub	fp, ip, #4
+ 2533              		.cfi_offset 14, -8
+ 2534              		.cfi_offset 13, -12
+ 2535              		.cfi_offset 11, -16
+ 2536              	.LCFI15:
+ 2537              		.cfi_def_cfa 11, 4
+ 119:../src/iis.c  ****     IISCON |= 1;
+ 2538              		.loc 1 119 0
+ 2539 058c 18309FE5 		ldr	r3, .L39
+ 2540 0590 14209FE5 		ldr	r2, .L39
+ 2541 0594 002092E5 		ldr	r2, [r2, #0]
+ 2542 0598 012082E3 		orr	r2, r2, #1
+ 2543 059c 002083E5 		str	r2, [r3, #0]
+ 120:../src/iis.c  **** }
+ 2544              		.loc 1 120 0
+ 2545 05a0 0CD04BE2 		sub	sp, fp, #12
+ 2546 05a4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2547 05a8 1EFF2FE1 		bx	lr
+ 2548              	.L40:
+ 2549              		.align	2
+ 2550              	.L39:
+ 2551 05ac 0080D101 		.word	30507008
+ 2552              		.cfi_endproc
+ 2553              	.LFE7:
+ 2555              		.align	2
+ 2556              		.global	iis_status
+ 2558              	iis_status:
+ 2559              	.LFB8:
+ 121:../src/iis.c  **** 
+ 122:../src/iis.c  **** uint8 iis_status( void )
+ 123:../src/iis.c  **** {
+ 2560              		.loc 1 123 0
+ 2561              		.cfi_startproc
+ 2562              		@ Function supports interworking.
+ 2563              		@ args = 0, pretend = 0, frame = 0
+ 2564              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2565 05b0 0DC0A0E1 		mov	ip, sp
+ 2566              	.LCFI16:
+ 2567              		.cfi_def_cfa_register 12
+ 2568 05b4 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2569 05b8 04B04CE2 		sub	fp, ip, #4
+ 2570              		.cfi_offset 14, -8
+ 2571              		.cfi_offset 13, -12
+ 2572              		.cfi_offset 11, -16
+ 2573              	.LCFI17:
+ 2574              		.cfi_def_cfa 11, 4
+ 124:../src/iis.c  ****     return (IISCON & 1);
+ 2575              		.loc 1 124 0
+ 2576 05bc 1C309FE5 		ldr	r3, .L42
+ 2577 05c0 003093E5 		ldr	r3, [r3, #0]
+ 2578 05c4 FF3003E2 		and	r3, r3, #255
+ 2579 05c8 013003E2 		and	r3, r3, #1
+ 2580 05cc FF3003E2 		and	r3, r3, #255
+ 125:../src/iis.c  **** }
+ 2581              		.loc 1 125 0
+ 2582 05d0 0300A0E1 		mov	r0, r3
+ 2583 05d4 0CD04BE2 		sub	sp, fp, #12
+ 2584 05d8 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2585 05dc 1EFF2FE1 		bx	lr
+ 2586              	.L43:
+ 2587              		.align	2
+ 2588              	.L42:
+ 2589 05e0 0080D101 		.word	30507008
+ 2590              		.cfi_endproc
+ 2591              	.LFE8:
+ 2593              		.align	2
+ 2594              		.global	iis_playWawFile
+ 2596              	iis_playWawFile:
+ 2597              	.LFB9:
+ 126:../src/iis.c  **** 
+ 127:../src/iis.c  **** void iis_playWawFile( int16 *wav, uint8 loop )
+ 128:../src/iis.c  **** {
+ 2598              		.loc 1 128 0
+ 2599              		.cfi_startproc
+ 2600              		@ Function supports interworking.
+ 2601              		@ args = 0, pretend = 0, frame = 16
+ 2602              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2603 05e4 0DC0A0E1 		mov	ip, sp
+ 2604              	.LCFI18:
+ 2605              		.cfi_def_cfa_register 12
+ 2606 05e8 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2607 05ec 04B04CE2 		sub	fp, ip, #4
+ 2608              		.cfi_offset 14, -8
+ 2609              		.cfi_offset 13, -12
+ 2610              		.cfi_offset 11, -16
+ 2611              	.LCFI19:
+ 2612              		.cfi_def_cfa 11, 4
+ 2613 05f0 10D04DE2 		sub	sp, sp, #16
+ 2614 05f4 18000BE5 		str	r0, [fp, #-24]
+ 2615 05f8 0130A0E1 		mov	r3, r1
+ 2616 05fc 19304BE5 		strb	r3, [fp, #-25]
+ 129:../src/iis.c  **** 
+ 130:../src/iis.c  ****     uint32 size;
+ 131:../src/iis.c  ****     char *p;
+ 132:../src/iis.c  **** 
+ 133:../src/iis.c  ****     p = (char *) wav;
+ 2617              		.loc 1 133 0
+ 2618 0600 18301BE5 		ldr	r3, [fp, #-24]
+ 2619 0604 10300BE5 		str	r3, [fp, #-16]
+ 134:../src/iis.c  ****     while ( !(p[0] == 'd' && p[1] == 'a' && p[2] == 't' && p[3] == 'a') ) // busca el chunck data
+ 2620              		.loc 1 134 0
+ 2621 0608 020000EA 		b	.L45
+ 2622              	.L46:
+ 135:../src/iis.c  ****         p++;
+ 2623              		.loc 1 135 0
+ 2624 060c 10301BE5 		ldr	r3, [fp, #-16]
+ 2625 0610 013083E2 		add	r3, r3, #1
+ 2626 0614 10300BE5 		str	r3, [fp, #-16]
+ 2627              	.L45:
+ 134:../src/iis.c  ****     while ( !(p[0] == 'd' && p[1] == 'a' && p[2] == 't' && p[3] == 'a') ) // busca el chunck data
+ 2628              		.loc 1 134 0 discriminator 1
+ 2629 0618 10301BE5 		ldr	r3, [fp, #-16]
+ 2630 061c 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2631 0620 640053E3 		cmp	r3, #100
+ 2632 0624 F8FFFF1A 		bne	.L46
+ 134:../src/iis.c  ****     while ( !(p[0] == 'd' && p[1] == 'a' && p[2] == 't' && p[3] == 'a') ) // busca el chunck data
+ 2633              		.loc 1 134 0 is_stmt 0 discriminator 2
+ 2634 0628 10301BE5 		ldr	r3, [fp, #-16]
+ 2635 062c 013083E2 		add	r3, r3, #1
+ 2636 0630 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2637 0634 610053E3 		cmp	r3, #97
+ 2638 0638 F3FFFF1A 		bne	.L46
+ 134:../src/iis.c  ****     while ( !(p[0] == 'd' && p[1] == 'a' && p[2] == 't' && p[3] == 'a') ) // busca el chunck data
+ 2639              		.loc 1 134 0 discriminator 1
+ 2640 063c 10301BE5 		ldr	r3, [fp, #-16]
+ 2641 0640 023083E2 		add	r3, r3, #2
+ 2642 0644 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2643 0648 740053E3 		cmp	r3, #116
+ 2644 064c EEFFFF1A 		bne	.L46
+ 2645 0650 10301BE5 		ldr	r3, [fp, #-16]
+ 2646 0654 033083E2 		add	r3, r3, #3
+ 2647 0658 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2648 065c 610053E3 		cmp	r3, #97
+ 2649 0660 E9FFFF1A 		bne	.L46
+ 136:../src/iis.c  ****     p += 4;
+ 2650              		.loc 1 136 0 is_stmt 1
+ 2651 0664 10301BE5 		ldr	r3, [fp, #-16]
+ 2652 0668 043083E2 		add	r3, r3, #4
+ 2653 066c 10300BE5 		str	r3, [fp, #-16]
+ 137:../src/iis.c  **** 
+ 138:../src/iis.c  ****     size = p[0] + (p[1] << 8) + (p[2] << 16) + (p[3] << 24); // los datos de cabecera están en litt
+ 2654              		.loc 1 138 0
+ 2655 0670 10301BE5 		ldr	r3, [fp, #-16]
+ 2656 0674 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2657 0678 0320A0E1 		mov	r2, r3
+ 2658 067c 10301BE5 		ldr	r3, [fp, #-16]
+ 2659 0680 013083E2 		add	r3, r3, #1
+ 2660 0684 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2661 0688 0334A0E1 		mov	r3, r3, asl #8
+ 2662 068c 032082E0 		add	r2, r2, r3
+ 2663 0690 10301BE5 		ldr	r3, [fp, #-16]
+ 2664 0694 023083E2 		add	r3, r3, #2
+ 2665 0698 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2666 069c 0338A0E1 		mov	r3, r3, asl #16
+ 2667 06a0 032082E0 		add	r2, r2, r3
+ 2668 06a4 10301BE5 		ldr	r3, [fp, #-16]
+ 2669 06a8 033083E2 		add	r3, r3, #3
+ 2670 06ac 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2671 06b0 033CA0E1 		mov	r3, r3, asl #24
+ 2672 06b4 033082E0 		add	r3, r2, r3
+ 2673 06b8 14300BE5 		str	r3, [fp, #-20]
+ 139:../src/iis.c  ****     p += 4;
+ 2674              		.loc 1 139 0
+ 2675 06bc 10301BE5 		ldr	r3, [fp, #-16]
+ 2676 06c0 043083E2 		add	r3, r3, #4
+ 2677 06c4 10300BE5 		str	r3, [fp, #-16]
+ 140:../src/iis.c  **** 
+ 141:../src/iis.c  ****     iis_play( (int16 *)p, size, loop );
+ 2678              		.loc 1 141 0
+ 2679 06c8 10201BE5 		ldr	r2, [fp, #-16]
+ 2680 06cc 19305BE5 		ldrb	r3, [fp, #-25]	@ zero_extendqisi2
+ 2681 06d0 0200A0E1 		mov	r0, r2
+ 2682 06d4 14101BE5 		ldr	r1, [fp, #-20]
+ 2683 06d8 0320A0E1 		mov	r2, r3
+ 2684 06dc FEFFFFEB 		bl	iis_play
+ 142:../src/iis.c  **** 
+ 143:../src/iis.c  **** }
+ 2685              		.loc 1 143 0
+ 2686 06e0 0CD04BE2 		sub	sp, fp, #12
+ 2687 06e4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2688 06e8 1EFF2FE1 		bx	lr
+ 2689              		.cfi_endproc
+ 2690              	.LFE9:
+ 2692              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 iis.c
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1917   .bss:00000000 iomode
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1918   .bss:00000000 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1920   .text:00000000 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1923   .text:00000000 iis_init
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2003   .text:000000bc $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2014   .text:000000d4 isr_bdma0
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2012   .text:000000d4 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2052   .text:00000114 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2057   .text:0000011c $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2060   .text:0000011c iis_putSample
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2106   .text:00000178 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2111   .text:00000180 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2114   .text:00000180 iis_getSample
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2164   .text:000001ec $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2169   .text:000001f4 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2172   .text:000001f4 iis_play
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2331   .text:000003b8 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2341   .text:000003d4 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2344   .text:000003d4 iis_rec
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2471   .text:00000534 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2481   .text:00000550 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2484   .text:00000550 iis_pause
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2514   .text:0000057c $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2518   .text:00000580 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2521   .text:00000580 iis_continue
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2551   .text:000005ac $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2555   .text:000005b0 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2558   .text:000005b0 iis_status
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2589   .text:000005e0 $d
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2593   .text:000005e4 $a
+C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2596   .text:000005e4 iis_playWawFile
+                     .debug_frame:00000010 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+bdma0_init
+bdma0_open

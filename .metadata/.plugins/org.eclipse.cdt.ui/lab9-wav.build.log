@@ -1,0 +1,11 @@
+19:11:10 **** Incremental Build of configuration Debug for project lab9-wav ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab9-wav.elf
+   text	   data	    bss	    dec	    hex	filename
+  19944	      0	     14	  19958	   4df6	lab9-wav.elf
+'Finished building: lab9-wav.siz'
+' '
+
+19:11:11 Build Finished (took 238ms)
+

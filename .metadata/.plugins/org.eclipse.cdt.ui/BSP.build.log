@@ -1,4 +1,4 @@
-11:47:32 **** Build of configuration Debug for project BSP ****
+18:42:12 **** Build of configuration Debug for project BSP ****
 cs-make all 
 'Building file: ../src/adc.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
@@ -17,6 +17,10 @@ arm-none-eabi-gcc -I..\..\BSP\include -O0 -Wall -Wa,-adhlns="src/at24C04.o.lst" 
 'Building file: ../src/dma.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
 arm-none-eabi-gcc -I..\..\BSP\include -O0 -Wall -Wa,-adhlns="src/dma.o.lst" -c -fmessage-length=0 -mapcs-frame -fno-builtin -MMD -MP -MF"src/dma.d" -MT"src/dma.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "src/dma.o" "../src/dma.c"
+../src/dma.c: In function 'bdma0_open':
+../src/dma.c:17:16: warning: assignment makes integer from pointer without a cast
+../src/dma.c: In function 'bdma0_close':
+../src/dma.c:25:16: warning: assignment makes integer from pointer without a cast
 'Finished building: ../src/dma.c'
 ' '
 'Building file: ../src/font8x16.c'
@@ -135,5 +139,5 @@ arm-none-eabi-ar: creating libBSP.a
 'Finished building target: libBSP.a'
 ' '
 
-11:47:34 Build Finished (took 1s.961ms)
+18:42:16 Build Finished (took 4s.49ms)
 

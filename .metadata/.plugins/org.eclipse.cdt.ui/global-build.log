@@ -1,35 +1,59 @@
-11:47:39 **** Build of configuration Debug for project lab10 ****
+18:54:35 **** Build of configuration Debug for project lab9-efectos ****
 cs-make all 
-'Building file: ../lab10.c'
+'Building file: ../lab9-efectos.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
-arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab10.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab10.d" -MT"lab10.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab10.o" "../lab10.c"
-../lab10.c:27:6: warning: return type of 'main' is not 'int'
-'Finished building: ../lab10.c'
+arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab9-efectos.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab9-efectos.d" -MT"lab9-efectos.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab9-efectos.o" "../lab9-efectos.c"
+../lab9-efectos.c:77:6: warning: return type of 'main' is not 'int'
+'Finished building: ../lab9-efectos.c'
 ' '
-'Building target: lab10.elf'
+'Building target: lab9-efectos.elf'
 'Invoking: ARM Sourcery Windows GCC C Linker'
-arm-none-eabi-gcc -T"../lab10.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab10.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab10.elf"  ./lab10.o   -lBSP
-'Finished building target: lab10.elf'
+arm-none-eabi-gcc -T"../lab9-efectos.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab9-efectos.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab9-efectos.elf"  ./lab9-efectos.o   -lBSP
+'Finished building target: lab9-efectos.elf'
 ' '
 'Invoking: ARM Sourcery Windows GNU Create Flash Image'
-arm-none-eabi-objcopy -O binary lab10.elf  "lab10.hex"
-'Finished building: lab10.hex'
+arm-none-eabi-objcopy -O binary lab9-efectos.elf  "lab9-efectos.hex"
+'Finished building: lab9-efectos.hex'
 ' '
 'Invoking: ARM Sourcery Windows GNU Create Listing'
-arm-none-eabi-objdump -h -S lab10.elf > "lab10.lst"
-'Finished building: lab10.lst'
+arm-none-eabi-objdump -h -S lab9-efectos.elf > "lab9-efectos.lst"
+'Finished building: lab9-efectos.lst'
 ' '
 'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab10.elf
+arm-none-eabi-size  --format=berkeley lab9-efectos.elf
    text	   data	    bss	    dec	    hex	filename
-  26600	      0	  38424	  65024	   fe00	lab10.elf
-'Finished building: lab10.siz'
+  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+'Finished building: lab9-efectos.siz'
 ' '
-11:47:43 **** Incremental Build of configuration Debug for project lab10 ****
+18:54:42 **** Incremental Build of configuration Debug for project lab9-efectos ****
 cs-make all 
 'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab10.elf
+arm-none-eabi-size  --format=berkeley lab9-efectos.elf
    text	   data	    bss	    dec	    hex	filename
-  26600	      0	  38424	  65024	   fe00	lab10.elf
-'Finished building: lab10.siz'
+  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+'Finished building: lab9-efectos.siz'
+' '
+19:00:29 **** Incremental Build of configuration Debug for project lab9-efectos ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab9-efectos.elf
+   text	   data	    bss	    dec	    hex	filename
+  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+'Finished building: lab9-efectos.siz'
+' '
+19:09:46 **** Incremental Build of configuration Debug for project lab9-efectos ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab9-efectos.elf
+   text	   data	    bss	    dec	    hex	filename
+  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+'Finished building: lab9-efectos.siz'
+' '
+19:11:10 **** Incremental Build of configuration Debug for project lab9-wav ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab9-wav.elf
+   text	   data	    bss	    dec	    hex	filename
+  19944	      0	     14	  19958	   4df6	lab9-wav.elf
+'Finished building: lab9-wav.siz'
 ' '
