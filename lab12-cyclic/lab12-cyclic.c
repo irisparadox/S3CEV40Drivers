@@ -41,6 +41,7 @@ typedef void (*pf_t)(void);
 uint8 scancode;
 boolean flagTask5;
 boolean flagTask6;
+boolean flagTask8;
 
 volatile boolean flagPb;
 volatile boolean flagTimer;
@@ -54,6 +55,8 @@ void Task4( void );
 void Task5( void );
 void Task6( void );
 void Task7( void );
+void Task8( void );
+void Task9( void );
 
 /* Declaración de trabajos */
 
@@ -108,12 +111,16 @@ void main( void )
     rtc_init();
     pbs_init();
     keypad_init();  
+    lcd_init();
+	lcd_clear();
+	lcd_on();
   
     uart0_puts( "\n\n Ejecutando una aplicación cyclic executive\n" );
     uart0_puts(     " ------------------------------------------\n\n" ) ;
 
     flagTask5 = FALSE;    /* Inicializa flags */
     flagTask6 = FALSE;
+    flagTask8 = FALSE;
     flagPb    = FALSE;
     flagTimer = FALSE;
 
@@ -124,6 +131,8 @@ void main( void )
     Task5();
     Task6();
     Task7();
+    Task8();
+    Task9();
 
     pbs_open( isr_pb );                                          /* Instala isr_pbs como RTI por presión de pulsadores  */
     timer0_open_ms( isr_tick, MINOR_PERIOD, TIMER_INTERVAL );    /* Instala isr_tick como RTI del timer0  */
@@ -154,6 +163,7 @@ void JobB( void )
     Task5();
     Task6();
     Task7();
+    Task8();
 }
 
 void JobC( void )
@@ -163,6 +173,7 @@ void JobC( void )
     Task6();
     Task1();
     Task7();
+    Task8();
 }
 
 void JobD( void )
@@ -172,7 +183,9 @@ void JobD( void )
     Task6();
     Task1();
     Task3();
+    Task9();
     Task7();
+    Task8();
 }
 
 void JobE( void )
@@ -182,8 +195,10 @@ void JobE( void )
     Task6();
     Task1();
     Task3();
+    Task9();
     Task4();
     Task7();
+    Task8();
 }
 
 /*******************************************************************/
@@ -229,6 +244,7 @@ void Task2( void )  /* Cada 50 ms (5 ticks) muestrea el keypad y envía el scanco
             {
                 flagTask5 = TRUE;
                 flagTask6 = TRUE;
+                flagTask8 = TRUE;
             }
             state = wait_keyup;
             break;

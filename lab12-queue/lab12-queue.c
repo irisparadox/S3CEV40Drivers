@@ -26,6 +26,7 @@
 #include <keypad.h>
 #include <timers.h>
 #include <rtc.h>
+#include <lcd.h>
 
 #define TICKS_PER_SEC   (100)
 
@@ -63,6 +64,8 @@ void Task4( void );
 void Task5( void );
 void Task6( void );
 void Task7( void );
+void Task8( void );
+void Task9( void );
 
 /* Declaración de RTI */
 
@@ -83,6 +86,9 @@ void main( void )
     rtc_init();
     pbs_init();
     keypad_init(); 
+    lcd_init();
+	lcd_clear();
+	lcd_on();
       
     uart0_puts( "\n\n Ejecutando una aplicación como cola de funciones\n" );
     uart0_puts( " ------------------------------------------------\n\n" ) ;
@@ -96,6 +102,8 @@ void main( void )
     Task5();
     Task6();
     Task7();
+    Task8();
+    Task9();
 
     pbs_open( isr_pb );                           /* Instala isr_pb como RTI por presión de pulsadores  */
     timer0_open_tick( isr_tick, TICKS_PER_SEC );  /* Instala isr_tick como RTI del timer0  */
@@ -155,6 +163,7 @@ void Task2( void )  /* Cada 50 ms (5 ticks) muestrea el keypad y envía el scanco
             {
                 fifo_enqueue( Task5 );
                 fifo_enqueue( Task6 );
+                fifo_enqueue( Task8 );
             }
             state = wait_keyup;
             break;
@@ -255,6 +264,33 @@ void Task7( void )  /* Cada vez que se presione un pulsador lo avisa por la UART
     }
 }
 
+void Task8( void ) {
+	static boolean init = TRUE;
+	static char* key_str = "Tecla pulsada: ";
+
+	if( init ){
+		init = FALSE;
+		uart0_puts( " Task 8: iniciada.\n" );
+	} else {
+		lcd_puts(LCD_WIDTH/2 - 64, LCD_HEIGHT/2 - 64, BLACK, key_str);
+		lcd_puthex(LCD_WIDTH/2 - 64, LCD_HEIGHT/2, BLACK, scancode);
+	}
+}
+
+void Task9( void ) {
+	static boolean init = TRUE;
+	static uint32 sec;
+
+	if(init) {
+		init = FALSE;
+		uart0_puts( " Task 9: iniciada.\n" );
+		sec = 0;
+	} else {
+		lcd_puts(10, 10, BLACK, "Segundos: ");
+		lcd_putint(90, 10, BLACK, sec++);
+	}
+}
+
 /*******************************************************************/
 
 void isr_pb( void )
@@ -285,7 +321,8 @@ void isr_tick( void )
     if( !(--cont100ticks) )
     {
         cont100ticks = 100;
-        fifo_enqueue( Task3 );        
+        fifo_enqueue( Task3 );
+        fifo_enqueue( Task9 );
     }    
     if( !(--cont1000ticks) )
     {

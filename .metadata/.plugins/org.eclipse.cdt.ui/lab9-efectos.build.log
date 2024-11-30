@@ -1,11 +1,11 @@
-19:09:46 **** Incremental Build of configuration Debug for project lab9-efectos ****
+11:25:15 **** Incremental Build of configuration Debug for project lab9-efectos ****
 cs-make all 
 'Invoking: ARM Sourcery Windows GNU Print Size'
 arm-none-eabi-size  --format=berkeley lab9-efectos.elf
    text	   data	    bss	    dec	    hex	filename
-  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+  21920	    216	 768022	 790158	  c0e8e	lab9-efectos.elf
 'Finished building: lab9-efectos.siz'
 ' '
 
-19:09:47 Build Finished (took 232ms)
+11:25:16 Build Finished (took 150ms)
 

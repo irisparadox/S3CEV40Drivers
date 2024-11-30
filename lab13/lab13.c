@@ -28,12 +28,14 @@
 #include <keypad.h>
 #include <timers.h>
 #include <rtc.h>
+#include <lcd.h>
 
 /* Declaración de recursos */
 
 uint8 scancode;
 boolean flagTask5;
 boolean flagTask6;
+boolean flagTask8;
 
 volatile boolean flagPb;
 
@@ -46,6 +48,8 @@ void Task4( void );
 void Task5( void );
 void Task6( void );
 void Task7( void );
+void Task8( void );
+void Task9( void );
 
 /* Declaración de RTI */
 
@@ -63,6 +67,9 @@ void main( void )
     rtc_init();
     pbs_init();
     keypad_init();
+    lcd_init();
+    lcd_clear();
+    lcd_on();
 
     uart0_puts( "\n\n Ejecutando kernel de planificación no expropiativa\n" );
     uart0_puts( " --------------------------------------------------\n\n" ) ;
@@ -77,8 +84,10 @@ void main( void )
     create_task( Task7, 5 );          /* ... el kernel asigna la prioridad según orden de creación: Task2 > Task5 > Task6 > ... */
     create_task( Task5, 10 );         /* ... las tareas más frecuentes tienen mayor prioridad (criterio Rate-Monotonic-Scheduling) */
     create_task( Task6, 10 );
+    create_task( Task8, 10 );
     create_task( Task1, 50 );
     create_task( Task3, 100 );
+    create_task( Task9, 100 );
     create_task( Task4, 1000 );
 
     timer0_open_tick( scheduler, TICKS_PER_SEC );  /* Instala scheduler como RTI del timer0  */
@@ -135,6 +144,7 @@ void Task2( void )  /* Cada 50 ms (5 ticks) muestrea el keypad y envía el scanco
             {
                 flagTask5 = TRUE;
                 flagTask6 = TRUE;
+                flagTask8 = TRUE;
             }
             state = wait_keyup;
             break;
@@ -236,6 +246,33 @@ void Task7( void )  /* Cada vez que se presione un pulsador lo avisa por la UART
         flagPb = FALSE;
         uart0_puts( "  (Task 7) Se ha pulsado algún pushbutton...\n" );
     }
+}
+
+void Task8( void ) {
+	static boolean init = TRUE;
+	static char* key_str = "Tecla pulsada: ";
+
+	if( init ){
+		init = FALSE;
+		uart0_puts( " Task 8: iniciada.\n" );
+	} else {
+		lcd_puts(LCD_WIDTH/2 - 64, LCD_HEIGHT/2 - 64, BLACK, key_str);
+		lcd_puthex(LCD_WIDTH/2 - 64, LCD_HEIGHT/2, BLACK, scancode);
+	}
+}
+
+void Task9( void ) {
+	static boolean init = TRUE;
+	static uint32 sec;
+
+	if(init) {
+		init = FALSE;
+		uart0_puts( " Task 9: iniciada.\n" );
+		sec = 0;
+	} else {
+		lcd_puts(10, 10, BLACK, "Segundos: ");
+		lcd_putint(90, 10, BLACK, sec++);
+	}
 }
 
 /*******************************************************************/

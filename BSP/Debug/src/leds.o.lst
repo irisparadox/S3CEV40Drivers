@@ -251,21 +251,21 @@
  1908              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 leds.c
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1688   .text:00000000 $a
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1691   .text:00000000 leds_init
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1777   .text:00000088 led_off
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1727   .text:0000003c $d
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1731   .text:00000040 $a
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1734   .text:00000040 led_on
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1770   .text:00000084 $d
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1774   .text:00000088 $a
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1812   .text:000000c8 $d
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1816   .text:000000cc $a
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1819   .text:000000cc led_toggle
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1854   .text:0000010c $d
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1858   .text:00000110 $a
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1861   .text:00000110 led_status
-C:\Users\rusaa\AppData\Local\Temp\ccWrXvBu.s:1904   .text:00000160 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1688   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1691   .text:00000000 leds_init
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1777   .text:00000088 led_off
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1727   .text:0000003c $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1731   .text:00000040 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1734   .text:00000040 led_on
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1770   .text:00000084 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1774   .text:00000088 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1812   .text:000000c8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1816   .text:000000cc $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1819   .text:000000cc led_toggle
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1854   .text:0000010c $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1858   .text:00000110 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1861   .text:00000110 led_status
+C:\Users\USUARI~2\AppData\Local\Temp\cc9NaWvW.s:1904   .text:00000160 $d
                      .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS

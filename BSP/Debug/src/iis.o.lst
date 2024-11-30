@@ -917,37 +917,37 @@
  2692              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 iis.c
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1917   .bss:00000000 iomode
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1918   .bss:00000000 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1920   .text:00000000 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:1923   .text:00000000 iis_init
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2003   .text:000000bc $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2014   .text:000000d4 isr_bdma0
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2012   .text:000000d4 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2052   .text:00000114 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2057   .text:0000011c $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2060   .text:0000011c iis_putSample
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2106   .text:00000178 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2111   .text:00000180 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2114   .text:00000180 iis_getSample
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2164   .text:000001ec $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2169   .text:000001f4 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2172   .text:000001f4 iis_play
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2331   .text:000003b8 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2341   .text:000003d4 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2344   .text:000003d4 iis_rec
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2471   .text:00000534 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2481   .text:00000550 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2484   .text:00000550 iis_pause
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2514   .text:0000057c $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2518   .text:00000580 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2521   .text:00000580 iis_continue
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2551   .text:000005ac $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2555   .text:000005b0 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2558   .text:000005b0 iis_status
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2589   .text:000005e0 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2593   .text:000005e4 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJ7cRzK.s:2596   .text:000005e4 iis_playWawFile
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:1917   .bss:00000000 iomode
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:1918   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:1920   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:1923   .text:00000000 iis_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2003   .text:000000bc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2014   .text:000000d4 isr_bdma0
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2012   .text:000000d4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2052   .text:00000114 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2057   .text:0000011c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2060   .text:0000011c iis_putSample
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2106   .text:00000178 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2111   .text:00000180 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2114   .text:00000180 iis_getSample
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2164   .text:000001ec $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2169   .text:000001f4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2172   .text:000001f4 iis_play
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2331   .text:000003b8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2341   .text:000003d4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2344   .text:000003d4 iis_rec
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2471   .text:00000534 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2481   .text:00000550 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2484   .text:00000550 iis_pause
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2514   .text:0000057c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2518   .text:00000580 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2521   .text:00000580 iis_continue
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2551   .text:000005ac $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2555   .text:000005b0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2558   .text:000005b0 iis_status
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2589   .text:000005e0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2593   .text:000005e4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccPL1Pqs.s:2596   .text:000005e4 iis_playWawFile
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

@@ -1,4 +1,4 @@
-18:54:35 **** Build of configuration Debug for project lab9-efectos ****
+11:25:06 **** Incremental Build of configuration Debug for project lab9-efectos ****
 cs-make all 
 'Building file: ../lab9-efectos.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
@@ -22,38 +22,14 @@ arm-none-eabi-objdump -h -S lab9-efectos.elf > "lab9-efectos.lst"
 'Invoking: ARM Sourcery Windows GNU Print Size'
 arm-none-eabi-size  --format=berkeley lab9-efectos.elf
    text	   data	    bss	    dec	    hex	filename
-  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+  21920	    216	 768022	 790158	  c0e8e	lab9-efectos.elf
 'Finished building: lab9-efectos.siz'
 ' '
-18:54:42 **** Incremental Build of configuration Debug for project lab9-efectos ****
+11:25:15 **** Incremental Build of configuration Debug for project lab9-efectos ****
 cs-make all 
 'Invoking: ARM Sourcery Windows GNU Print Size'
 arm-none-eabi-size  --format=berkeley lab9-efectos.elf
    text	   data	    bss	    dec	    hex	filename
-  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
+  21920	    216	 768022	 790158	  c0e8e	lab9-efectos.elf
 'Finished building: lab9-efectos.siz'
-' '
-19:00:29 **** Incremental Build of configuration Debug for project lab9-efectos ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab9-efectos.elf
-   text	   data	    bss	    dec	    hex	filename
-  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
-'Finished building: lab9-efectos.siz'
-' '
-19:09:46 **** Incremental Build of configuration Debug for project lab9-efectos ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab9-efectos.elf
-   text	   data	    bss	    dec	    hex	filename
-  21912	    216	 768022	 790150	  c0e86	lab9-efectos.elf
-'Finished building: lab9-efectos.siz'
-' '
-19:11:10 **** Incremental Build of configuration Debug for project lab9-wav ****
-cs-make all 
-'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab9-wav.elf
-   text	   data	    bss	    dec	    hex	filename
-  19944	      0	     14	  19958	   4df6	lab9-wav.elf
-'Finished building: lab9-wav.siz'
 ' '

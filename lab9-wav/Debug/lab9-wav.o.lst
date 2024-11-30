@@ -1160,12 +1160,12 @@
  2686              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 lab9-wav.c
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:1949   .rodata:00000000 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:2032   .text:00000000 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:2035   .text:00000000 main
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:2436   .text:000003f4 $d
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:2454   .text:00000434 $a
-C:\Users\rusaa\AppData\Local\Temp\ccJg9hHH.s:2641   .text:00000608 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:1949   .rodata:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:2032   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:2035   .text:00000000 main
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:2436   .text:000003f4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:2454   .text:00000434 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccfIs45L.s:2641   .text:00000608 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
