@@ -413,29 +413,29 @@
  2295              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 adc.c
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1941   .bss:00000000 state
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1942   .bss:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1944   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1947   .text:00000000 adc_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2028   .text:00000070 adc_off
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1977   .text:00000028 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1981   .text:0000002c $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:1984   .text:0000002c adc_on
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2021   .text:0000006c $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2025   .text:00000070 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2062   .text:000000a8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2066   .text:000000ac $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2069   .text:000000ac adc_status
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2097   .text:000000d0 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2101   .text:000000d4 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2104   .text:000000d4 adc_getSample
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2198   .text:000001c4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2203   .text:000001cc $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2206   .text:000001cc adc_open
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2246   .text:00000218 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2252   .text:00000224 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2255   .text:00000224 adc_close
-C:\Users\USUARI~2\AppData\Local\Temp\ccuZC94R.s:2289   .text:0000025c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1941   .bss:00000000 state
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1942   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1944   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1947   .text:00000000 adc_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2028   .text:00000070 adc_off
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1977   .text:00000028 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1981   .text:0000002c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:1984   .text:0000002c adc_on
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2021   .text:0000006c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2025   .text:00000070 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2062   .text:000000a8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2066   .text:000000ac $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2069   .text:000000ac adc_status
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2097   .text:000000d0 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2101   .text:000000d4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2104   .text:000000d4 adc_getSample
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2198   .text:000001c4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2203   .text:000001cc $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2206   .text:000001cc adc_open
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2246   .text:00000218 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2252   .text:00000224 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2255   .text:00000224 adc_close
+C:\Users\USUARI~2\AppData\Local\Temp\ccBUDAox.s:2289   .text:0000025c $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

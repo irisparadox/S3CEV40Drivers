@@ -424,26 +424,26 @@
  1452              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 uda1341ts.c
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1097   .bss:00000000 volume
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1098   .bss:00000000 $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1099   .bss:00000001 state
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1102   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1105   .text:00000000 uda1341ts_init
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1369   .text:0000020c uda1341ts_setvol
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1213   .text:000000d8 uda1341ts_on
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1167   .text:0000007c uda1341ts_mute
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1261   .text:00000144 $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1265   .text:00000148 $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1268   .text:00000148 uda1341ts_off
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1317   .text:000001b8 $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1321   .text:000001bc $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1324   .text:000001bc uda1341ts_status
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1362   .text:00000208 $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1366   .text:0000020c $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1413   .text:00000268 $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1417   .text:0000026c $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1420   .text:0000026c uda1341ts_getvol
-C:\Users\USUARI~2\AppData\Local\Temp\cc4mLyWO.s:1448   .text:00000290 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1097   .bss:00000000 volume
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1098   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1099   .bss:00000001 state
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1102   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1105   .text:00000000 uda1341ts_init
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1369   .text:0000020c uda1341ts_setvol
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1213   .text:000000d8 uda1341ts_on
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1167   .text:0000007c uda1341ts_mute
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1261   .text:00000144 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1265   .text:00000148 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1268   .text:00000148 uda1341ts_off
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1317   .text:000001b8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1321   .text:000001bc $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1324   .text:000001bc uda1341ts_status
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1362   .text:00000208 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1366   .text:0000020c $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1413   .text:00000268 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1417   .text:0000026c $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1420   .text:0000026c uda1341ts_getvol
+C:\Users\USUARI~2\AppData\Local\Temp\cc18XbKP.s:1448   .text:00000290 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

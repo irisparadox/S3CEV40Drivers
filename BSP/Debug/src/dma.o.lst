@@ -177,15 +177,15 @@
  2046              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 dma.c
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1903   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1906   .text:00000000 bdma0_init
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1946   .text:00000048 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1952   .text:00000054 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1955   .text:00000054 bdma0_open
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:1996   .text:000000a4 $d
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:2002   .text:000000b0 $a
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:2005   .text:000000b0 bdma0_close
-C:\Users\USUARI~2\AppData\Local\Temp\ccuVDyaf.s:2040   .text:000000ec $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1903   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1906   .text:00000000 bdma0_init
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1946   .text:00000048 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1952   .text:00000054 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1955   .text:00000054 bdma0_open
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:1996   .text:000000a4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:2002   .text:000000b0 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:2005   .text:000000b0 bdma0_close
+C:\Users\USUARI~2\AppData\Local\Temp\ccbjbYC8.s:2040   .text:000000ec $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

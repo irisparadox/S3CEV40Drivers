@@ -190,6 +190,7 @@ void Task2( void )  /* Cada 50 ms (5 ticks) muestrea el keypad y envía el scanco
             {
                 flagTask5 = TRUE;
                 flagTask6 = TRUE;
+                flagTask8 = TRUE;
             }
             state = wait_keyup;
             break;

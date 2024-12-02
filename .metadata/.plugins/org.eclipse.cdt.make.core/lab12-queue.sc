@@ -2,6 +2,9 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.314556193;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.314556193.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.973898875;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1807408131">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include"/>
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include-fixed"/>
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include-fixed"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include"/>
@@ -318,6 +321,9 @@
 </instance>
 <instance id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.314556193;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.314556193.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.857772931;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.535976564">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include"/>
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include-fixed"/>
+<includePath path="c:\software\electronica\arm\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/include-fixed"/>
 <includePath path="c:\eclipsearm\sourcery-g++-lite-arm-2011.03\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include"/>

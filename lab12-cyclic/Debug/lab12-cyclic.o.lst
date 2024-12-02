@@ -1,0 +1,1965 @@
+   1              		.cpu arm7tdmi
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lab12-cyclic.c"
+  21              	.Ltext0:
+  22              		.file 1 "../lab12-cyclic.c"
+ 2148              		.align	2
+ 2151              	pjobs:
+ 2152 0000 00000000 		.word	JobA
+ 2153 0004 00000000 		.word	JobB
+ 2154 0008 00000000 		.word	JobA
+ 2155 000c 00000000 		.word	JobB
+ 2156 0010 00000000 		.word	JobA
+ 2157 0014 00000000 		.word	JobB
+ 2158 0018 00000000 		.word	JobA
+ 2159 001c 00000000 		.word	JobB
+ 2160 0020 00000000 		.word	JobA
+ 2161 0024 00000000 		.word	JobC
+ 2162 0028 00000000 		.word	JobA
+ 2163 002c 00000000 		.word	JobB
+ 2164 0030 00000000 		.word	JobA
+ 2165 0034 00000000 		.word	JobB
+ 2166 0038 00000000 		.word	JobA
+ 2167 003c 00000000 		.word	JobB
+ 2168 0040 00000000 		.word	JobA
+ 2169 0044 00000000 		.word	JobB
+ 2170 0048 00000000 		.word	JobA
+ 2171 004c 00000000 		.word	JobD
+ 2172 0050 00000000 		.word	JobA
+ 2173 0054 00000000 		.word	JobB
+ 2174 0058 00000000 		.word	JobA
+ 2175 005c 00000000 		.word	JobB
+ 2176 0060 00000000 		.word	JobA
+ 2177 0064 00000000 		.word	JobB
+ 2178 0068 00000000 		.word	JobA
+ 2179 006c 00000000 		.word	JobB
+ 2180 0070 00000000 		.word	JobA
+ 2181 0074 00000000 		.word	JobC
+ 2182 0078 00000000 		.word	JobA
+ 2183 007c 00000000 		.word	JobB
+ 2184 0080 00000000 		.word	JobA
+ 2185 0084 00000000 		.word	JobB
+ 2186 0088 00000000 		.word	JobA
+ 2187 008c 00000000 		.word	JobB
+ 2188 0090 00000000 		.word	JobA
+ 2189 0094 00000000 		.word	JobB
+ 2190 0098 00000000 		.word	JobA
+ 2191 009c 00000000 		.word	JobD
+ 2192 00a0 00000000 		.word	JobA
+ 2193 00a4 00000000 		.word	JobB
+ 2194 00a8 00000000 		.word	JobA
+ 2195 00ac 00000000 		.word	JobB
+ 2196 00b0 00000000 		.word	JobA
+ 2197 00b4 00000000 		.word	JobB
+ 2198 00b8 00000000 		.word	JobA
+ 2199 00bc 00000000 		.word	JobB
+ 2200 00c0 00000000 		.word	JobA
+ 2201 00c4 00000000 		.word	JobC
+ 2202 00c8 00000000 		.word	JobA
+ 2203 00cc 00000000 		.word	JobB
+ 2204 00d0 00000000 		.word	JobA
+ 2205 00d4 00000000 		.word	JobB
+ 2206 00d8 00000000 		.word	JobA
+ 2207 00dc 00000000 		.word	JobB
+ 2208 00e0 00000000 		.word	JobA
+ 2209 00e4 00000000 		.word	JobB
+ 2210 00e8 00000000 		.word	JobA
+ 2211 00ec 00000000 		.word	JobD
+ 2212 00f0 00000000 		.word	JobA
+ 2213 00f4 00000000 		.word	JobB
+ 2214 00f8 00000000 		.word	JobA
+ 2215 00fc 00000000 		.word	JobB
+ 2216 0100 00000000 		.word	JobA
+ 2217 0104 00000000 		.word	JobB
+ 2218 0108 00000000 		.word	JobA
+ 2219 010c 00000000 		.word	JobB
+ 2220 0110 00000000 		.word	JobA
+ 2221 0114 00000000 		.word	JobC
+ 2222 0118 00000000 		.word	JobA
+ 2223 011c 00000000 		.word	JobB
+ 2224 0120 00000000 		.word	JobA
+ 2225 0124 00000000 		.word	JobB
+ 2226 0128 00000000 		.word	JobA
+ 2227 012c 00000000 		.word	JobB
+ 2228 0130 00000000 		.word	JobA
+ 2229 0134 00000000 		.word	JobB
+ 2230 0138 00000000 		.word	JobA
+ 2231 013c 00000000 		.word	JobD
+ 2232 0140 00000000 		.word	JobA
+ 2233 0144 00000000 		.word	JobB
+ 2234 0148 00000000 		.word	JobA
+ 2235 014c 00000000 		.word	JobB
+ 2236 0150 00000000 		.word	JobA
+ 2237 0154 00000000 		.word	JobB
+ 2238 0158 00000000 		.word	JobA
+ 2239 015c 00000000 		.word	JobB
+ 2240 0160 00000000 		.word	JobA
+ 2241 0164 00000000 		.word	JobC
+ 2242 0168 00000000 		.word	JobA
+ 2243 016c 00000000 		.word	JobB
+ 2244 0170 00000000 		.word	JobA
+ 2245 0174 00000000 		.word	JobB
+ 2246 0178 00000000 		.word	JobA
+ 2247 017c 00000000 		.word	JobB
+ 2248 0180 00000000 		.word	JobA
+ 2249 0184 00000000 		.word	JobB
+ 2250 0188 00000000 		.word	JobA
+ 2251 018c 00000000 		.word	JobD
+ 2252 0190 00000000 		.word	JobA
+ 2253 0194 00000000 		.word	JobB
+ 2254 0198 00000000 		.word	JobA
+ 2255 019c 00000000 		.word	JobB
+ 2256 01a0 00000000 		.word	JobA
+ 2257 01a4 00000000 		.word	JobB
+ 2258 01a8 00000000 		.word	JobA
+ 2259 01ac 00000000 		.word	JobB
+ 2260 01b0 00000000 		.word	JobA
+ 2261 01b4 00000000 		.word	JobC
+ 2262 01b8 00000000 		.word	JobA
+ 2263 01bc 00000000 		.word	JobB
+ 2264 01c0 00000000 		.word	JobA
+ 2265 01c4 00000000 		.word	JobB
+ 2266 01c8 00000000 		.word	JobA
+ 2267 01cc 00000000 		.word	JobB
+ 2268 01d0 00000000 		.word	JobA
+ 2269 01d4 00000000 		.word	JobB
+ 2270 01d8 00000000 		.word	JobA
+ 2271 01dc 00000000 		.word	JobD
+ 2272 01e0 00000000 		.word	JobA
+ 2273 01e4 00000000 		.word	JobB
+ 2274 01e8 00000000 		.word	JobA
+ 2275 01ec 00000000 		.word	JobB
+ 2276 01f0 00000000 		.word	JobA
+ 2277 01f4 00000000 		.word	JobB
+ 2278 01f8 00000000 		.word	JobA
+ 2279 01fc 00000000 		.word	JobB
+ 2280 0200 00000000 		.word	JobA
+ 2281 0204 00000000 		.word	JobC
+ 2282 0208 00000000 		.word	JobA
+ 2283 020c 00000000 		.word	JobB
+ 2284 0210 00000000 		.word	JobA
+ 2285 0214 00000000 		.word	JobB
+ 2286 0218 00000000 		.word	JobA
+ 2287 021c 00000000 		.word	JobB
+ 2288 0220 00000000 		.word	JobA
+ 2289 0224 00000000 		.word	JobB
+ 2290 0228 00000000 		.word	JobA
+ 2291 022c 00000000 		.word	JobD
+ 2292 0230 00000000 		.word	JobA
+ 2293 0234 00000000 		.word	JobB
+ 2294 0238 00000000 		.word	JobA
+ 2295 023c 00000000 		.word	JobB
+ 2296 0240 00000000 		.word	JobA
+ 2297 0244 00000000 		.word	JobB
+ 2298 0248 00000000 		.word	JobA
+ 2299 024c 00000000 		.word	JobB
+ 2300 0250 00000000 		.word	JobA
+ 2301 0254 00000000 		.word	JobC
+ 2302 0258 00000000 		.word	JobA
+ 2303 025c 00000000 		.word	JobB
+ 2304 0260 00000000 		.word	JobA
+ 2305 0264 00000000 		.word	JobB
+ 2306 0268 00000000 		.word	JobA
+ 2307 026c 00000000 		.word	JobB
+ 2308 0270 00000000 		.word	JobA
+ 2309 0274 00000000 		.word	JobB
+ 2310 0278 00000000 		.word	JobA
+ 2311 027c 00000000 		.word	JobD
+ 2312 0280 00000000 		.word	JobA
+ 2313 0284 00000000 		.word	JobB
+ 2314 0288 00000000 		.word	JobA
+ 2315 028c 00000000 		.word	JobB
+ 2316 0290 00000000 		.word	JobA
+ 2317 0294 00000000 		.word	JobB
+ 2318 0298 00000000 		.word	JobA
+ 2319 029c 00000000 		.word	JobB
+ 2320 02a0 00000000 		.word	JobA
+ 2321 02a4 00000000 		.word	JobC
+ 2322 02a8 00000000 		.word	JobA
+ 2323 02ac 00000000 		.word	JobB
+ 2324 02b0 00000000 		.word	JobA
+ 2325 02b4 00000000 		.word	JobB
+ 2326 02b8 00000000 		.word	JobA
+ 2327 02bc 00000000 		.word	JobB
+ 2328 02c0 00000000 		.word	JobA
+ 2329 02c4 00000000 		.word	JobB
+ 2330 02c8 00000000 		.word	JobA
+ 2331 02cc 00000000 		.word	JobD
+ 2332 02d0 00000000 		.word	JobA
+ 2333 02d4 00000000 		.word	JobB
+ 2334 02d8 00000000 		.word	JobA
+ 2335 02dc 00000000 		.word	JobB
+ 2336 02e0 00000000 		.word	JobA
+ 2337 02e4 00000000 		.word	JobB
+ 2338 02e8 00000000 		.word	JobA
+ 2339 02ec 00000000 		.word	JobB
+ 2340 02f0 00000000 		.word	JobA
+ 2341 02f4 00000000 		.word	JobC
+ 2342 02f8 00000000 		.word	JobA
+ 2343 02fc 00000000 		.word	JobB
+ 2344 0300 00000000 		.word	JobA
+ 2345 0304 00000000 		.word	JobB
+ 2346 0308 00000000 		.word	JobA
+ 2347 030c 00000000 		.word	JobB
+ 2348 0310 00000000 		.word	JobA
+ 2349 0314 00000000 		.word	JobB
+ 2350 0318 00000000 		.word	JobA
+ 2351 031c 00000000 		.word	JobE
+ 2352              		.align	2
+ 2353              	.LC0:
+ 2354 0320 0A0A2045 		.ascii	"\012\012 Ejecutando una aplicaci\363n cyclic execut"
+ 2354      6A656375 
+ 2354      74616E64 
+ 2354      6F20756E 
+ 2354      61206170 
+ 2355 034a 6976650A 		.ascii	"ive\012\000"
+ 2355      00
+ 2356 034f 00       		.align	2
+ 2357              	.LC1:
+ 2358 0350 202D2D2D 		.ascii	" ------------------------------------------\012\012"
+ 2358      2D2D2D2D 
+ 2358      2D2D2D2D 
+ 2358      2D2D2D2D 
+ 2358      2D2D2D2D 
+ 2359 037d 00       		.ascii	"\000"
+ 2360              		.text
+ 2361              		.align	2
+ 2362              		.global	main
+ 2364              	main:
+ 2365              	.LFB0:
+   1:../lab12-cyclic.c **** /*-------------------------------------------------------------------
+   2:../lab12-cyclic.c **** **
+   3:../lab12-cyclic.c **** **  Fichero:
+   4:../lab12-cyclic.c **** **    lab12-cyclic.c  14/1/2021
+   5:../lab12-cyclic.c **** **
+   6:../lab12-cyclic.c **** **    (c) J.M. Mendias
+   7:../lab12-cyclic.c **** **    Programación de Sistemas y Dispositivos
+   8:../lab12-cyclic.c **** **    Facultad de Informática. Universidad Complutense de Madrid
+   9:../lab12-cyclic.c **** **
+  10:../lab12-cyclic.c **** **  Propósito:
+  11:../lab12-cyclic.c **** **    Ejemplo de una aplicación guiada por tiempo con arquitectura
+  12:../lab12-cyclic.c **** **    cyclic executive
+  13:../lab12-cyclic.c **** **
+  14:../lab12-cyclic.c **** **  Notas de diseño:
+  15:../lab12-cyclic.c **** **
+  16:../lab12-cyclic.c **** **-----------------------------------------------------------------*/
+  17:../lab12-cyclic.c **** 
+  18:../lab12-cyclic.c **** #include <s3c44b0x.h>
+  19:../lab12-cyclic.c **** #include <s3cev40.h>
+  20:../lab12-cyclic.c **** #include <common_types.h>
+  21:../lab12-cyclic.c **** #include <system.h>
+  22:../lab12-cyclic.c **** #include <leds.h>
+  23:../lab12-cyclic.c **** #include <segs.h>
+  24:../lab12-cyclic.c **** #include <uart.h>
+  25:../lab12-cyclic.c **** #include <pbs.h>
+  26:../lab12-cyclic.c **** #include <keypad.h>
+  27:../lab12-cyclic.c **** #include <timers.h>
+  28:../lab12-cyclic.c **** #include <rtc.h>
+  29:../lab12-cyclic.c **** #include <lcd.h>
+  30:../lab12-cyclic.c **** 
+  31:../lab12-cyclic.c **** #define TICKS_PER_SEC   (100)
+  32:../lab12-cyclic.c **** 
+  33:../lab12-cyclic.c **** #define MAYOR_PERIOD (10000)    /* mcm( 50 ms, 100 ms, 500 ms, 1000 ms, 10000 ms */
+  34:../lab12-cyclic.c **** #define MINOR_PERIOD (50)       /* 50 ms */
+  35:../lab12-cyclic.c **** 
+  36:../lab12-cyclic.c **** #define NUM_JOBS     (MAYOR_PERIOD/MINOR_PERIOD)
+  37:../lab12-cyclic.c **** 
+  38:../lab12-cyclic.c **** typedef void (*pf_t)(void);
+  39:../lab12-cyclic.c **** 
+  40:../lab12-cyclic.c **** /* Declaración de recursos */
+  41:../lab12-cyclic.c **** 
+  42:../lab12-cyclic.c **** uint8 scancode;
+  43:../lab12-cyclic.c **** boolean flagTask5;
+  44:../lab12-cyclic.c **** boolean flagTask6;
+  45:../lab12-cyclic.c **** boolean flagTask8;
+  46:../lab12-cyclic.c **** 
+  47:../lab12-cyclic.c **** volatile boolean flagPb;
+  48:../lab12-cyclic.c **** volatile boolean flagTimer;
+  49:../lab12-cyclic.c **** 
+  50:../lab12-cyclic.c **** /* Declaración de tareas */
+  51:../lab12-cyclic.c **** 
+  52:../lab12-cyclic.c **** void Task1( void );
+  53:../lab12-cyclic.c **** void Task2( void );
+  54:../lab12-cyclic.c **** void Task3( void );
+  55:../lab12-cyclic.c **** void Task4( void );
+  56:../lab12-cyclic.c **** void Task5( void );
+  57:../lab12-cyclic.c **** void Task6( void );
+  58:../lab12-cyclic.c **** void Task7( void );
+  59:../lab12-cyclic.c **** void Task8( void );
+  60:../lab12-cyclic.c **** void Task9( void );
+  61:../lab12-cyclic.c **** 
+  62:../lab12-cyclic.c **** /* Declaración de trabajos */
+  63:../lab12-cyclic.c **** 
+  64:../lab12-cyclic.c **** void JobA( void );
+  65:../lab12-cyclic.c **** void JobB( void );
+  66:../lab12-cyclic.c **** void JobC( void );
+  67:../lab12-cyclic.c **** void JobD( void );
+  68:../lab12-cyclic.c **** void JobE( void );
+  69:../lab12-cyclic.c **** 
+  70:../lab12-cyclic.c **** /* Planificación estática de trabajos */
+  71:../lab12-cyclic.c **** 
+  72:../lab12-cyclic.c **** const pf_t pjobs[NUM_JOBS] =
+  73:../lab12-cyclic.c **** {
+  74:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*   500 ms */
+  75:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  1000 ms */
+  76:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  1500 ms */
+  77:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  2000 ms */
+  78:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  2500 ms */
+  79:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  3000 ms */
+  80:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  3500 ms */
+  81:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  4000 ms */
+  82:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  4500 ms */
+  83:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  5000 ms */
+  84:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  5500 ms */
+  85:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  6000 ms */
+  86:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  6500 ms */
+  87:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  7000 ms */
+  88:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  7500 ms */
+  89:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  8000 ms */
+  90:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  8500 ms */
+  91:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobD,    /*  9000 ms */
+  92:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobC,    /*  9500 ms */
+  93:../lab12-cyclic.c ****     JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobB, JobA, JobE     /* 10000 ms */
+  94:../lab12-cyclic.c **** };
+  95:../lab12-cyclic.c **** 
+  96:../lab12-cyclic.c **** /* Declaración de RTI */
+  97:../lab12-cyclic.c **** 
+  98:../lab12-cyclic.c **** void isr_pb( void ) __attribute__ ((interrupt ("IRQ")));
+  99:../lab12-cyclic.c **** void isr_tick( void ) __attribute__ ((interrupt ("IRQ")));
+ 100:../lab12-cyclic.c **** 
+ 101:../lab12-cyclic.c **** /*******************************************************************/
+ 102:../lab12-cyclic.c **** 
+ 103:../lab12-cyclic.c **** void main( void )
+ 104:../lab12-cyclic.c **** {
+ 2366              		.loc 1 104 0
+ 2367              		.cfi_startproc
+ 2368              		@ Function supports interworking.
+ 2369              		@ args = 0, pretend = 0, frame = 8
+ 2370              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2371 0000 0DC0A0E1 		mov	ip, sp
+ 2372              	.LCFI0:
+ 2373              		.cfi_def_cfa_register 12
+ 2374 0004 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2375 0008 04B04CE2 		sub	fp, ip, #4
+ 2376              		.cfi_offset 14, -8
+ 2377              		.cfi_offset 13, -12
+ 2378              		.cfi_offset 11, -16
+ 2379              	.LCFI1:
+ 2380              		.cfi_def_cfa 11, 4
+ 2381 000c 08D04DE2 		sub	sp, sp, #8
+ 105:../lab12-cyclic.c ****     uint8 i;
+ 106:../lab12-cyclic.c ****     
+ 107:../lab12-cyclic.c ****     sys_init();      /* Inicializa el sistema */
+ 2382              		.loc 1 107 0
+ 2383 0010 FEFFFFEB 		bl	sys_init
+ 108:../lab12-cyclic.c ****     timers_init();
+ 2384              		.loc 1 108 0
+ 2385 0014 FEFFFFEB 		bl	timers_init
+ 109:../lab12-cyclic.c ****     uart0_init();
+ 2386              		.loc 1 109 0
+ 2387 0018 FEFFFFEB 		bl	uart0_init
+ 110:../lab12-cyclic.c ****     leds_init();
+ 2388              		.loc 1 110 0
+ 2389 001c FEFFFFEB 		bl	leds_init
+ 111:../lab12-cyclic.c ****     segs_init();
+ 2390              		.loc 1 111 0
+ 2391 0020 FEFFFFEB 		bl	segs_init
+ 112:../lab12-cyclic.c ****     rtc_init();
+ 2392              		.loc 1 112 0
+ 2393 0024 FEFFFFEB 		bl	rtc_init
+ 113:../lab12-cyclic.c ****     pbs_init();
+ 2394              		.loc 1 113 0
+ 2395 0028 FEFFFFEB 		bl	pbs_init
+ 114:../lab12-cyclic.c ****     keypad_init();  
+ 2396              		.loc 1 114 0
+ 2397 002c FEFFFFEB 		bl	keypad_init
+ 115:../lab12-cyclic.c ****     lcd_init();
+ 2398              		.loc 1 115 0
+ 2399 0030 FEFFFFEB 		bl	lcd_init
+ 116:../lab12-cyclic.c **** 	lcd_clear();
+ 2400              		.loc 1 116 0
+ 2401 0034 FEFFFFEB 		bl	lcd_clear
+ 117:../lab12-cyclic.c **** 	lcd_on();
+ 2402              		.loc 1 117 0
+ 2403 0038 FEFFFFEB 		bl	lcd_on
+ 118:../lab12-cyclic.c ****   
+ 119:../lab12-cyclic.c ****     uart0_puts( "\n\n Ejecutando una aplicación cyclic executive\n" );
+ 2404              		.loc 1 119 0
+ 2405 003c E8009FE5 		ldr	r0, .L7
+ 2406 0040 FEFFFFEB 		bl	uart0_puts
+ 120:../lab12-cyclic.c ****     uart0_puts(     " ------------------------------------------\n\n" ) ;
+ 2407              		.loc 1 120 0
+ 2408 0044 E4009FE5 		ldr	r0, .L7+4
+ 2409 0048 FEFFFFEB 		bl	uart0_puts
+ 121:../lab12-cyclic.c **** 
+ 122:../lab12-cyclic.c ****     flagTask5 = FALSE;    /* Inicializa flags */
+ 2410              		.loc 1 122 0
+ 2411 004c E0309FE5 		ldr	r3, .L7+8
+ 2412 0050 0020A0E3 		mov	r2, #0
+ 2413 0054 0020C3E5 		strb	r2, [r3, #0]
+ 123:../lab12-cyclic.c ****     flagTask6 = FALSE;
+ 2414              		.loc 1 123 0
+ 2415 0058 D8309FE5 		ldr	r3, .L7+12
+ 2416 005c 0020A0E3 		mov	r2, #0
+ 2417 0060 0020C3E5 		strb	r2, [r3, #0]
+ 124:../lab12-cyclic.c ****     flagTask8 = FALSE;
+ 2418              		.loc 1 124 0
+ 2419 0064 D0309FE5 		ldr	r3, .L7+16
+ 2420 0068 0020A0E3 		mov	r2, #0
+ 2421 006c 0020C3E5 		strb	r2, [r3, #0]
+ 125:../lab12-cyclic.c ****     flagPb    = FALSE;
+ 2422              		.loc 1 125 0
+ 2423 0070 C8309FE5 		ldr	r3, .L7+20
+ 2424 0074 0020A0E3 		mov	r2, #0
+ 2425 0078 0020C3E5 		strb	r2, [r3, #0]
+ 126:../lab12-cyclic.c ****     flagTimer = FALSE;
+ 2426              		.loc 1 126 0
+ 2427 007c C0309FE5 		ldr	r3, .L7+24
+ 2428 0080 0020A0E3 		mov	r2, #0
+ 2429 0084 0020C3E5 		strb	r2, [r3, #0]
+ 127:../lab12-cyclic.c **** 
+ 128:../lab12-cyclic.c ****     Task1();    /* Ejecuta por primera vez a las funciones para inicializarlas */
+ 2430              		.loc 1 128 0
+ 2431 0088 FEFFFFEB 		bl	Task1
+ 129:../lab12-cyclic.c ****     Task2();
+ 2432              		.loc 1 129 0
+ 2433 008c FEFFFFEB 		bl	Task2
+ 130:../lab12-cyclic.c ****     Task3();
+ 2434              		.loc 1 130 0
+ 2435 0090 FEFFFFEB 		bl	Task3
+ 131:../lab12-cyclic.c ****     Task4();
+ 2436              		.loc 1 131 0
+ 2437 0094 FEFFFFEB 		bl	Task4
+ 132:../lab12-cyclic.c ****     Task5();
+ 2438              		.loc 1 132 0
+ 2439 0098 FEFFFFEB 		bl	Task5
+ 133:../lab12-cyclic.c ****     Task6();
+ 2440              		.loc 1 133 0
+ 2441 009c FEFFFFEB 		bl	Task6
+ 134:../lab12-cyclic.c ****     Task7();
+ 2442              		.loc 1 134 0
+ 2443 00a0 FEFFFFEB 		bl	Task7
+ 135:../lab12-cyclic.c ****     Task8();
+ 2444              		.loc 1 135 0
+ 2445 00a4 FEFFFFEB 		bl	Task8
+ 136:../lab12-cyclic.c ****     Task9();
+ 2446              		.loc 1 136 0
+ 2447 00a8 FEFFFFEB 		bl	Task9
+ 137:../lab12-cyclic.c **** 
+ 138:../lab12-cyclic.c ****     pbs_open( isr_pb );                                          /* Instala isr_pbs como RTI por pr
+ 2448              		.loc 1 138 0
+ 2449 00ac 94009FE5 		ldr	r0, .L7+28
+ 2450 00b0 FEFFFFEB 		bl	pbs_open
+ 139:../lab12-cyclic.c ****     timer0_open_ms( isr_tick, MINOR_PERIOD, TIMER_INTERVAL );    /* Instala isr_tick como RTI del t
+ 2451              		.loc 1 139 0
+ 2452 00b4 90009FE5 		ldr	r0, .L7+32
+ 2453 00b8 3210A0E3 		mov	r1, #50
+ 2454 00bc 0120A0E3 		mov	r2, #1
+ 2455 00c0 FEFFFFEB 		bl	timer0_open_ms
+ 2456 00c4 000000EA 		b	.L5
+ 2457              	.L6:
+ 140:../lab12-cyclic.c ****         
+ 141:../lab12-cyclic.c ****     while( 1 )
+ 142:../lab12-cyclic.c ****     {
+ 143:../lab12-cyclic.c ****         sleep();                        /* Entra en estado IDLE, sale por interrupción */
+ 144:../lab12-cyclic.c ****         if( flagTimer )
+ 145:../lab12-cyclic.c ****         {
+ 146:../lab12-cyclic.c ****         	flagTimer = FALSE;
+ 147:../lab12-cyclic.c ****         	(*pjobs[i])();              /* Las tareas que forman el trabajo se ejecutan en esta hebra 
+ 148:../lab12-cyclic.c ****         	i = ( i==NUM_JOBS-1 ? 0 : i+1 );
+ 149:../lab12-cyclic.c ****         }
+ 150:../lab12-cyclic.c ****     }
+ 2458              		.loc 1 150 0
+ 2459 00c8 0000A0E1 		mov	r0, r0	@ nop
+ 2460              	.L5:
+ 143:../lab12-cyclic.c ****         sleep();                        /* Entra en estado IDLE, sale por interrupción */
+ 2461              		.loc 1 143 0
+ 2462 00cc FEFFFFEB 		bl	sleep
+ 144:../lab12-cyclic.c ****         if( flagTimer )
+ 2463              		.loc 1 144 0
+ 2464 00d0 6C309FE5 		ldr	r3, .L7+24
+ 2465 00d4 0030D3E5 		ldrb	r3, [r3, #0]
+ 2466 00d8 FF3003E2 		and	r3, r3, #255
+ 2467 00dc 000053E3 		cmp	r3, #0
+ 2468 00e0 F8FFFF0A 		beq	.L6
+ 146:../lab12-cyclic.c ****         	flagTimer = FALSE;
+ 2469              		.loc 1 146 0
+ 2470 00e4 58309FE5 		ldr	r3, .L7+24
+ 2471 00e8 0020A0E3 		mov	r2, #0
+ 2472 00ec 0020C3E5 		strb	r2, [r3, #0]
+ 147:../lab12-cyclic.c ****         	(*pjobs[i])();              /* Las tareas que forman el trabajo se ejecutan en esta hebra 
+ 2473              		.loc 1 147 0
+ 2474 00f0 0D205BE5 		ldrb	r2, [fp, #-13]	@ zero_extendqisi2
+ 2475 00f4 54309FE5 		ldr	r3, .L7+36
+ 2476 00f8 023193E7 		ldr	r3, [r3, r2, asl #2]
+ 2477 00fc 0FE0A0E1 		mov	lr, pc
+ 2478 0100 13FF2FE1 		bx	r3
+ 148:../lab12-cyclic.c ****         	i = ( i==NUM_JOBS-1 ? 0 : i+1 );
+ 2479              		.loc 1 148 0
+ 2480 0104 0D305BE5 		ldrb	r3, [fp, #-13]	@ zero_extendqisi2
+ 2481 0108 C70053E3 		cmp	r3, #199
+ 2482 010c 0300000A 		beq	.L3
+ 148:../lab12-cyclic.c ****         	i = ( i==NUM_JOBS-1 ? 0 : i+1 );
+ 2483              		.loc 1 148 0 is_stmt 0 discriminator 1
+ 2484 0110 0D305BE5 		ldrb	r3, [fp, #-13]
+ 2485 0114 013083E2 		add	r3, r3, #1
+ 2486 0118 FF3003E2 		and	r3, r3, #255
+ 2487 011c 000000EA 		b	.L4
+ 2488              	.L3:
+ 148:../lab12-cyclic.c ****         	i = ( i==NUM_JOBS-1 ? 0 : i+1 );
+ 2489              		.loc 1 148 0 discriminator 2
+ 2490 0120 0030A0E3 		mov	r3, #0
+ 2491              	.L4:
+ 148:../lab12-cyclic.c ****         	i = ( i==NUM_JOBS-1 ? 0 : i+1 );
+ 2492              		.loc 1 148 0 discriminator 3
+ 2493 0124 0D304BE5 		strb	r3, [fp, #-13]
+ 2494              		.loc 1 150 0 is_stmt 1 discriminator 3
+ 2495 0128 E7FFFFEA 		b	.L5
+ 2496              	.L8:
+ 2497              		.align	2
+ 2498              	.L7:
+ 2499 012c 20030000 		.word	.LC0
+ 2500 0130 50030000 		.word	.LC1
+ 2501 0134 00000000 		.word	flagTask5
+ 2502 0138 00000000 		.word	flagTask6
+ 2503 013c 00000000 		.word	flagTask8
+ 2504 0140 00000000 		.word	flagPb
+ 2505 0144 00000000 		.word	flagTimer
+ 2506 0148 00000000 		.word	isr_pb
+ 2507 014c 00000000 		.word	isr_tick
+ 2508 0150 00000000 		.word	pjobs
+ 2509              		.cfi_endproc
+ 2510              	.LFE0:
+ 2512              		.align	2
+ 2513              		.global	JobA
+ 2515              	JobA:
+ 2516              	.LFB1:
+ 151:../lab12-cyclic.c **** }
+ 152:../lab12-cyclic.c **** 
+ 153:../lab12-cyclic.c **** /*******************************************************************/
+ 154:../lab12-cyclic.c **** 
+ 155:../lab12-cyclic.c **** void JobA( void )
+ 156:../lab12-cyclic.c **** {
+ 2517              		.loc 1 156 0
+ 2518              		.cfi_startproc
+ 2519              		@ Function supports interworking.
+ 2520              		@ args = 0, pretend = 0, frame = 0
+ 2521              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2522 0154 0DC0A0E1 		mov	ip, sp
+ 2523              	.LCFI2:
+ 2524              		.cfi_def_cfa_register 12
+ 2525 0158 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2526 015c 04B04CE2 		sub	fp, ip, #4
+ 2527              		.cfi_offset 14, -8
+ 2528              		.cfi_offset 13, -12
+ 2529              		.cfi_offset 11, -16
+ 2530              	.LCFI3:
+ 2531              		.cfi_def_cfa 11, 4
+ 157:../lab12-cyclic.c ****     Task2();
+ 2532              		.loc 1 157 0
+ 2533 0160 FEFFFFEB 		bl	Task2
+ 158:../lab12-cyclic.c ****     Task7();
+ 2534              		.loc 1 158 0
+ 2535 0164 FEFFFFEB 		bl	Task7
+ 159:../lab12-cyclic.c **** }
+ 2536              		.loc 1 159 0
+ 2537 0168 0CD04BE2 		sub	sp, fp, #12
+ 2538 016c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2539 0170 1EFF2FE1 		bx	lr
+ 2540              		.cfi_endproc
+ 2541              	.LFE1:
+ 2543              		.align	2
+ 2544              		.global	JobB
+ 2546              	JobB:
+ 2547              	.LFB2:
+ 160:../lab12-cyclic.c **** 
+ 161:../lab12-cyclic.c **** void JobB( void )
+ 162:../lab12-cyclic.c **** {
+ 2548              		.loc 1 162 0
+ 2549              		.cfi_startproc
+ 2550              		@ Function supports interworking.
+ 2551              		@ args = 0, pretend = 0, frame = 0
+ 2552              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2553 0174 0DC0A0E1 		mov	ip, sp
+ 2554              	.LCFI4:
+ 2555              		.cfi_def_cfa_register 12
+ 2556 0178 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2557 017c 04B04CE2 		sub	fp, ip, #4
+ 2558              		.cfi_offset 14, -8
+ 2559              		.cfi_offset 13, -12
+ 2560              		.cfi_offset 11, -16
+ 2561              	.LCFI5:
+ 2562              		.cfi_def_cfa 11, 4
+ 163:../lab12-cyclic.c ****     Task2();
+ 2563              		.loc 1 163 0
+ 2564 0180 FEFFFFEB 		bl	Task2
+ 164:../lab12-cyclic.c ****     Task5();
+ 2565              		.loc 1 164 0
+ 2566 0184 FEFFFFEB 		bl	Task5
+ 165:../lab12-cyclic.c ****     Task6();
+ 2567              		.loc 1 165 0
+ 2568 0188 FEFFFFEB 		bl	Task6
+ 166:../lab12-cyclic.c ****     Task7();
+ 2569              		.loc 1 166 0
+ 2570 018c FEFFFFEB 		bl	Task7
+ 167:../lab12-cyclic.c ****     Task8();
+ 2571              		.loc 1 167 0
+ 2572 0190 FEFFFFEB 		bl	Task8
+ 168:../lab12-cyclic.c **** }
+ 2573              		.loc 1 168 0
+ 2574 0194 0CD04BE2 		sub	sp, fp, #12
+ 2575 0198 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2576 019c 1EFF2FE1 		bx	lr
+ 2577              		.cfi_endproc
+ 2578              	.LFE2:
+ 2580              		.align	2
+ 2581              		.global	JobC
+ 2583              	JobC:
+ 2584              	.LFB3:
+ 169:../lab12-cyclic.c **** 
+ 170:../lab12-cyclic.c **** void JobC( void )
+ 171:../lab12-cyclic.c **** {
+ 2585              		.loc 1 171 0
+ 2586              		.cfi_startproc
+ 2587              		@ Function supports interworking.
+ 2588              		@ args = 0, pretend = 0, frame = 0
+ 2589              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2590 01a0 0DC0A0E1 		mov	ip, sp
+ 2591              	.LCFI6:
+ 2592              		.cfi_def_cfa_register 12
+ 2593 01a4 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2594 01a8 04B04CE2 		sub	fp, ip, #4
+ 2595              		.cfi_offset 14, -8
+ 2596              		.cfi_offset 13, -12
+ 2597              		.cfi_offset 11, -16
+ 2598              	.LCFI7:
+ 2599              		.cfi_def_cfa 11, 4
+ 172:../lab12-cyclic.c ****     Task2();
+ 2600              		.loc 1 172 0
+ 2601 01ac FEFFFFEB 		bl	Task2
+ 173:../lab12-cyclic.c ****     Task5();
+ 2602              		.loc 1 173 0
+ 2603 01b0 FEFFFFEB 		bl	Task5
+ 174:../lab12-cyclic.c ****     Task6();
+ 2604              		.loc 1 174 0
+ 2605 01b4 FEFFFFEB 		bl	Task6
+ 175:../lab12-cyclic.c ****     Task1();
+ 2606              		.loc 1 175 0
+ 2607 01b8 FEFFFFEB 		bl	Task1
+ 176:../lab12-cyclic.c ****     Task7();
+ 2608              		.loc 1 176 0
+ 2609 01bc FEFFFFEB 		bl	Task7
+ 177:../lab12-cyclic.c ****     Task8();
+ 2610              		.loc 1 177 0
+ 2611 01c0 FEFFFFEB 		bl	Task8
+ 178:../lab12-cyclic.c **** }
+ 2612              		.loc 1 178 0
+ 2613 01c4 0CD04BE2 		sub	sp, fp, #12
+ 2614 01c8 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2615 01cc 1EFF2FE1 		bx	lr
+ 2616              		.cfi_endproc
+ 2617              	.LFE3:
+ 2619              		.align	2
+ 2620              		.global	JobD
+ 2622              	JobD:
+ 2623              	.LFB4:
+ 179:../lab12-cyclic.c **** 
+ 180:../lab12-cyclic.c **** void JobD( void )
+ 181:../lab12-cyclic.c **** {
+ 2624              		.loc 1 181 0
+ 2625              		.cfi_startproc
+ 2626              		@ Function supports interworking.
+ 2627              		@ args = 0, pretend = 0, frame = 0
+ 2628              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2629 01d0 0DC0A0E1 		mov	ip, sp
+ 2630              	.LCFI8:
+ 2631              		.cfi_def_cfa_register 12
+ 2632 01d4 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2633 01d8 04B04CE2 		sub	fp, ip, #4
+ 2634              		.cfi_offset 14, -8
+ 2635              		.cfi_offset 13, -12
+ 2636              		.cfi_offset 11, -16
+ 2637              	.LCFI9:
+ 2638              		.cfi_def_cfa 11, 4
+ 182:../lab12-cyclic.c ****     Task2();
+ 2639              		.loc 1 182 0
+ 2640 01dc FEFFFFEB 		bl	Task2
+ 183:../lab12-cyclic.c ****     Task5();
+ 2641              		.loc 1 183 0
+ 2642 01e0 FEFFFFEB 		bl	Task5
+ 184:../lab12-cyclic.c ****     Task6();
+ 2643              		.loc 1 184 0
+ 2644 01e4 FEFFFFEB 		bl	Task6
+ 185:../lab12-cyclic.c ****     Task1();
+ 2645              		.loc 1 185 0
+ 2646 01e8 FEFFFFEB 		bl	Task1
+ 186:../lab12-cyclic.c ****     Task3();
+ 2647              		.loc 1 186 0
+ 2648 01ec FEFFFFEB 		bl	Task3
+ 187:../lab12-cyclic.c ****     Task9();
+ 2649              		.loc 1 187 0
+ 2650 01f0 FEFFFFEB 		bl	Task9
+ 188:../lab12-cyclic.c ****     Task7();
+ 2651              		.loc 1 188 0
+ 2652 01f4 FEFFFFEB 		bl	Task7
+ 189:../lab12-cyclic.c ****     Task8();
+ 2653              		.loc 1 189 0
+ 2654 01f8 FEFFFFEB 		bl	Task8
+ 190:../lab12-cyclic.c **** }
+ 2655              		.loc 1 190 0
+ 2656 01fc 0CD04BE2 		sub	sp, fp, #12
+ 2657 0200 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2658 0204 1EFF2FE1 		bx	lr
+ 2659              		.cfi_endproc
+ 2660              	.LFE4:
+ 2662              		.align	2
+ 2663              		.global	JobE
+ 2665              	JobE:
+ 2666              	.LFB5:
+ 191:../lab12-cyclic.c **** 
+ 192:../lab12-cyclic.c **** void JobE( void )
+ 193:../lab12-cyclic.c **** {
+ 2667              		.loc 1 193 0
+ 2668              		.cfi_startproc
+ 2669              		@ Function supports interworking.
+ 2670              		@ args = 0, pretend = 0, frame = 0
+ 2671              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2672 0208 0DC0A0E1 		mov	ip, sp
+ 2673              	.LCFI10:
+ 2674              		.cfi_def_cfa_register 12
+ 2675 020c 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2676 0210 04B04CE2 		sub	fp, ip, #4
+ 2677              		.cfi_offset 14, -8
+ 2678              		.cfi_offset 13, -12
+ 2679              		.cfi_offset 11, -16
+ 2680              	.LCFI11:
+ 2681              		.cfi_def_cfa 11, 4
+ 194:../lab12-cyclic.c ****     Task2();
+ 2682              		.loc 1 194 0
+ 2683 0214 FEFFFFEB 		bl	Task2
+ 195:../lab12-cyclic.c ****     Task5();
+ 2684              		.loc 1 195 0
+ 2685 0218 FEFFFFEB 		bl	Task5
+ 196:../lab12-cyclic.c ****     Task6();
+ 2686              		.loc 1 196 0
+ 2687 021c FEFFFFEB 		bl	Task6
+ 197:../lab12-cyclic.c ****     Task1();
+ 2688              		.loc 1 197 0
+ 2689 0220 FEFFFFEB 		bl	Task1
+ 198:../lab12-cyclic.c ****     Task3();
+ 2690              		.loc 1 198 0
+ 2691 0224 FEFFFFEB 		bl	Task3
+ 199:../lab12-cyclic.c ****     Task9();
+ 2692              		.loc 1 199 0
+ 2693 0228 FEFFFFEB 		bl	Task9
+ 200:../lab12-cyclic.c ****     Task4();
+ 2694              		.loc 1 200 0
+ 2695 022c FEFFFFEB 		bl	Task4
+ 201:../lab12-cyclic.c ****     Task7();
+ 2696              		.loc 1 201 0
+ 2697 0230 FEFFFFEB 		bl	Task7
+ 202:../lab12-cyclic.c ****     Task8();
+ 2698              		.loc 1 202 0
+ 2699 0234 FEFFFFEB 		bl	Task8
+ 203:../lab12-cyclic.c **** }
+ 2700              		.loc 1 203 0
+ 2701 0238 0CD04BE2 		sub	sp, fp, #12
+ 2702 023c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2703 0240 1EFF2FE1 		bx	lr
+ 2704              		.cfi_endproc
+ 2705              	.LFE5:
+ 2707              		.section	.rodata
+ 2708 037e 0000     		.align	2
+ 2709              	.LC2:
+ 2710 0380 20546173 		.ascii	" Task 1: iniciada.\012\000"
+ 2710      6B20313A 
+ 2710      20696E69 
+ 2710      63696164 
+ 2710      612E0A00 
+ 2711              		.text
+ 2712              		.align	2
+ 2713              		.global	Task1
+ 2715              	Task1:
+ 2716              	.LFB6:
+ 204:../lab12-cyclic.c **** 
+ 205:../lab12-cyclic.c **** /*******************************************************************/
+ 206:../lab12-cyclic.c **** 
+ 207:../lab12-cyclic.c **** void Task1( void )  /* Cada 0,5 segundos (50 ticks) alterna el led que se enciende */
+ 208:../lab12-cyclic.c **** {
+ 2717              		.loc 1 208 0
+ 2718              		.cfi_startproc
+ 2719              		@ Function supports interworking.
+ 2720              		@ args = 0, pretend = 0, frame = 0
+ 2721              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2722 0244 0DC0A0E1 		mov	ip, sp
+ 2723              	.LCFI12:
+ 2724              		.cfi_def_cfa_register 12
+ 2725 0248 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2726 024c 04B04CE2 		sub	fp, ip, #4
+ 2727              		.cfi_offset 14, -8
+ 2728              		.cfi_offset 13, -12
+ 2729              		.cfi_offset 11, -16
+ 2730              	.LCFI13:
+ 2731              		.cfi_def_cfa 11, 4
+ 209:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 210:../lab12-cyclic.c **** 
+ 211:../lab12-cyclic.c ****     if( init )
+ 2732              		.loc 1 211 0
+ 2733 0250 4C309FE5 		ldr	r3, .L17
+ 2734 0254 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2735 0258 000053E3 		cmp	r3, #0
+ 2736 025c 0900000A 		beq	.L15
+ 212:../lab12-cyclic.c ****     {
+ 213:../lab12-cyclic.c ****         init = FALSE;
+ 2737              		.loc 1 213 0
+ 2738 0260 3C309FE5 		ldr	r3, .L17
+ 2739 0264 0020A0E3 		mov	r2, #0
+ 2740 0268 0020C3E5 		strb	r2, [r3, #0]
+ 214:../lab12-cyclic.c ****         uart0_puts( " Task 1: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 2741              		.loc 1 214 0
+ 2742 026c 34009FE5 		ldr	r0, .L17+4
+ 2743 0270 FEFFFFEB 		bl	uart0_puts
+ 215:../lab12-cyclic.c ****         led_on( LEFT_LED );
+ 2744              		.loc 1 215 0
+ 2745 0274 0100A0E3 		mov	r0, #1
+ 2746 0278 FEFFFFEB 		bl	led_on
+ 216:../lab12-cyclic.c ****         led_off( RIGHT_LED );
+ 2747              		.loc 1 216 0
+ 2748 027c 0200A0E3 		mov	r0, #2
+ 2749 0280 FEFFFFEB 		bl	led_off
+ 2750 0284 030000EA 		b	.L14
+ 2751              	.L15:
+ 217:../lab12-cyclic.c ****     }
+ 218:../lab12-cyclic.c ****     else
+ 219:../lab12-cyclic.c ****     {
+ 220:../lab12-cyclic.c ****         led_toggle( LEFT_LED );
+ 2752              		.loc 1 220 0
+ 2753 0288 0100A0E3 		mov	r0, #1
+ 2754 028c FEFFFFEB 		bl	led_toggle
+ 221:../lab12-cyclic.c ****         led_toggle( RIGHT_LED );
+ 2755              		.loc 1 221 0
+ 2756 0290 0200A0E3 		mov	r0, #2
+ 2757 0294 FEFFFFEB 		bl	led_toggle
+ 2758              	.L14:
+ 222:../lab12-cyclic.c ****     }
+ 223:../lab12-cyclic.c **** }
+ 2759              		.loc 1 223 0
+ 2760 0298 0CD04BE2 		sub	sp, fp, #12
+ 2761 029c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2762 02a0 1EFF2FE1 		bx	lr
+ 2763              	.L18:
+ 2764              		.align	2
+ 2765              	.L17:
+ 2766 02a4 0E000000 		.word	init.4198
+ 2767 02a8 80030000 		.word	.LC2
+ 2768              		.cfi_endproc
+ 2769              	.LFE6:
+ 2771              		.section	.rodata
+ 2772              		.align	2
+ 2773              	.LC3:
+ 2774 0394 20546173 		.ascii	" Task 2: iniciada.\012\000"
+ 2774      6B20323A 
+ 2774      20696E69 
+ 2774      63696164 
+ 2774      612E0A00 
+ 2775              		.text
+ 2776              		.align	2
+ 2777              		.global	Task2
+ 2779              	Task2:
+ 2780              	.LFB7:
+ 224:../lab12-cyclic.c **** 
+ 225:../lab12-cyclic.c **** void Task2( void )  /* Cada 50 ms (5 ticks) muestrea el keypad y envía el scancode a otras tareas *
+ 226:../lab12-cyclic.c **** {
+ 2781              		.loc 1 226 0
+ 2782              		.cfi_startproc
+ 2783              		@ Function supports interworking.
+ 2784              		@ args = 0, pretend = 0, frame = 0
+ 2785              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2786 02ac 0DC0A0E1 		mov	ip, sp
+ 2787              	.LCFI14:
+ 2788              		.cfi_def_cfa_register 12
+ 2789 02b0 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2790 02b4 04B04CE2 		sub	fp, ip, #4
+ 2791              		.cfi_offset 14, -8
+ 2792              		.cfi_offset 13, -12
+ 2793              		.cfi_offset 11, -16
+ 2794              	.LCFI15:
+ 2795              		.cfi_def_cfa 11, 4
+ 227:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 228:../lab12-cyclic.c ****     static enum { wait_keydown, scan, wait_keyup } state;
+ 229:../lab12-cyclic.c **** 
+ 230:../lab12-cyclic.c ****     if( init )
+ 2796              		.loc 1 230 0
+ 2797 02b8 FC309FE5 		ldr	r3, .L30
+ 2798 02bc 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2799 02c0 000053E3 		cmp	r3, #0
+ 2800 02c4 0800000A 		beq	.L20
+ 231:../lab12-cyclic.c ****     {
+ 232:../lab12-cyclic.c ****         init  = FALSE;
+ 2801              		.loc 1 232 0
+ 2802 02c8 EC309FE5 		ldr	r3, .L30
+ 2803 02cc 0020A0E3 		mov	r2, #0
+ 2804 02d0 0020C3E5 		strb	r2, [r3, #0]
+ 233:../lab12-cyclic.c ****         uart0_puts( " Task 2: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 2805              		.loc 1 233 0
+ 2806 02d4 E4009FE5 		ldr	r0, .L30+4
+ 2807 02d8 FEFFFFEB 		bl	uart0_puts
+ 234:../lab12-cyclic.c ****         state = wait_keydown;
+ 2808              		.loc 1 234 0
+ 2809 02dc E0309FE5 		ldr	r3, .L30+8
+ 2810 02e0 0020A0E3 		mov	r2, #0
+ 2811 02e4 0020C3E5 		strb	r2, [r3, #0]
+ 2812 02e8 300000EA 		b	.L19
+ 2813              	.L20:
+ 235:../lab12-cyclic.c ****     }
+ 236:../lab12-cyclic.c ****     else switch( state )
+ 2814              		.loc 1 236 0
+ 2815 02ec D0309FE5 		ldr	r3, .L30+8
+ 2816 02f0 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2817 02f4 010053E3 		cmp	r3, #1
+ 2818 02f8 0B00000A 		beq	.L23
+ 2819 02fc 020053E3 		cmp	r3, #2
+ 2820 0300 1F00000A 		beq	.L24
+ 2821 0304 000053E3 		cmp	r3, #0
+ 2822 0308 2800001A 		bne	.L19
+ 2823              	.L22:
+ 237:../lab12-cyclic.c ****     {
+ 238:../lab12-cyclic.c ****         case wait_keydown:
+ 239:../lab12-cyclic.c ****             if( keypad_pressed() )
+ 2824              		.loc 1 239 0
+ 2825 030c FEFFFFEB 		bl	keypad_pressed
+ 2826 0310 0030A0E1 		mov	r3, r0
+ 2827 0314 000053E3 		cmp	r3, #0
+ 2828 0318 2100000A 		beq	.L28
+ 240:../lab12-cyclic.c ****                 state = scan;
+ 2829              		.loc 1 240 0
+ 2830 031c A0309FE5 		ldr	r3, .L30+8
+ 2831 0320 0120A0E3 		mov	r2, #1
+ 2832 0324 0020C3E5 		strb	r2, [r3, #0]
+ 241:../lab12-cyclic.c ****             break;
+ 2833              		.loc 1 241 0
+ 2834 0328 200000EA 		b	.L19
+ 2835              	.L23:
+ 242:../lab12-cyclic.c ****         case scan:
+ 243:../lab12-cyclic.c ****             scancode = keypad_scan();
+ 2836              		.loc 1 243 0
+ 2837 032c FEFFFFEB 		bl	keypad_scan
+ 2838 0330 0030A0E1 		mov	r3, r0
+ 2839 0334 0320A0E1 		mov	r2, r3
+ 2840 0338 88309FE5 		ldr	r3, .L30+12
+ 2841 033c 0020C3E5 		strb	r2, [r3, #0]
+ 244:../lab12-cyclic.c ****             if( scancode != KEYPAD_FAILURE )
+ 2842              		.loc 1 244 0
+ 2843 0340 80309FE5 		ldr	r3, .L30+12
+ 2844 0344 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2845 0348 FF0053E3 		cmp	r3, #255
+ 2846 034c 0800000A 		beq	.L26
+ 245:../lab12-cyclic.c ****             {
+ 246:../lab12-cyclic.c ****                 flagTask5 = TRUE;
+ 2847              		.loc 1 246 0
+ 2848 0350 74309FE5 		ldr	r3, .L30+16
+ 2849 0354 0120A0E3 		mov	r2, #1
+ 2850 0358 0020C3E5 		strb	r2, [r3, #0]
+ 247:../lab12-cyclic.c ****                 flagTask6 = TRUE;
+ 2851              		.loc 1 247 0
+ 2852 035c 6C309FE5 		ldr	r3, .L30+20
+ 2853 0360 0120A0E3 		mov	r2, #1
+ 2854 0364 0020C3E5 		strb	r2, [r3, #0]
+ 248:../lab12-cyclic.c ****                 flagTask8 = TRUE;
+ 2855              		.loc 1 248 0
+ 2856 0368 64309FE5 		ldr	r3, .L30+24
+ 2857 036c 0120A0E3 		mov	r2, #1
+ 2858 0370 0020C3E5 		strb	r2, [r3, #0]
+ 2859              	.L26:
+ 249:../lab12-cyclic.c ****             }
+ 250:../lab12-cyclic.c ****             state = wait_keyup;
+ 2860              		.loc 1 250 0
+ 2861 0374 48309FE5 		ldr	r3, .L30+8
+ 2862 0378 0220A0E3 		mov	r2, #2
+ 2863 037c 0020C3E5 		strb	r2, [r3, #0]
+ 251:../lab12-cyclic.c ****             break;
+ 2864              		.loc 1 251 0
+ 2865 0380 0A0000EA 		b	.L19
+ 2866              	.L24:
+ 252:../lab12-cyclic.c ****         case wait_keyup:
+ 253:../lab12-cyclic.c ****             if( !keypad_pressed() )
+ 2867              		.loc 1 253 0
+ 2868 0384 FEFFFFEB 		bl	keypad_pressed
+ 2869 0388 0030A0E1 		mov	r3, r0
+ 2870 038c 000053E3 		cmp	r3, #0
+ 2871 0390 0500001A 		bne	.L29
+ 254:../lab12-cyclic.c ****                 state = wait_keydown;
+ 2872              		.loc 1 254 0
+ 2873 0394 28309FE5 		ldr	r3, .L30+8
+ 2874 0398 0020A0E3 		mov	r2, #0
+ 2875 039c 0020C3E5 		strb	r2, [r3, #0]
+ 255:../lab12-cyclic.c ****             break;
+ 2876              		.loc 1 255 0
+ 2877 03a0 020000EA 		b	.L19
+ 2878              	.L28:
+ 241:../lab12-cyclic.c ****             break;
+ 2879              		.loc 1 241 0
+ 2880 03a4 0000A0E1 		mov	r0, r0	@ nop
+ 2881 03a8 000000EA 		b	.L19
+ 2882              	.L29:
+ 2883              		.loc 1 255 0
+ 2884 03ac 0000A0E1 		mov	r0, r0	@ nop
+ 2885              	.L19:
+ 256:../lab12-cyclic.c ****     }
+ 257:../lab12-cyclic.c **** }
+ 2886              		.loc 1 257 0
+ 2887 03b0 0CD04BE2 		sub	sp, fp, #12
+ 2888 03b4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2889 03b8 1EFF2FE1 		bx	lr
+ 2890              	.L31:
+ 2891              		.align	2
+ 2892              	.L30:
+ 2893 03bc 0D000000 		.word	init.4202
+ 2894 03c0 94030000 		.word	.LC3
+ 2895 03c4 08000000 		.word	state.4207
+ 2896 03c8 00000000 		.word	scancode
+ 2897 03cc 00000000 		.word	flagTask5
+ 2898 03d0 00000000 		.word	flagTask6
+ 2899 03d4 00000000 		.word	flagTask8
+ 2900              		.cfi_endproc
+ 2901              	.LFE7:
+ 2903              		.section	.rodata
+ 2904              		.align	2
+ 2905              	.LC4:
+ 2906 03a8 20546173 		.ascii	" Task 3: iniciada.\012\000"
+ 2906      6B20333A 
+ 2906      20696E69 
+ 2906      63696164 
+ 2906      612E0A00 
+ 2907              		.align	2
+ 2908              	.LC5:
+ 2909 03bc 20202854 		.ascii	"  (Task 3) Hora: \000"
+ 2909      61736B20 
+ 2909      33292048 
+ 2909      6F72613A 
+ 2909      2000
+ 2910 03ce 0000     		.align	2
+ 2911              	.LC6:
+ 2912 03d0 0A00     		.ascii	"\012\000"
+ 2913              		.text
+ 2914              		.align	2
+ 2915              		.global	Task3
+ 2917              	Task3:
+ 2918              	.LFB8:
+ 258:../lab12-cyclic.c **** 
+ 259:../lab12-cyclic.c **** void Task3( void  )  /* Cada segundo (100 ticks) muestra por la UART0 la hora del RTC */
+ 260:../lab12-cyclic.c **** {
+ 2919              		.loc 1 260 0
+ 2920              		.cfi_startproc
+ 2921              		@ Function supports interworking.
+ 2922              		@ args = 0, pretend = 0, frame = 8
+ 2923              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2924 03d8 0DC0A0E1 		mov	ip, sp
+ 2925              	.LCFI16:
+ 2926              		.cfi_def_cfa_register 12
+ 2927 03dc 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 2928 03e0 04B04CE2 		sub	fp, ip, #4
+ 2929              		.cfi_offset 14, -8
+ 2930              		.cfi_offset 13, -12
+ 2931              		.cfi_offset 11, -16
+ 2932              	.LCFI17:
+ 2933              		.cfi_def_cfa 11, 4
+ 2934 03e4 08D04DE2 		sub	sp, sp, #8
+ 261:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 262:../lab12-cyclic.c ****     rtc_time_t rtc_time;
+ 263:../lab12-cyclic.c **** 
+ 264:../lab12-cyclic.c ****     if( init )
+ 2935              		.loc 1 264 0
+ 2936 03e8 7C309FE5 		ldr	r3, .L35
+ 2937 03ec 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 2938 03f0 000053E3 		cmp	r3, #0
+ 2939 03f4 0500000A 		beq	.L33
+ 265:../lab12-cyclic.c ****     {
+ 266:../lab12-cyclic.c ****         init = FALSE;
+ 2940              		.loc 1 266 0
+ 2941 03f8 6C309FE5 		ldr	r3, .L35
+ 2942 03fc 0020A0E3 		mov	r2, #0
+ 2943 0400 0020C3E5 		strb	r2, [r3, #0]
+ 267:../lab12-cyclic.c ****         uart0_puts( " Task 3: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 2944              		.loc 1 267 0
+ 2945 0404 64009FE5 		ldr	r0, .L35+4
+ 2946 0408 FEFFFFEB 		bl	uart0_puts
+ 2947 040c 130000EA 		b	.L32
+ 2948              	.L33:
+ 268:../lab12-cyclic.c ****     }
+ 269:../lab12-cyclic.c ****     else
+ 270:../lab12-cyclic.c ****     {
+ 271:../lab12-cyclic.c ****         rtc_gettime( &rtc_time );
+ 2949              		.loc 1 271 0
+ 2950 0410 14304BE2 		sub	r3, fp, #20
+ 2951 0414 0300A0E1 		mov	r0, r3
+ 2952 0418 FEFFFFEB 		bl	rtc_gettime
+ 272:../lab12-cyclic.c ****         uart0_puts( "  (Task 3) Hora: " );
+ 2953              		.loc 1 272 0
+ 2954 041c 50009FE5 		ldr	r0, .L35+8
+ 2955 0420 FEFFFFEB 		bl	uart0_puts
+ 273:../lab12-cyclic.c ****         uart0_putint( rtc_time.hour );
+ 2956              		.loc 1 273 0
+ 2957 0424 12305BE5 		ldrb	r3, [fp, #-18]	@ zero_extendqisi2
+ 2958 0428 0300A0E1 		mov	r0, r3
+ 2959 042c FEFFFFEB 		bl	uart0_putint
+ 274:../lab12-cyclic.c ****         uart0_putchar( ':' );
+ 2960              		.loc 1 274 0
+ 2961 0430 3A00A0E3 		mov	r0, #58
+ 2962 0434 FEFFFFEB 		bl	uart0_putchar
+ 275:../lab12-cyclic.c ****         uart0_putint( rtc_time.min );
+ 2963              		.loc 1 275 0
+ 2964 0438 13305BE5 		ldrb	r3, [fp, #-19]	@ zero_extendqisi2
+ 2965 043c 0300A0E1 		mov	r0, r3
+ 2966 0440 FEFFFFEB 		bl	uart0_putint
+ 276:../lab12-cyclic.c ****         uart0_putchar( ':' );
+ 2967              		.loc 1 276 0
+ 2968 0444 3A00A0E3 		mov	r0, #58
+ 2969 0448 FEFFFFEB 		bl	uart0_putchar
+ 277:../lab12-cyclic.c ****         uart0_putint( rtc_time.sec );
+ 2970              		.loc 1 277 0
+ 2971 044c 14305BE5 		ldrb	r3, [fp, #-20]	@ zero_extendqisi2
+ 2972 0450 0300A0E1 		mov	r0, r3
+ 2973 0454 FEFFFFEB 		bl	uart0_putint
+ 278:../lab12-cyclic.c ****         uart0_puts( "\n" );
+ 2974              		.loc 1 278 0
+ 2975 0458 18009FE5 		ldr	r0, .L35+12
+ 2976 045c FEFFFFEB 		bl	uart0_puts
+ 2977              	.L32:
+ 279:../lab12-cyclic.c ****     }
+ 280:../lab12-cyclic.c **** }
+ 2978              		.loc 1 280 0
+ 2979 0460 0CD04BE2 		sub	sp, fp, #12
+ 2980 0464 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 2981 0468 1EFF2FE1 		bx	lr
+ 2982              	.L36:
+ 2983              		.align	2
+ 2984              	.L35:
+ 2985 046c 0C000000 		.word	init.4215
+ 2986 0470 A8030000 		.word	.LC4
+ 2987 0474 BC030000 		.word	.LC5
+ 2988 0478 D0030000 		.word	.LC6
+ 2989              		.cfi_endproc
+ 2990              	.LFE8:
+ 2992              		.section	.rodata
+ 2993 03d2 0000     		.align	2
+ 2994              	.LC7:
+ 2995 03d4 20546173 		.ascii	" Task 4: iniciada.\012\000"
+ 2995      6B20343A 
+ 2995      20696E69 
+ 2995      63696164 
+ 2995      612E0A00 
+ 2996              		.align	2
+ 2997              	.LC8:
+ 2998 03e8 20202854 		.ascii	"  (Task 4) Ticks: \000"
+ 2998      61736B20 
+ 2998      34292054 
+ 2998      69636B73 
+ 2998      3A2000
+ 2999              		.text
+ 3000              		.align	2
+ 3001              		.global	Task4
+ 3003              	Task4:
+ 3004              	.LFB9:
+ 281:../lab12-cyclic.c **** 
+ 282:../lab12-cyclic.c **** void Task4( void )  /* Cada 10 segundos (1000 ticks) muestra por la UART0 los ticks transcurridos *
+ 283:../lab12-cyclic.c **** {
+ 3005              		.loc 1 283 0
+ 3006              		.cfi_startproc
+ 3007              		@ Function supports interworking.
+ 3008              		@ args = 0, pretend = 0, frame = 0
+ 3009              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3010 047c 0DC0A0E1 		mov	ip, sp
+ 3011              	.LCFI18:
+ 3012              		.cfi_def_cfa_register 12
+ 3013 0480 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3014 0484 04B04CE2 		sub	fp, ip, #4
+ 3015              		.cfi_offset 14, -8
+ 3016              		.cfi_offset 13, -12
+ 3017              		.cfi_offset 11, -16
+ 3018              	.LCFI19:
+ 3019              		.cfi_def_cfa 11, 4
+ 284:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 285:../lab12-cyclic.c ****     static uint32 ticks;
+ 286:../lab12-cyclic.c **** 
+ 287:../lab12-cyclic.c ****     if( init )
+ 3020              		.loc 1 287 0
+ 3021 0488 6C309FE5 		ldr	r3, .L40
+ 3022 048c 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3023 0490 000053E3 		cmp	r3, #0
+ 3024 0494 0800000A 		beq	.L38
+ 288:../lab12-cyclic.c ****     {
+ 289:../lab12-cyclic.c ****         init = FALSE;
+ 3025              		.loc 1 289 0
+ 3026 0498 5C309FE5 		ldr	r3, .L40
+ 3027 049c 0020A0E3 		mov	r2, #0
+ 3028 04a0 0020C3E5 		strb	r2, [r3, #0]
+ 290:../lab12-cyclic.c ****         uart0_puts( " Task 4: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 3029              		.loc 1 290 0
+ 3030 04a4 54009FE5 		ldr	r0, .L40+4
+ 3031 04a8 FEFFFFEB 		bl	uart0_puts
+ 291:../lab12-cyclic.c ****         ticks = 0;
+ 3032              		.loc 1 291 0
+ 3033 04ac 50309FE5 		ldr	r3, .L40+8
+ 3034 04b0 0020A0E3 		mov	r2, #0
+ 3035 04b4 002083E5 		str	r2, [r3, #0]
+ 3036 04b8 0C0000EA 		b	.L37
+ 3037              	.L38:
+ 292:../lab12-cyclic.c ****     }
+ 293:../lab12-cyclic.c ****     else
+ 294:../lab12-cyclic.c ****     {
+ 295:../lab12-cyclic.c ****         ticks += TICKS_PER_SEC * 10;
+ 3038              		.loc 1 295 0
+ 3039 04bc 40309FE5 		ldr	r3, .L40+8
+ 3040 04c0 003093E5 		ldr	r3, [r3, #0]
+ 3041 04c4 FA2F83E2 		add	r2, r3, #1000
+ 3042 04c8 34309FE5 		ldr	r3, .L40+8
+ 3043 04cc 002083E5 		str	r2, [r3, #0]
+ 296:../lab12-cyclic.c ****         uart0_puts( "  (Task 4) Ticks: " );
+ 3044              		.loc 1 296 0
+ 3045 04d0 30009FE5 		ldr	r0, .L40+12
+ 3046 04d4 FEFFFFEB 		bl	uart0_puts
+ 297:../lab12-cyclic.c ****         uart0_putint( ticks );
+ 3047              		.loc 1 297 0
+ 3048 04d8 24309FE5 		ldr	r3, .L40+8
+ 3049 04dc 003093E5 		ldr	r3, [r3, #0]
+ 3050 04e0 0300A0E1 		mov	r0, r3
+ 3051 04e4 FEFFFFEB 		bl	uart0_putint
+ 298:../lab12-cyclic.c ****         uart0_puts( "\n" );
+ 3052              		.loc 1 298 0
+ 3053 04e8 1C009FE5 		ldr	r0, .L40+16
+ 3054 04ec FEFFFFEB 		bl	uart0_puts
+ 3055              	.L37:
+ 299:../lab12-cyclic.c ****     }
+ 300:../lab12-cyclic.c **** }
+ 3056              		.loc 1 300 0
+ 3057 04f0 0CD04BE2 		sub	sp, fp, #12
+ 3058 04f4 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3059 04f8 1EFF2FE1 		bx	lr
+ 3060              	.L41:
+ 3061              		.align	2
+ 3062              	.L40:
+ 3063 04fc 0B000000 		.word	init.4220
+ 3064 0500 D4030000 		.word	.LC7
+ 3065 0504 04000000 		.word	ticks.4221
+ 3066 0508 E8030000 		.word	.LC8
+ 3067 050c D0030000 		.word	.LC6
+ 3068              		.cfi_endproc
+ 3069              	.LFE9:
+ 3071              		.section	.rodata
+ 3072 03fb 00       		.align	2
+ 3073              	.LC9:
+ 3074 03fc 20546173 		.ascii	" Task 5: iniciada.\012\000"
+ 3074      6B20353A 
+ 3074      20696E69 
+ 3074      63696164 
+ 3074      612E0A00 
+ 3075              		.align	2
+ 3076              	.LC10:
+ 3077 0410 20202854 		.ascii	"  (Task 5) Tecla pulsada: \000"
+ 3077      61736B20 
+ 3077      35292054 
+ 3077      65636C61 
+ 3077      2070756C 
+ 3078              		.text
+ 3079              		.align	2
+ 3080              		.global	Task5
+ 3082              	Task5:
+ 3083              	.LFB10:
+ 301:../lab12-cyclic.c **** 
+ 302:../lab12-cyclic.c **** void Task5( void )  /* Cada vez que reciba un scancode lo muestra por la UART0 */
+ 303:../lab12-cyclic.c **** {
+ 3084              		.loc 1 303 0
+ 3085              		.cfi_startproc
+ 3086              		@ Function supports interworking.
+ 3087              		@ args = 0, pretend = 0, frame = 0
+ 3088              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3089 0510 0DC0A0E1 		mov	ip, sp
+ 3090              	.LCFI20:
+ 3091              		.cfi_def_cfa_register 12
+ 3092 0514 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3093 0518 04B04CE2 		sub	fp, ip, #4
+ 3094              		.cfi_offset 14, -8
+ 3095              		.cfi_offset 13, -12
+ 3096              		.cfi_offset 11, -16
+ 3097              	.LCFI21:
+ 3098              		.cfi_def_cfa 11, 4
+ 304:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 305:../lab12-cyclic.c **** 
+ 306:../lab12-cyclic.c ****     if( init )
+ 3099              		.loc 1 306 0
+ 3100 051c 68309FE5 		ldr	r3, .L45
+ 3101 0520 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3102 0524 000053E3 		cmp	r3, #0
+ 3103 0528 0500000A 		beq	.L43
+ 307:../lab12-cyclic.c ****     {
+ 308:../lab12-cyclic.c ****         init = FALSE;
+ 3104              		.loc 1 308 0
+ 3105 052c 58309FE5 		ldr	r3, .L45
+ 3106 0530 0020A0E3 		mov	r2, #0
+ 3107 0534 0020C3E5 		strb	r2, [r3, #0]
+ 309:../lab12-cyclic.c ****         uart0_puts( " Task 5: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 3108              		.loc 1 309 0
+ 3109 0538 50009FE5 		ldr	r0, .L45+4
+ 3110 053c FEFFFFEB 		bl	uart0_puts
+ 3111 0540 0E0000EA 		b	.L42
+ 3112              	.L43:
+ 310:../lab12-cyclic.c ****     }
+ 311:../lab12-cyclic.c ****     else if( flagTask5 )
+ 3113              		.loc 1 311 0
+ 3114 0544 48309FE5 		ldr	r3, .L45+8
+ 3115 0548 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3116 054c 000053E3 		cmp	r3, #0
+ 3117 0550 0A00000A 		beq	.L42
+ 312:../lab12-cyclic.c ****     {
+ 313:../lab12-cyclic.c ****         flagTask5 = FALSE;
+ 3118              		.loc 1 313 0
+ 3119 0554 38309FE5 		ldr	r3, .L45+8
+ 3120 0558 0020A0E3 		mov	r2, #0
+ 3121 055c 0020C3E5 		strb	r2, [r3, #0]
+ 314:../lab12-cyclic.c ****         uart0_puts( "  (Task 5) Tecla pulsada: " );
+ 3122              		.loc 1 314 0
+ 3123 0560 30009FE5 		ldr	r0, .L45+12
+ 3124 0564 FEFFFFEB 		bl	uart0_puts
+ 315:../lab12-cyclic.c ****         uart0_puthex( scancode );
+ 3125              		.loc 1 315 0
+ 3126 0568 2C309FE5 		ldr	r3, .L45+16
+ 3127 056c 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3128 0570 0300A0E1 		mov	r0, r3
+ 3129 0574 FEFFFFEB 		bl	uart0_puthex
+ 316:../lab12-cyclic.c ****         uart0_puts( "\n" );
+ 3130              		.loc 1 316 0
+ 3131 0578 20009FE5 		ldr	r0, .L45+20
+ 3132 057c FEFFFFEB 		bl	uart0_puts
+ 3133              	.L42:
+ 317:../lab12-cyclic.c ****     }
+ 318:../lab12-cyclic.c **** }
+ 3134              		.loc 1 318 0
+ 3135 0580 0CD04BE2 		sub	sp, fp, #12
+ 3136 0584 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3137 0588 1EFF2FE1 		bx	lr
+ 3138              	.L46:
+ 3139              		.align	2
+ 3140              	.L45:
+ 3141 058c 0A000000 		.word	init.4225
+ 3142 0590 FC030000 		.word	.LC9
+ 3143 0594 00000000 		.word	flagTask5
+ 3144 0598 10040000 		.word	.LC10
+ 3145 059c 00000000 		.word	scancode
+ 3146 05a0 D0030000 		.word	.LC6
+ 3147              		.cfi_endproc
+ 3148              	.LFE10:
+ 3150              		.section	.rodata
+ 3151 042b 00       		.align	2
+ 3152              	.LC11:
+ 3153 042c 20546173 		.ascii	" Task 6: iniciada.\012\000"
+ 3153      6B20363A 
+ 3153      20696E69 
+ 3153      63696164 
+ 3153      612E0A00 
+ 3154              		.text
+ 3155              		.align	2
+ 3156              		.global	Task6
+ 3158              	Task6:
+ 3159              	.LFB11:
+ 319:../lab12-cyclic.c **** 
+ 320:../lab12-cyclic.c **** void Task6( void )  /* Cada vez que reciba un scancode lo muestra por los 7 segmentos */
+ 321:../lab12-cyclic.c **** {
+ 3160              		.loc 1 321 0
+ 3161              		.cfi_startproc
+ 3162              		@ Function supports interworking.
+ 3163              		@ args = 0, pretend = 0, frame = 0
+ 3164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3165 05a4 0DC0A0E1 		mov	ip, sp
+ 3166              	.LCFI22:
+ 3167              		.cfi_def_cfa_register 12
+ 3168 05a8 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3169 05ac 04B04CE2 		sub	fp, ip, #4
+ 3170              		.cfi_offset 14, -8
+ 3171              		.cfi_offset 13, -12
+ 3172              		.cfi_offset 11, -16
+ 3173              	.LCFI23:
+ 3174              		.cfi_def_cfa 11, 4
+ 322:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 323:../lab12-cyclic.c **** 
+ 324:../lab12-cyclic.c ****     if( init )
+ 3175              		.loc 1 324 0
+ 3176 05b0 58309FE5 		ldr	r3, .L50
+ 3177 05b4 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3178 05b8 000053E3 		cmp	r3, #0
+ 3179 05bc 0500000A 		beq	.L48
+ 325:../lab12-cyclic.c ****     {
+ 326:../lab12-cyclic.c ****         init = FALSE;
+ 3180              		.loc 1 326 0
+ 3181 05c0 48309FE5 		ldr	r3, .L50
+ 3182 05c4 0020A0E3 		mov	r2, #0
+ 3183 05c8 0020C3E5 		strb	r2, [r3, #0]
+ 327:../lab12-cyclic.c ****         uart0_puts( " Task 6: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 3184              		.loc 1 327 0
+ 3185 05cc 40009FE5 		ldr	r0, .L50+4
+ 3186 05d0 FEFFFFEB 		bl	uart0_puts
+ 3187 05d4 0A0000EA 		b	.L47
+ 3188              	.L48:
+ 328:../lab12-cyclic.c ****     }
+ 329:../lab12-cyclic.c ****     else if( flagTask6 )
+ 3189              		.loc 1 329 0
+ 3190 05d8 38309FE5 		ldr	r3, .L50+8
+ 3191 05dc 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3192 05e0 000053E3 		cmp	r3, #0
+ 3193 05e4 0600000A 		beq	.L47
+ 330:../lab12-cyclic.c ****     {
+ 331:../lab12-cyclic.c ****         flagTask6 = FALSE;
+ 3194              		.loc 1 331 0
+ 3195 05e8 28309FE5 		ldr	r3, .L50+8
+ 3196 05ec 0020A0E3 		mov	r2, #0
+ 3197 05f0 0020C3E5 		strb	r2, [r3, #0]
+ 332:../lab12-cyclic.c ****         segs_putchar( scancode );
+ 3198              		.loc 1 332 0
+ 3199 05f4 20309FE5 		ldr	r3, .L50+12
+ 3200 05f8 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3201 05fc 0300A0E1 		mov	r0, r3
+ 3202 0600 FEFFFFEB 		bl	segs_putchar
+ 3203              	.L47:
+ 333:../lab12-cyclic.c ****     }
+ 334:../lab12-cyclic.c **** }
+ 3204              		.loc 1 334 0
+ 3205 0604 0CD04BE2 		sub	sp, fp, #12
+ 3206 0608 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3207 060c 1EFF2FE1 		bx	lr
+ 3208              	.L51:
+ 3209              		.align	2
+ 3210              	.L50:
+ 3211 0610 09000000 		.word	init.4229
+ 3212 0614 2C040000 		.word	.LC11
+ 3213 0618 00000000 		.word	flagTask6
+ 3214 061c 00000000 		.word	scancode
+ 3215              		.cfi_endproc
+ 3216              	.LFE11:
+ 3218              		.section	.rodata
+ 3219              		.align	2
+ 3220              	.LC12:
+ 3221 0440 20546173 		.ascii	" Task 7: iniciada.\012\000"
+ 3221      6B20373A 
+ 3221      20696E69 
+ 3221      63696164 
+ 3221      612E0A00 
+ 3222              		.align	2
+ 3223              	.LC13:
+ 3224 0454 20202854 		.ascii	"  (Task 7) Se ha pulsado alg\372n pushbutton...\012"
+ 3224      61736B20 
+ 3224      37292053 
+ 3224      65206861 
+ 3224      2070756C 
+ 3225 0481 00       		.ascii	"\000"
+ 3226              		.text
+ 3227              		.align	2
+ 3228              		.global	Task7
+ 3230              	Task7:
+ 3231              	.LFB12:
+ 335:../lab12-cyclic.c **** 
+ 336:../lab12-cyclic.c **** void Task7( void )  /* Cada vez que se presione un pulsador lo avisa por la UART0 */
+ 337:../lab12-cyclic.c **** {
+ 3232              		.loc 1 337 0
+ 3233              		.cfi_startproc
+ 3234              		@ Function supports interworking.
+ 3235              		@ args = 0, pretend = 0, frame = 0
+ 3236              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3237 0620 0DC0A0E1 		mov	ip, sp
+ 3238              	.LCFI24:
+ 3239              		.cfi_def_cfa_register 12
+ 3240 0624 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3241 0628 04B04CE2 		sub	fp, ip, #4
+ 3242              		.cfi_offset 14, -8
+ 3243              		.cfi_offset 13, -12
+ 3244              		.cfi_offset 11, -16
+ 3245              	.LCFI25:
+ 3246              		.cfi_def_cfa 11, 4
+ 338:../lab12-cyclic.c ****     static boolean init = TRUE;
+ 339:../lab12-cyclic.c **** 
+ 340:../lab12-cyclic.c ****     if( init )
+ 3247              		.loc 1 340 0
+ 3248 062c 54309FE5 		ldr	r3, .L55
+ 3249 0630 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3250 0634 000053E3 		cmp	r3, #0
+ 3251 0638 0500000A 		beq	.L53
+ 341:../lab12-cyclic.c ****     {
+ 342:../lab12-cyclic.c ****         init = FALSE;
+ 3252              		.loc 1 342 0
+ 3253 063c 44309FE5 		ldr	r3, .L55
+ 3254 0640 0020A0E3 		mov	r2, #0
+ 3255 0644 0020C3E5 		strb	r2, [r3, #0]
+ 343:../lab12-cyclic.c ****         uart0_puts( " Task 7: iniciada.\n" );  /* Muestra un mensaje inicial en la UART0 (no es nec
+ 3256              		.loc 1 343 0
+ 3257 0648 3C009FE5 		ldr	r0, .L55+4
+ 3258 064c FEFFFFEB 		bl	uart0_puts
+ 3259 0650 090000EA 		b	.L52
+ 3260              	.L53:
+ 344:../lab12-cyclic.c ****     }
+ 345:../lab12-cyclic.c ****     else if( flagPb )
+ 3261              		.loc 1 345 0
+ 3262 0654 34309FE5 		ldr	r3, .L55+8
+ 3263 0658 0030D3E5 		ldrb	r3, [r3, #0]
+ 3264 065c FF3003E2 		and	r3, r3, #255
+ 3265 0660 000053E3 		cmp	r3, #0
+ 3266 0664 0400000A 		beq	.L52
+ 346:../lab12-cyclic.c ****     {   
+ 347:../lab12-cyclic.c ****         flagPb = FALSE;
+ 3267              		.loc 1 347 0
+ 3268 0668 20309FE5 		ldr	r3, .L55+8
+ 3269 066c 0020A0E3 		mov	r2, #0
+ 3270 0670 0020C3E5 		strb	r2, [r3, #0]
+ 348:../lab12-cyclic.c ****         uart0_puts( "  (Task 7) Se ha pulsado algún pushbutton...\n" );
+ 3271              		.loc 1 348 0
+ 3272 0674 18009FE5 		ldr	r0, .L55+12
+ 3273 0678 FEFFFFEB 		bl	uart0_puts
+ 3274              	.L52:
+ 349:../lab12-cyclic.c ****     }
+ 350:../lab12-cyclic.c **** }
+ 3275              		.loc 1 350 0
+ 3276 067c 0CD04BE2 		sub	sp, fp, #12
+ 3277 0680 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3278 0684 1EFF2FE1 		bx	lr
+ 3279              	.L56:
+ 3280              		.align	2
+ 3281              	.L55:
+ 3282 0688 08000000 		.word	init.4233
+ 3283 068c 40040000 		.word	.LC12
+ 3284 0690 00000000 		.word	flagPb
+ 3285 0694 54040000 		.word	.LC13
+ 3286              		.cfi_endproc
+ 3287              	.LFE12:
+ 3289              		.section	.rodata
+ 3290 0482 0000     		.align	2
+ 3291              	.LC14:
+ 3292 0484 20546173 		.ascii	" Task 8: iniciada.\012\000"
+ 3292      6B20383A 
+ 3292      20696E69 
+ 3292      63696164 
+ 3292      612E0A00 
+ 3293              		.text
+ 3294              		.align	2
+ 3295              		.global	Task8
+ 3297              	Task8:
+ 3298              	.LFB13:
+ 351:../lab12-cyclic.c **** 
+ 352:../lab12-cyclic.c **** void Task8( void ) {
+ 3299              		.loc 1 352 0
+ 3300              		.cfi_startproc
+ 3301              		@ Function supports interworking.
+ 3302              		@ args = 0, pretend = 0, frame = 0
+ 3303              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3304 0698 0DC0A0E1 		mov	ip, sp
+ 3305              	.LCFI26:
+ 3306              		.cfi_def_cfa_register 12
+ 3307 069c 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3308 06a0 04B04CE2 		sub	fp, ip, #4
+ 3309              		.cfi_offset 14, -8
+ 3310              		.cfi_offset 13, -12
+ 3311              		.cfi_offset 11, -16
+ 3312              	.LCFI27:
+ 3313              		.cfi_def_cfa 11, 4
+ 353:../lab12-cyclic.c **** 	static boolean init = TRUE;
+ 354:../lab12-cyclic.c **** 	static char* key_str = "Tecla pulsada: ";
+ 355:../lab12-cyclic.c **** 
+ 356:../lab12-cyclic.c **** 	if( init ){
+ 3314              		.loc 1 356 0
+ 3315 06a4 5C309FE5 		ldr	r3, .L60
+ 3316 06a8 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3317 06ac 000053E3 		cmp	r3, #0
+ 3318 06b0 0500000A 		beq	.L58
+ 357:../lab12-cyclic.c **** 		init = FALSE;
+ 3319              		.loc 1 357 0
+ 3320 06b4 4C309FE5 		ldr	r3, .L60
+ 3321 06b8 0020A0E3 		mov	r2, #0
+ 3322 06bc 0020C3E5 		strb	r2, [r3, #0]
+ 358:../lab12-cyclic.c **** 		uart0_puts( " Task 8: iniciada.\n" );
+ 3323              		.loc 1 358 0
+ 3324 06c0 44009FE5 		ldr	r0, .L60+4
+ 3325 06c4 FEFFFFEB 		bl	uart0_puts
+ 3326 06c8 0B0000EA 		b	.L57
+ 3327              	.L58:
+ 359:../lab12-cyclic.c **** 	} else {
+ 360:../lab12-cyclic.c **** 		lcd_puts(LCD_WIDTH/2 - 64, LCD_HEIGHT/2 - 64, BLACK, key_str);
+ 3328              		.loc 1 360 0
+ 3329 06cc 3C309FE5 		ldr	r3, .L60+8
+ 3330 06d0 003093E5 		ldr	r3, [r3, #0]
+ 3331 06d4 6000A0E3 		mov	r0, #96
+ 3332 06d8 3810A0E3 		mov	r1, #56
+ 3333 06dc 0F20A0E3 		mov	r2, #15
+ 3334 06e0 FEFFFFEB 		bl	lcd_puts
+ 361:../lab12-cyclic.c **** 		lcd_puthex(LCD_WIDTH/2 - 64, LCD_HEIGHT/2, BLACK, scancode);
+ 3335              		.loc 1 361 0
+ 3336 06e4 28309FE5 		ldr	r3, .L60+12
+ 3337 06e8 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3338 06ec 6000A0E3 		mov	r0, #96
+ 3339 06f0 7810A0E3 		mov	r1, #120
+ 3340 06f4 0F20A0E3 		mov	r2, #15
+ 3341 06f8 FEFFFFEB 		bl	lcd_puthex
+ 3342              	.L57:
+ 362:../lab12-cyclic.c **** 	}
+ 363:../lab12-cyclic.c **** }
+ 3343              		.loc 1 363 0
+ 3344 06fc 0CD04BE2 		sub	sp, fp, #12
+ 3345 0700 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3346 0704 1EFF2FE1 		bx	lr
+ 3347              	.L61:
+ 3348              		.align	2
+ 3349              	.L60:
+ 3350 0708 01000000 		.word	init.4237
+ 3351 070c 84040000 		.word	.LC14
+ 3352 0710 04000000 		.word	key_str.4238
+ 3353 0714 00000000 		.word	scancode
+ 3354              		.cfi_endproc
+ 3355              	.LFE13:
+ 3357              		.section	.rodata
+ 3358              		.align	2
+ 3359              	.LC15:
+ 3360 0498 20546173 		.ascii	" Task 9: iniciada.\012\000"
+ 3360      6B20393A 
+ 3360      20696E69 
+ 3360      63696164 
+ 3360      612E0A00 
+ 3361              		.align	2
+ 3362              	.LC16:
+ 3363 04ac 53656775 		.ascii	"Segundos: \000"
+ 3363      6E646F73 
+ 3363      3A2000
+ 3364              		.text
+ 3365              		.align	2
+ 3366              		.global	Task9
+ 3368              	Task9:
+ 3369              	.LFB14:
+ 364:../lab12-cyclic.c **** 
+ 365:../lab12-cyclic.c **** void Task9( void ) {
+ 3370              		.loc 1 365 0
+ 3371              		.cfi_startproc
+ 3372              		@ Function supports interworking.
+ 3373              		@ args = 0, pretend = 0, frame = 0
+ 3374              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3375 0718 0DC0A0E1 		mov	ip, sp
+ 3376              	.LCFI28:
+ 3377              		.cfi_def_cfa_register 12
+ 3378 071c 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 3379 0720 04B04CE2 		sub	fp, ip, #4
+ 3380              		.cfi_offset 14, -8
+ 3381              		.cfi_offset 13, -12
+ 3382              		.cfi_offset 11, -16
+ 3383              	.LCFI29:
+ 3384              		.cfi_def_cfa 11, 4
+ 366:../lab12-cyclic.c **** 	static boolean init = TRUE;
+ 367:../lab12-cyclic.c **** 	static uint32 sec;
+ 368:../lab12-cyclic.c **** 
+ 369:../lab12-cyclic.c **** 	if(init) {
+ 3385              		.loc 1 369 0
+ 3386 0724 78309FE5 		ldr	r3, .L65
+ 3387 0728 0030D3E5 		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 3388 072c 000053E3 		cmp	r3, #0
+ 3389 0730 0800000A 		beq	.L63
+ 370:../lab12-cyclic.c **** 		init = FALSE;
+ 3390              		.loc 1 370 0
+ 3391 0734 68309FE5 		ldr	r3, .L65
+ 3392 0738 0020A0E3 		mov	r2, #0
+ 3393 073c 0020C3E5 		strb	r2, [r3, #0]
+ 371:../lab12-cyclic.c **** 		uart0_puts( " Task 9: iniciada.\n" );
+ 3394              		.loc 1 371 0
+ 3395 0740 60009FE5 		ldr	r0, .L65+4
+ 3396 0744 FEFFFFEB 		bl	uart0_puts
+ 372:../lab12-cyclic.c **** 		sec = 0;
+ 3397              		.loc 1 372 0
+ 3398 0748 5C309FE5 		ldr	r3, .L65+8
+ 3399 074c 0020A0E3 		mov	r2, #0
+ 3400 0750 002083E5 		str	r2, [r3, #0]
+ 3401 0754 0F0000EA 		b	.L62
+ 3402              	.L63:
+ 373:../lab12-cyclic.c **** 	} else {
+ 374:../lab12-cyclic.c **** 		lcd_puts(10, 10, BLACK, "Segundos: ");
+ 3403              		.loc 1 374 0
+ 3404 0758 0A00A0E3 		mov	r0, #10
+ 3405 075c 0A10A0E3 		mov	r1, #10
+ 3406 0760 0F20A0E3 		mov	r2, #15
+ 3407 0764 44309FE5 		ldr	r3, .L65+12
+ 3408 0768 FEFFFFEB 		bl	lcd_puts
+ 375:../lab12-cyclic.c **** 		lcd_putint(90, 10, BLACK, sec++);
+ 3409              		.loc 1 375 0
+ 3410 076c 38309FE5 		ldr	r3, .L65+8
+ 3411 0770 003093E5 		ldr	r3, [r3, #0]
+ 3412 0774 03C0A0E1 		mov	ip, r3
+ 3413 0778 012083E2 		add	r2, r3, #1
+ 3414 077c 28309FE5 		ldr	r3, .L65+8
+ 3415 0780 002083E5 		str	r2, [r3, #0]
+ 3416 0784 5A00A0E3 		mov	r0, #90
+ 3417 0788 0A10A0E3 		mov	r1, #10
+ 3418 078c 0F20A0E3 		mov	r2, #15
+ 3419 0790 0C30A0E1 		mov	r3, ip
+ 3420 0794 FEFFFFEB 		bl	lcd_putint
+ 3421              	.L62:
+ 376:../lab12-cyclic.c **** 	}
+ 377:../lab12-cyclic.c **** }
+ 3422              		.loc 1 377 0
+ 3423 0798 0CD04BE2 		sub	sp, fp, #12
+ 3424 079c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 3425 07a0 1EFF2FE1 		bx	lr
+ 3426              	.L66:
+ 3427              		.align	2
+ 3428              	.L65:
+ 3429 07a4 00000000 		.word	init.4242
+ 3430 07a8 98040000 		.word	.LC15
+ 3431 07ac 00000000 		.word	sec.4243
+ 3432 07b0 AC040000 		.word	.LC16
+ 3433              		.cfi_endproc
+ 3434              	.LFE14:
+ 3436              		.align	2
+ 3437              		.global	isr_pb
+ 3439              	isr_pb:
+ 3440              	.LFB15:
+ 378:../lab12-cyclic.c **** 
+ 379:../lab12-cyclic.c **** /*******************************************************************/
+ 380:../lab12-cyclic.c **** 
+ 381:../lab12-cyclic.c **** void isr_pb( void )
+ 382:../lab12-cyclic.c **** {
+ 3441              		.loc 1 382 0
+ 3442              		.cfi_startproc
+ 3443              		@ Interrupt Service Routine.
+ 3444              		@ args = 0, pretend = 0, frame = 0
+ 3445              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3446 07b4 04C02DE5 		str	ip, [sp, #-4]!
+ 3447 07b8 0DC0A0E1 		mov	ip, sp
+ 3448              	.LCFI30:
+ 3449              		.cfi_def_cfa_register 12
+ 3450 07bc 0CD82DE9 		stmfd	sp!, {r2, r3, fp, ip, lr, pc}
+ 3451 07c0 04B04CE2 		sub	fp, ip, #4
+ 3452              		.cfi_offset 14, -8
+ 3453              		.cfi_offset 13, -12
+ 3454              		.cfi_offset 11, -16
+ 3455              		.cfi_offset 3, -20
+ 3456              		.cfi_offset 2, -24
+ 3457              	.LCFI31:
+ 3458              		.cfi_def_cfa 11, 4
+ 383:../lab12-cyclic.c ****     flagPb = TRUE;
+ 3459              		.loc 1 383 0
+ 3460 07c4 2C309FE5 		ldr	r3, .L68
+ 3461 07c8 0120A0E3 		mov	r2, #1
+ 3462 07cc 0020C3E5 		strb	r2, [r3, #0]
+ 384:../lab12-cyclic.c ****     EXTINTPND = BIT_RIGHTPB | BIT_LEFTPB;
+ 3463              		.loc 1 384 0
+ 3464 07d0 24309FE5 		ldr	r3, .L68+4
+ 3465 07d4 0C20A0E3 		mov	r2, #12
+ 3466 07d8 002083E5 		str	r2, [r3, #0]
+ 385:../lab12-cyclic.c ****     I_ISPC = BIT_PB;
+ 3467              		.loc 1 385 0
+ 3468 07dc 1C309FE5 		ldr	r3, .L68+8
+ 3469 07e0 0226A0E3 		mov	r2, #2097152
+ 3470 07e4 002083E5 		str	r2, [r3, #0]
+ 386:../lab12-cyclic.c **** }
+ 3471              		.loc 1 386 0
+ 3472 07e8 14D04BE2 		sub	sp, fp, #20
+ 3473 07ec 0C689DE8 		ldmfd	sp, {r2, r3, fp, sp, lr}
+ 3474 07f0 04C09DE4 		ldmfd	sp!, {ip}
+ 3475 07f4 04F05EE2 		subs	pc, lr, #4
+ 3476              	.L69:
+ 3477              		.align	2
+ 3478              	.L68:
+ 3479 07f8 00000000 		.word	flagPb
+ 3480 07fc 5400D201 		.word	30539860
+ 3481 0800 2400E001 		.word	31457316
+ 3482              		.cfi_endproc
+ 3483              	.LFE15:
+ 3485              		.align	2
+ 3486              		.global	isr_tick
+ 3488              	isr_tick:
+ 3489              	.LFB16:
+ 387:../lab12-cyclic.c **** 
+ 388:../lab12-cyclic.c **** void isr_tick( void )
+ 389:../lab12-cyclic.c **** {     
+ 3490              		.loc 1 389 0
+ 3491              		.cfi_startproc
+ 3492              		@ Interrupt Service Routine.
+ 3493              		@ args = 0, pretend = 0, frame = 0
+ 3494              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3495 0804 04C02DE5 		str	ip, [sp, #-4]!
+ 3496 0808 0DC0A0E1 		mov	ip, sp
+ 3497              	.LCFI32:
+ 3498              		.cfi_def_cfa_register 12
+ 3499 080c 0CD82DE9 		stmfd	sp!, {r2, r3, fp, ip, lr, pc}
+ 3500 0810 04B04CE2 		sub	fp, ip, #4
+ 3501              		.cfi_offset 14, -8
+ 3502              		.cfi_offset 13, -12
+ 3503              		.cfi_offset 11, -16
+ 3504              		.cfi_offset 3, -20
+ 3505              		.cfi_offset 2, -24
+ 3506              	.LCFI33:
+ 3507              		.cfi_def_cfa 11, 4
+ 390:../lab12-cyclic.c ****     flagTimer = TRUE;
+ 3508              		.loc 1 390 0
+ 3509 0814 20309FE5 		ldr	r3, .L71
+ 3510 0818 0120A0E3 		mov	r2, #1
+ 3511 081c 0020C3E5 		strb	r2, [r3, #0]
+ 391:../lab12-cyclic.c ****     I_ISPC = BIT_TIMER0;
+ 3512              		.loc 1 391 0
+ 3513 0820 18309FE5 		ldr	r3, .L71+4
+ 3514 0824 022AA0E3 		mov	r2, #8192
+ 3515 0828 002083E5 		str	r2, [r3, #0]
+ 392:../lab12-cyclic.c **** };
+ 3516              		.loc 1 392 0
+ 3517 082c 14D04BE2 		sub	sp, fp, #20
+ 3518 0830 0C689DE8 		ldmfd	sp, {r2, r3, fp, sp, lr}
+ 3519 0834 04C09DE4 		ldmfd	sp!, {ip}
+ 3520 0838 04F05EE2 		subs	pc, lr, #4
+ 3521              	.L72:
+ 3522              		.align	2
+ 3523              	.L71:
+ 3524 083c 00000000 		.word	flagTimer
+ 3525 0840 2400E001 		.word	31457316
+ 3526              		.cfi_endproc
+ 3527              	.LFE16:
+ 3529              		.data
+ 3532              	init.4242:
+ 3533 0000 01       		.byte	1
+ 3534              		.bss
+ 3535              		.align	2
+ 3536              	sec.4243:
+ 3537 0000 00000000 		.space	4
+ 3538              		.data
+ 3541              	init.4237:
+ 3542 0001 01       		.byte	1
+ 3543              		.section	.rodata
+ 3544 04b7 00       		.align	2
+ 3545              	.LC17:
+ 3546 04b8 5465636C 		.ascii	"Tecla pulsada: \000"
+ 3546      61207075 
+ 3546      6C736164 
+ 3546      613A2000 
+ 3547              		.data
+ 3548 0002 0000     		.align	2
+ 3551              	key_str.4238:
+ 3552 0004 B8040000 		.word	.LC17
+ 3555              	init.4233:
+ 3556 0008 01       		.byte	1
+ 3559              	init.4229:
+ 3560 0009 01       		.byte	1
+ 3563              	init.4225:
+ 3564 000a 01       		.byte	1
+ 3567              	init.4220:
+ 3568 000b 01       		.byte	1
+ 3569              		.bss
+ 3570              		.align	2
+ 3571              	ticks.4221:
+ 3572 0004 00000000 		.space	4
+ 3573              		.data
+ 3576              	init.4215:
+ 3577 000c 01       		.byte	1
+ 3580              	init.4202:
+ 3581 000d 01       		.byte	1
+ 3582              		.bss
+ 3583              	state.4207:
+ 3584 0008 00       		.space	1
+ 3585 0009 000000   		.data
+ 3588              	init.4198:
+ 3589 000e 01       		.byte	1
+ 3590 000f 00       		.text
+ 3591              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 lab12-cyclic.c
+                            *COM*:00000001 scancode
+                            *COM*:00000001 flagTask5
+                            *COM*:00000001 flagTask6
+                            *COM*:00000001 flagTask8
+                            *COM*:00000001 flagPb
+                            *COM*:00000001 flagTimer
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2151   .rodata:00000000 pjobs
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2148   .rodata:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2515   .text:00000154 JobA
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2546   .text:00000174 JobB
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2583   .text:000001a0 JobC
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2622   .text:000001d0 JobD
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2665   .text:00000208 JobE
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2361   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2364   .text:00000000 main
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2715   .text:00000244 Task1
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2779   .text:000002ac Task2
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2917   .text:000003d8 Task3
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3003   .text:0000047c Task4
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3082   .text:00000510 Task5
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3158   .text:000005a4 Task6
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3230   .text:00000620 Task7
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3297   .text:00000698 Task8
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3368   .text:00000718 Task9
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2499   .text:0000012c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3439   .text:000007b4 isr_pb
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3488   .text:00000804 isr_tick
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2512   .text:00000154 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2766   .text:000002a4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3588   .data:0000000e init.4198
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2776   .text:000002ac $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2893   .text:000003bc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3580   .data:0000000d init.4202
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3583   .bss:00000008 state.4207
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2914   .text:000003d8 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:2985   .text:0000046c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3576   .data:0000000c init.4215
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3000   .text:0000047c $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3063   .text:000004fc $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3567   .data:0000000b init.4220
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3571   .bss:00000004 ticks.4221
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3079   .text:00000510 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3141   .text:0000058c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3563   .data:0000000a init.4225
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3155   .text:000005a4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3211   .text:00000610 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3559   .data:00000009 init.4229
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3227   .text:00000620 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3282   .text:00000688 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3555   .data:00000008 init.4233
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3294   .text:00000698 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3350   .text:00000708 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3541   .data:00000001 init.4237
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3551   .data:00000004 key_str.4238
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3365   .text:00000718 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3429   .text:000007a4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3532   .data:00000000 init.4242
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3536   .bss:00000000 sec.4243
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3436   .text:000007b4 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3479   .text:000007f8 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3485   .text:00000804 $a
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3524   .text:0000083c $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3535   .bss:00000000 $d
+C:\Users\USUARI~2\AppData\Local\Temp\ccAjnK5g.s:3548   .data:00000002 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+sys_init
+timers_init
+uart0_init
+leds_init
+segs_init
+rtc_init
+pbs_init
+keypad_init
+lcd_init
+lcd_clear
+lcd_on
+uart0_puts
+pbs_open
+timer0_open_ms
+sleep
+led_on
+led_off
+led_toggle
+keypad_pressed
+keypad_scan
+rtc_gettime
+uart0_putint
+uart0_putchar
+uart0_puthex
+segs_putchar
+lcd_puts
+lcd_puthex
+lcd_putint

@@ -7917,3 +7917,1182 @@ Binding(CTRL+SHIFT+H,
 
 !ENTRY org.eclipse.e4.ui.css.swt 4 0 2024-11-30 13:39:22.335
 !MESSAGE Failed to get bundle for: bundleclass://net.jeeeyul.eclipse.themes/net.jeeeyul.eclipse.themes.rendering.JeeeyulsTabRenderer
+!SESSION 2024-12-02 11:07:52.104 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product -data D:\PSyD\labs
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-12-02 11:07:55.083
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'u:\hlocal'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1304a5f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1304a5f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@162e435,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.MakeHandlersGo@162e435,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1747208,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1747208,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ea9919,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1ea9919,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@e96fa8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@e96fa8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1a1bb95,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1a1bb95,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-12-02 11:08:29.157
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1226025,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@1226025,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.226
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.231
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.231
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.232
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.232
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2024-12-02 11:10:30.232
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:10:58.407
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:10:58.408
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:11:47.175
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:11:47.175
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:12:16.839
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:12:16.839
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:13:30.345
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:13:30.345
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:14:46.715
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:14:46.715
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:15:22.556
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:15:22.556
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:17:16.455
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:17:16.455
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:18:24.378
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:18:24.378
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:18:46.170
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:18:46.170
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2024-12-02 11:20:38.959
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: No registers.[No registers.]
+	at org.eclipse.cdt.debug.mi.core.cdi.RegisterManager.update(RegisterManager.java:427)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:317)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.937
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:195)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.937
+!MESSAGE localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:195)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.951
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.951
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.966
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: You can't do that when your target is `None'
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:262)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:20.966
+!MESSAGE You can't do that when your target is `None'
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: You can't do that when your target is `None'
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:262)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:39.427
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:21:39.427
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:25:02.328
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:25:02.328
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:25:24.662
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:25:24.662
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:26:37.853
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:26:37.853
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:27:57.369
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:27:57.369
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2024-12-02 11:29:16.837
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:29:38.551
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:29:38.551
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2024-12-02 11:30:51.085
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.VariableManager.removeMIVar(VariableManager.java:219)
+	at org.eclipse.cdt.debug.mi.core.cdi.VariableManager.destroyVariable(VariableManager.java:588)
+	at org.eclipse.cdt.debug.mi.core.cdi.VariableManager.update(VariableManager.java:706)
+	at org.eclipse.cdt.debug.mi.core.cdi.VariableManager.update(VariableManager.java:642)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:311)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.919
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:195)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.920
+!MESSAGE localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: localhost:3333: Se produjo un error durante el intento de conexi\363n ya que la parte conectada no respondi\363 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\363n establecida ya que el host conectado no ha podido responder.
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:195)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.925
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: {R,T}xThread terminated
+	at org.eclipse.cdt.debug.mi.core.MISession.postCommand(MISession.java:571)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:350)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.925
+!MESSAGE {R,T}xThread terminated
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: {R,T}xThread terminated
+	at org.eclipse.cdt.debug.mi.core.MISession.postCommand(MISession.java:571)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:350)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.926
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: {R,T}xThread terminated
+	at org.eclipse.cdt.debug.mi.core.MISession.postCommand(MISession.java:571)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:350)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:262)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:31:28.926
+!MESSAGE {R,T}xThread terminated
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: {R,T}xThread terminated
+	at org.eclipse.cdt.debug.mi.core.MISession.postCommand(MISession.java:571)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:350)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:262)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2024-12-02 11:31:28.931
+!MESSAGE Internal error logged from CDI Debug: 
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: {R,T}xThread terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SourceManager.setSourcePaths(SourceManager.java:82)
+	at org.eclipse.cdt.debug.mi.core.cdi.model.Target.setSourcePaths(Target.java:1158)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.setSourceLookupPath(CDebugTarget.java:1867)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initializeSourceLookupPath(CDebugTarget.java:385)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initialize(CDebugTarget.java:286)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.<init>(CDebugTarget.java:279)
+	at org.eclipse.cdt.debug.core.CDIDebugModel$1.run(CDIDebugModel.java:127)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:132)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:230)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:70)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2024-12-02 11:31:28.932
+!MESSAGE Internal error logged from CDI Debug: 
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: {R,T}xThread terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.RegisterManager.getRegisterDescriptors(RegisterManager.java:196)
+	at org.eclipse.cdt.debug.mi.core.cdi.RegisterManager.getRegisterDescriptors(RegisterManager.java:174)
+	at org.eclipse.cdt.debug.mi.core.cdi.model.RegisterGroup.getRegisterDescriptors(RegisterGroup.java:43)
+	at org.eclipse.cdt.debug.internal.core.CRegisterManager.initialize(CRegisterManager.java:147)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.getRegisterManager(CDebugTarget.java:1586)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initializeRegisters(CDebugTarget.java:358)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initialize(CDebugTarget.java:291)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.<init>(CDebugTarget.java:279)
+	at org.eclipse.cdt.debug.core.CDIDebugModel$1.run(CDIDebugModel.java:127)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:132)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:230)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:70)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2024-12-02 11:31:28.932
+!MESSAGE Internal error logged from CDI Debug: 
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: {R,T}xThread terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.RegisterManager.getRegisterDescriptors(RegisterManager.java:196)
+	at org.eclipse.cdt.debug.mi.core.cdi.RegisterManager.getRegisterDescriptors(RegisterManager.java:174)
+	at org.eclipse.cdt.debug.mi.core.cdi.model.RegisterGroup.getRegisterDescriptors(RegisterGroup.java:43)
+	at org.eclipse.cdt.debug.internal.core.CRegisterManager.initialize(CRegisterManager.java:147)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initializeRegisters(CDebugTarget.java:358)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.initialize(CDebugTarget.java:291)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.<init>(CDebugTarget.java:279)
+	at org.eclipse.cdt.debug.core.CDIDebugModel$1.run(CDIDebugModel.java:127)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:132)
+	at org.eclipse.cdt.debug.core.CDIDebugModel.newDebugTarget(CDIDebugModel.java:230)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:70)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:32:06.775
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:32:06.775
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:33:51.632
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:33:51.632
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:36:40.466
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:36:40.466
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:37:43.290
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:37:43.290
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2024-12-02 11:38:17.642
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:38:33.961
+!MESSAGE Failed command
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.gdbjtag.core 4 150 2024-12-02 11:38:33.961
+!MESSAGE Undefined remote command: "reset init".  Try "help remote".
+!STACK 0
+org.eclipse.cdt.debug.mi.core.MIException: Undefined remote command: "reset init".  Try "help remote".
+	at org.eclipse.cdt.debug.mi.core.command.Command.throwMIException(Command.java:105)
+	at org.eclipse.cdt.debug.mi.core.command.Command.getMIInfo(Command.java:79)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:355)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.executeGDBScript(GDBJtagDebugger.java:378)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.doStartSession(GDBJtagDebugger.java:223)
+	at org.eclipse.cdt.debug.mi.core.AbstractGDBCDIDebugger.createSession(AbstractGDBCDIDebugger.java:86)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagDebugger.createSession(GDBJtagDebugger.java:69)
+	at org.eclipse.cdt.debug.gdbjtag.core.GDBJtagLaunchConfigurationDelegate.launch(GDBJtagLaunchConfigurationDelegate.java:54)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

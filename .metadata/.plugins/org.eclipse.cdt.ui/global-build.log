@@ -1,35 +1,51 @@
-11:25:06 **** Incremental Build of configuration Debug for project lab9-efectos ****
+11:37:26 **** Build of configuration Debug for project lab13 ****
 cs-make all 
-'Building file: ../lab9-efectos.c'
+'Building file: ../kernelcoop.c'
 'Invoking: ARM Sourcery Windows GCC C Compiler'
-arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="lab9-efectos.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab9-efectos.d" -MT"lab9-efectos.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab9-efectos.o" "../lab9-efectos.c"
-../lab9-efectos.c:77:6: warning: return type of 'main' is not 'int'
-'Finished building: ../lab9-efectos.c'
+arm-none-eabi-gcc -I.. -I../../BSP/include -I../os_core -I../os_port -O0 -Wall -Wa,-adhlns="kernelcoop.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"kernelcoop.d" -MT"kernelcoop.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "kernelcoop.o" "../kernelcoop.c"
+'Finished building: ../kernelcoop.c'
 ' '
-'Building target: lab9-efectos.elf'
+'Building file: ../lab13.c'
+'Invoking: ARM Sourcery Windows GCC C Compiler'
+arm-none-eabi-gcc -I.. -I../../BSP/include -I../os_core -I../os_port -O0 -Wall -Wa,-adhlns="lab13.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"lab13.d" -MT"lab13.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab13.o" "../lab13.c"
+../lab13.c:60:6: warning: return type of 'main' is not 'int'
+'Finished building: ../lab13.c'
+' '
+'Building target: lab13.elf'
 'Invoking: ARM Sourcery Windows GCC C Linker'
-arm-none-eabi-gcc -T"../lab9-efectos.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab9-efectos.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab9-efectos.elf"  ./lab9-efectos.o   -lBSP
-'Finished building target: lab9-efectos.elf'
+arm-none-eabi-gcc -T"../lab13.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,lab13.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "lab13.elf"  ./kernelcoop.o ./lab13.o   -lBSP
+'Finished building target: lab13.elf'
 ' '
 'Invoking: ARM Sourcery Windows GNU Create Flash Image'
-arm-none-eabi-objcopy -O binary lab9-efectos.elf  "lab9-efectos.hex"
-'Finished building: lab9-efectos.hex'
+arm-none-eabi-objcopy -O binary lab13.elf  "lab13.hex"
+'Finished building: lab13.hex'
 ' '
 'Invoking: ARM Sourcery Windows GNU Create Listing'
-arm-none-eabi-objdump -h -S lab9-efectos.elf > "lab9-efectos.lst"
-'Finished building: lab9-efectos.lst'
+arm-none-eabi-objdump -h -S lab13.elf > "lab13.lst"
+'Finished building: lab13.lst'
 ' '
 'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab9-efectos.elf
+arm-none-eabi-size  --format=berkeley lab13.elf
    text	   data	    bss	    dec	    hex	filename
-  21920	    216	 768022	 790158	  c0e8e	lab9-efectos.elf
-'Finished building: lab9-efectos.siz'
+  28572	     16	  38592	  67180	  1066c	lab13.elf
+'Finished building: lab13.siz'
 ' '
-11:25:15 **** Incremental Build of configuration Debug for project lab9-efectos ****
+
+11:37:27 Build Finished (took 831ms)
+
+11:37:41 **** Incremental Build of configuration Debug for project lab13 ****
 cs-make all 
 'Invoking: ARM Sourcery Windows GNU Print Size'
-arm-none-eabi-size  --format=berkeley lab9-efectos.elf
+arm-none-eabi-size  --format=berkeley lab13.elf
    text	   data	    bss	    dec	    hex	filename
-  21920	    216	 768022	 790158	  c0e8e	lab9-efectos.elf
-'Finished building: lab9-efectos.siz'
+  28572	     16	  38592	  67180	  1066c	lab13.elf
+'Finished building: lab13.siz'
+' '
+11:38:32 **** Incremental Build of configuration Debug for project lab13 ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley lab13.elf
+   text	   data	    bss	    dec	    hex	filename
+  28572	     16	  38592	  67180	  1066c	lab13.elf
+'Finished building: lab13.siz'
 ' '

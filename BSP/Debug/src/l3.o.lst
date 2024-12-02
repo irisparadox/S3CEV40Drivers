@@ -234,12 +234,12 @@
  1894              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 l3.c
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1705   .text:00000000 $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1708   .text:00000000 L3_init
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1738   .text:0000002c $d
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1742   .text:00000030 $a
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1745   .text:00000030 L3_putByte
-C:\Users\USUARI~2\AppData\Local\Temp\cc91fcwF.s:1889   .text:000001a4 $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1705   .text:00000000 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1708   .text:00000000 L3_init
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1738   .text:0000002c $d
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1742   .text:00000030 $a
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1745   .text:00000030 L3_putByte
+C:\Users\USUARI~2\AppData\Local\Temp\cc6RNm7A.s:1889   .text:000001a4 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

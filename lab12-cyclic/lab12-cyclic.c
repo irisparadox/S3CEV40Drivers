@@ -26,6 +26,7 @@
 #include <keypad.h>
 #include <timers.h>
 #include <rtc.h>
+#include <lcd.h>
 
 #define TICKS_PER_SEC   (100)
 
@@ -346,6 +347,33 @@ void Task7( void )  /* Cada vez que se presione un pulsador lo avisa por la UART
         flagPb = FALSE;
         uart0_puts( "  (Task 7) Se ha pulsado algún pushbutton...\n" );
     }
+}
+
+void Task8( void ) {
+	static boolean init = TRUE;
+	static char* key_str = "Tecla pulsada: ";
+
+	if( init ){
+		init = FALSE;
+		uart0_puts( " Task 8: iniciada.\n" );
+	} else {
+		lcd_puts(LCD_WIDTH/2 - 64, LCD_HEIGHT/2 - 64, BLACK, key_str);
+		lcd_puthex(LCD_WIDTH/2 - 64, LCD_HEIGHT/2, BLACK, scancode);
+	}
+}
+
+void Task9( void ) {
+	static boolean init = TRUE;
+	static uint32 sec;
+
+	if(init) {
+		init = FALSE;
+		uart0_puts( " Task 9: iniciada.\n" );
+		sec = 0;
+	} else {
+		lcd_puts(10, 10, BLACK, "Segundos: ");
+		lcd_putint(90, 10, BLACK, sec++);
+	}
 }
 
 /*******************************************************************/
