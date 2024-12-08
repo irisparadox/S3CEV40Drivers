@@ -83,21 +83,25 @@ uint8 lcd_getpixel( uint16 x, uint16 y ) {
 }
 
 void lcd_draw_hrow( uint16 xleft, uint16 xright, uint16 y, uint8 color, uint16 width ) {
-	uint16 i, j;
-	for(i = xleft; i <= xright + 4; ++i) {
-		for(j = y; j < y + width; ++j) {
-			lcd_putpixel(i, j, color);
+	uint16 auxY = y;
+	while(xleft <= xright){
+		y = auxY;
+		while(y < (auxY + width)){
+			lcd_putpixel(xleft, y++, color);
 		}
+		++xleft;
 	}
 }
 
 void lcd_draw_vrow( uint16 yup, uint16 ydown, uint16 x, uint8 color, uint16 width ) {
-	uint16 i, j;
-    for(i = x; i <= x + width; ++i) {
-    	for(j = yup; j < ydown + 4; ++j) {
-    		lcd_putpixel(i, j, color);
-    	}
-    }
+	uint16 auxX = x;
+	while(yup <= ydown){
+		x = auxX;
+		while(x < (auxX + width)){
+			lcd_putpixel(x++, yup,color);
+		}
+		++yup;
+	}
 }
 
 void lcd_draw_box( uint16 xleft, uint16 yup, uint16 xright, uint16 ydown, uint8 color, uint16 width ) {

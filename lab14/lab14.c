@@ -28,6 +28,7 @@
 #include <keypad.h>
 #include <timers.h>
 #include <rtc.h>
+#include <lcd.h>
 
 /* Declaración de pilas */
 
@@ -40,11 +41,14 @@ OS_STK Task4Stk[TASK_STK_SIZE];
 OS_STK Task5Stk[TASK_STK_SIZE];
 OS_STK Task6Stk[TASK_STK_SIZE];
 OS_STK Task7Stk[TASK_STK_SIZE];
+OS_STK Task8Stk[TASK_STK_SIZE];
+OS_STK Task9Stk[TASK_STK_SIZE];
 OS_STK TaskStartStk[TASK_STK_SIZE];
 
 /* Declaración de recursos */
 
 OS_EVENT *uart0Sem;                /* Semáforo para el acceso mutex a la UART0 */
+OS_EVENT *LCDSem;
 
 OS_EVENT *keypadMbox;              /* Buzón para el scancode de la tecla pulsada */
 OS_EVENT *flagPb;                  /* Flag para señalizar la presión de un pulsador */
@@ -58,6 +62,8 @@ void Task4( void *id );
 void Task5( void *id );
 void Task6( void *id );
 void Task7( void *id );
+void Task8( void *id );
+void Task9( void *id );
 void TaskStart( void *pdata );
 
 /* Declaración de RTI */
@@ -87,6 +93,7 @@ void main( void )
 
     OSInit();                                                              /* Inicializa el kernel              */
     uart0Sem   = OSSemCreate( 1 );                                         /* Crea recursos                     */
+    LCDSem	   = OSSemCreate( 1 );
     keypadMbox = OSMboxCreate( NULL );
     flagPb     = OSSemCreate( 0 ); 
     
@@ -105,6 +112,8 @@ void TaskStart( void *pdata )
     const char id5 = '5';
     const char id6 = '6';
     const char id7 = '7';
+    const char id8 = '8';
+    const char id9 = '9';
   
     OS_ENTER_CRITICAL();
     timer0_open_tick( OSTickISR, OS_TICKS_PER_SEC );  /* Instala OSTickISR como RTI del timer0                     */
@@ -120,6 +129,8 @@ void TaskStart( void *pdata )
     OSTaskCreate( Task5, (void *)&id5, &Task5Stk[TASK_STK_SIZE - 1], 3 );
     OSTaskCreate( Task6, (void *)&id6, &Task6Stk[TASK_STK_SIZE - 1], 4 );
     OSTaskCreate( Task7, (void *)&id7, &Task7Stk[TASK_STK_SIZE - 1], 2 );
+    OSTaskCreate( Task8, (void *)&id8, &Task8Stk[TASK_STK_SIZE - 1], 5 );
+    OSTaskCreate( Task9, (void *)&id9, &Task9Stk[TASK_STK_SIZE - 1], 8 );
 
     OSTaskDel(OS_PRIO_SELF);             /* La tarea inicial de arranque se auto-elimina */
 }
@@ -283,6 +294,47 @@ void Task7( void *id )
             uart0_puts( ") Se ha pulsado algún pushbutton...\n" );
         OSSemPost( uart0Sem );
     }
+}
+
+void Task8( void *id ) {
+
+	INT8U err;
+	uint8 scancode;
+	static char* key_str = "Tecla pulsada: ";
+
+	OSSemPend( uart0Sem, 0, &err );
+	uart0_puts( " Task" );
+	uart0_putchar( *(char *)id );
+	uart0_puts( " iniciada.\n" );
+	OSSemPost( uart0Sem );
+
+	while( 1 ) {
+		scancode = *((uint8 *) OSMboxPend( keypadMbox, 0, &err ));
+		OSSemPend( LCDSem, 0, &err );
+			lcd_puts(LCD_WIDTH/2 - 64, LCD_HEIGHT/2 - 64, BLACK, key_str);
+			lcd_puthex(LCD_WIDTH/2 + 64, LCD_HEIGHT/2 - 64, BLACK, scancode);
+		OSSemPost( LCDSem );
+	}
+}
+
+void Task9( void *id ) {
+
+	INT8U err;
+	static uint32 secs = 0;
+
+	OSSemPend( uart0Sem, 0, &err );
+	uart0_puts( " Task" );
+	uart0_putchar( *(char *)id );
+	uart0_puts( " iniciada.\n" );
+	OSSemPost( uart0Sem );
+
+	while( 1 ) {
+		OSTimeDly( 100 );
+		OSSemPend( LCDSem, 0, &err );
+			lcd_puts(10, 10, BLACK, "Segundos: ");
+			lcd_putint(90, 10, BLACK, secs++);
+		OSSemPost( LCDSem );
+	}
 }
 
 /*******************************************************************/
